@@ -7,26 +7,26 @@ class App extends Component {
       <div className="App">
         <div className="sidebar">
           <div className="logo">
-            <span>My Portfolio</span>
+            <a><img src="h.jpg" alt="logo"/></a>
           </div>
           <nav>
-            <a href="#" className="nav-item">Home</a>
             <a href="#" className="nav-item">About</a>
             <a href="#" className="nav-item">Portfolio</a>
-            <a href="#" className="nav-item">Contact</a>
+            <a href="#" className="nav-item contact">Contact</a>
+            <a href="https://github.com/t4kaha00" className="nav-item">Github</a>
           </nav>
         </div>
 
         <div className="content">
           <div className="portfolio">
-            <div class="portfolio-item one"></div>
-            <div class="portfolio-item two"></div>
-            <div class="portfolio-item three"></div>
-            <div class="portfolio-item four"></div>
-            <div class="portfolio-item five"></div>
-            <div class="portfolio-item six"></div>
-            <div class="portfolio-item seven"></div>
-            <div class="portfolio-item eight"></div>    
+            <div className="portfolio-item one"></div>
+            <div className="portfolio-item two"></div>
+            <div className="portfolio-item three"></div>
+            <div className="portfolio-item four"></div>
+            <div className="portfolio-item five"></div>
+            <div className="portfolio-item six"></div>
+            <div className="portfolio-item seven"></div>
+            <div className="portfolio-item eight"></div>    
           </div>
         </div>
         
