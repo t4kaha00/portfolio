@@ -18,8 +18,8 @@ body {
 /* Navigation Bar */
 .sidebar {
   background: #4f4f4f;
-  flex: 1 1 25%;
-  min-width: 300px;
+  flex: 1 1 15%;
+  min-width: 285px;
   padding: 3em;
   margin: .5em;
   border-radius: 25px;
@@ -30,7 +30,7 @@ body {
   margin-bottom: 2em;
 }
 
-img {
+.logo img {
   width: 40px;
   border-radius: 50%;
 }
@@ -44,6 +44,9 @@ img {
 }
 
 @media (min-width: 1033px) {
+  .sidebar {
+    max-width: 500px;
+  }
   .logo {
     margin-bottom: 5em;
   }
@@ -92,10 +95,12 @@ img {
   grid-row: span 8;
   grid-column: span 16;
   background-image: url(1.jpg);
-  
+  /* background-size: cover; */
 }
 .portfolio-item.one:hover {
   color: black;
+  cursor: pointer;
+  background-position-x: center;
 }
 .portfolio-item.one::before {
   content: '';
@@ -121,6 +126,8 @@ img {
 }
 .portfolio-item.two:hover {
   color: black;
+  cursor: pointer;
+  background-position-x: center;
 }
 .portfolio-item.two::before {
   content: '';
@@ -146,6 +153,8 @@ img {
 }
 .portfolio-item.three:hover {
   color: black;
+  cursor: pointer;
+  background-position-x: right;
 }
 .portfolio-item.three::before {
   content: '';
@@ -171,6 +180,8 @@ img {
 }
 .portfolio-item.four:hover {
   color: black;
+  cursor: pointer;
+  background-position-x: center;
 }
 .portfolio-item.four::before {
   content: '';
@@ -196,6 +207,8 @@ img {
 }
 .portfolio-item.five:hover {
   color: black;
+  cursor: pointer;
+  background-position-x: center;
 }
 .portfolio-item.five::before {
   content: '';
@@ -221,6 +234,8 @@ img {
 }
 .portfolio-item.six:hover {
   color: black;
+  cursor: pointer;
+  background-position-x: center;
 }
 .portfolio-item.six::before {
   content: '';
@@ -246,6 +261,8 @@ img {
 }
 .portfolio-item.seven:hover {
   color: black;
+  cursor: pointer;
+  background-position-x: center;
 }
 .portfolio-item.seven::before {
   content: '';
@@ -271,6 +288,8 @@ img {
 }
 .portfolio-item.eight:hover {
   color: black;
+  cursor: pointer;
+  background-position-x: center;
 }
 .portfolio-item.eight::before {
   content: '';
@@ -286,5 +305,32 @@ img {
   z-index: -1;
 }
 .portfolio-item.eight:hover::before {
+  opacity: 0.2;
+}
+
+.portfolio-item.nine {
+  grid-row: 11 / span 1;
+  grid-column: 11 / span 1;
+  background-image: url(8.jpg);  
+}
+.portfolio-item.nine:hover {
+  color: black;
+  cursor: pointer;
+  background-position-x: center;
+}
+.portfolio-item.nine::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+.portfolio-item.nine:hover::before {
   opacity: 0.2;
 }

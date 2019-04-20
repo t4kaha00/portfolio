@@ -26,7 +26,8 @@ class App extends Component {
             <div className="portfolio-item five"></div>
             <div className="portfolio-item six"></div>
             <div className="portfolio-item seven"></div>
-            <div className="portfolio-item eight"></div>    
+            <div className="portfolio-item eight"></div>
+            <div className="portfolio-item nine"></div>    
           </div>
         </div>
         
