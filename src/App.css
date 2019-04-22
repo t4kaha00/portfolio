@@ -41,6 +41,26 @@ body {
   font-size: 1.7rem;
   display: inline-block;
   margin-right: 2em;  
+  position: relative;
+}
+
+.nav-item.contact::before {
+  content: "hkarmacharya@gmail.com";
+  display: block;
+  position: absolute;
+  background-color: gray;
+  border-radius: 5px;
+  bottom: 0;
+  left: -100%;
+  padding: 0 .5em;
+  transform: scale(0);
+  transition: 
+    transform ease-out 150ms,
+    bottom ease-out 150ms;
+}
+.nav-item.contact:hover::before {
+  transform: scale(0.75);
+  bottom: 100%;
 }
 
 @media (min-width: 1033px) {
@@ -53,6 +73,9 @@ body {
   .nav-item {
     display: block;
     margin: 7vh 0;
+  }
+  .nav-item.contact::before {
+    left: -25%;
   }
 }  
 
@@ -69,6 +92,7 @@ body {
   grid-template-rows: repeat(16, 2em);
   grid-template-columns: repeat(16, 1fr);
   grid-gap: 5px;
+  position: relative;
 }
 
 .portfolio-item {
