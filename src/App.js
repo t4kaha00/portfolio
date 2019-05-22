@@ -9,8 +9,36 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = { open : true };
+    this.state = { 
+      open : true,
+      value: '',
+      numbers: [1, 125, 24, 500] 
+    };
   }
+
+  // Updates the value everytime there is a change in the input field
+  onChangeValue = event => {
+    this.setState({ value: event.target.value });
+  };
+
+  // Adds the value from input field to the numbers array
+  AddItem = () => {
+    this.setState( state => {
+      if(this.state.value.length > 0){
+        // Adds the input value to the numbers array
+        const numbers = state.numbers.concat(state.value);
+        
+        return {
+          numbers,
+          value: '',
+        };
+      } else {
+        // Input validation for null value
+        window.alert("Please input a value");
+      }
+    });
+
+  };
 
   render() {
     return (
@@ -31,6 +59,24 @@ class App extends Component {
                 <a href="mailto:hkarmacharya@gmail.com" className="nav-item contact">Contact</a>
                 <a href="https://github.com/t4kaha00" className="nav-item">Github</a>
             </nav>
+        </div>
+
+        {/* Sorted arrays list with input */}
+        <div className="content">
+          <input 
+            type="number" value={this.state.value} onChange={this.onChangeValue} />
+          <br />
+          <button type="button" onClick={this.AddItem} >Add</button>
+          <br />
+          <br />
+          {/* Sorts the array of numbers in a descending order and maps it as a list */}
+          {this.state.numbers.sort((a, b) => b - a ).map( (item, i) => (
+            <li key={i}> {item}  </li>
+          ))}
+          <div>
+            {/* Prints the second value from the sorted array which is in descending order */}
+            <p>The second largest number is {this.state.numbers[1]}</p>
+          </div>
         </div>
 
         <Route exact path="/about" component={About} />
