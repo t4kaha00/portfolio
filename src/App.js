@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ReactDOM from 'react-dom';
-import { Document, Page } from 'react-pdf';
-import resume from './resume.pdf'
 import './App.css';
 
 class App extends Component {
