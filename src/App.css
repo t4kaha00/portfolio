@@ -19,9 +19,9 @@ p {
   color: #171616;
 }
 
-img {
-  width: 100px;
-  height: 100px;
+a {
+  text-decoration: none;
+  color: #444440;
 }
 
 .resume {
@@ -45,9 +45,13 @@ img {
 
 .col1-row1, .col1-row2,
 .col1-row3, .col1-row4 {
-  margin: 5px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
+}
+
+.col1-row2-row {
+  /* margin-top: 20px; */
 }
 
 .col1-row1-row > h4 {
@@ -78,6 +82,11 @@ img {
 .col1-row2-row > p {
   color: #000000;
   font-weight: bold;
+}
+
+.col1-row1-row-row1 {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }
 
 .right {

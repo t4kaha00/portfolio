@@ -48,11 +48,20 @@ class App extends Component {
                 <h4>IT ENGINEER</h4>
               </div>
               <div className='col1-row1-row'>
-                <ul>
-                  <li><a href="mailto:hkarmacharya@gmail.com">hkarmacharya@gmail.com</a><br/></li>
-                  <li><a href='https://github.com/t4kaha00'>Github</a><br/></li>
-                  <li><a href='http://www.linkedin.com/in/harjit-karmacharya'><img src="mine.jpg" alt="logo"/></a></li>
-                </ul>
+                <div className='col1-row1-row-row1'>
+                  <img src="gmail.png" alt="mail" width="20px"/>
+                  <a href="mailto:hkarmacharya@gmail.com">Gmail</a>
+                </div>
+                <br/>
+                <div className='col1-row1-row-row1'>
+                  <img src="linkedin2.png" alt="linkedin" width="20px"/>
+                  <a href='http://www.linkedin.com/in/harjit-karmacharya'>LinkedIn</a>
+                </div>
+                <br/>
+                <div className='col1-row1-row-row1'>
+                  <img src="github.png" alt="github" width="20px"/>
+                  <a href='https://github.com/t4kaha00'>Github</a>
+                </div>
               </div>
             </div>
             <div className='col1-row2 skills'>
