@@ -40,46 +40,219 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Router>
+        <div className='resume'>
+          <div className='left'>
+            <div className='col1-row1 details'>
+              <div className='col1-row1-row'>
+                <h1>Harjit Karmacharya</h1>
+                <h4>IT ENGINEER</h4>
+              </div>
+              <div className='col1-row1-row'>
+                <ul>
+                  <li><a href="mailto:hkarmacharya@gmail.com">hkarmacharya@gmail.com</a><br/></li>
+                  <li><a href='https://github.com/t4kaha00'>https://github.com/t4kaha00</a><br/></li>
+                  <li><a href='http://www.linkedin.com/in/harjit-karmacharya'>http://www.linkedin.com/in/harjit-karmacharya</a></li>
+                </ul>
+              </div>
+            </div>
+            <div className='col1-row2 skills'>
+              <div className='col1-row2-row'>
+               <h2><u>SKILLS</u></h2>
+              </div>
+              <div className='col1-row2-row'>
+                <p>Mobile development</p>
+                <ul><li>Android studio</li></ul>
+              </div>
+              <div className='col1-row2-row'>
+                <b>Game development</b>
+                <ul><li>Unity, Blender</li></ul>
+              </div>
+              <div className='col1-row2-row'>
+                <b>Web Development</b>
+                <ul>
+                  <li>Angular, Meteor, React</li>
+                  <li>Typescript, Express</li>
+                  <li>Python, Java</li>
+                </ul>
+              </div>
+              <div className='col1-row2-row'>
+                <b>Cloud Managament</b>
+                <ul>
+                  <li>AWS, Docker</li>
+                </ul>
+              </div>
+              <div className='col1-row2-row'>
+                <b>Hardware</b>
+                <ul>
+                  <li>Arduino</li>
+                  <li>Lego Robots</li>
+                  <li>GoPiGo</li>
+                </ul>
+              </div>
+            </div>
+            <div className='col1-row3 languages'>
+              <div className='col1-row3-row'>
+                <h2><u>Languages</u></h2> 
+              </div>
+              <div className='col1-row3-row'>
+                <p>English</p>
+                <p>Finnish</p>
+                <p>Nepali</p>
+                <p>Hindi</p>
+              </div>
+            </div>
+            <div className='col1-row4 live-projects'>
+              <div className='col1-row4-row'>
+                <h2><u>LIVE PROJECTS</u></h2>
+              </div>
+              <div className='col1-row4-row'>
+                <ul>
+                  <li>
+                    <a href='https://nadaasi.com'>nadaasi.com</a>
+                  </li>
+                  <br/>
+                  <li>
+                    <a href='https://lianatech.herokuapp.com'>lianatech.herokuapp.com</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+          <div className='right'>
+            <div className='col2-row1'>
+              <h2 className='col2-row1-row right-heading2'><u>EDUCATION HISTORY</u></h2>
+              <div className='col2-row1-row ouas'>
+                <div className='col2-row1-row-row'>
+                  <h4 className='heading1'>Bachelors of Engineering in Information and Communications Technology</h4>
+                  <p>Aug 2014 - Aug 2020</p>
+                </div>
+                <div className='col2-row1-row-row'>
+                  <h3>Oulu University of Applied Sciences</h3>
+                </div>
+              </div>
+              <div className='col2-row1-row dit'>
+                <div className='col2-row1-row-row'>
+                  <h4 className='heading1'>Bachelors in Computer Science</h4>
+                  <p>Sep 2016 - May 2017</p>
+                </div>
+                <div className='col2-row1-row-row'>
+                  <h3>Dublin Institute of Technology</h3>
+                  <i>Erasmus Computing</i>
+                </div>
+              </div>
+            </div>
+            <div className='col2-row2'>
+              <h2 className='col2-row2-row right-heading2'><u>WORK EXPERIENCE</u></h2>
+              <div className='col2-row2-row cajo'>
+                <div className='col2-row2-row-row'>
+                  <h4 className='right-heading1'>IMAGE MODIFICATION PORTAL</h4>
+                  <p>Jan 2017 - April 2017</p>
+                </div>
+                <div className='col2-row2-row-row'>
+                  <h2>Cajo Oy</h2>
+                  <ul>
+                    <li><p>Mapping images into 3D objects online</p></li>
+                  </ul>
+                </div>
+              </div>
+              <div className='col2-row2-row nepgo'>
+                <div className='col2-row2-row-row'>
+                  <h4 className='right-heading1'>ANDROID APPLICATION</h4>
+                  <p>Jan 2017 - Mar 2017</p>
+                </div>
+                <div className='col2-row2-row-row'>
+                  <h2>Nepgo Oy</h2>   
+                  <ul>
+                    <li><p>A demo android application for the startup company oriented for charities</p></li>
+                  </ul>
+                </div>
+              </div>
+              <div className='col2-row2-row nadaasi'>
+                <div className='col2-row2-row-row'>
+                  <h4 className='right-heading1'>WEBSHOP</h4>
+                  <p>Jun 2020 - Dec 2020</p>
+                </div>
+                <div className='col2-row2-row-row'>
+                  <h2>Nadaasi Oy</h2>
+                  <ul>
+                    <li><p>Modern webshop based on javascript and mngoDB</p></li>
+                  </ul>
+                </div>
+              </div>
+              <div className='col2-row2-row nclean'>
+                <div className='col2-row2-row-row'>
+                  <h4 className='right-heading1'>SUPERVISOR</h4>
+                  <p>Jan 2019 - Apr 2021</p>
+                </div>
+                <div className='col2-row2-row-row'>
+                  <h2>Nclean Oy</h2>
+                  <ul>
+                    <li><p>Managing the housekeeping department for client hotels (Aalto Inn, Unihome Oy)</p></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className='col2-row3'>
+              <h2 className='col2-row3-row right-heading2'><u>PROJECTS</u></h2>
+              <div className='col2-row3-row'>
+                <div className='col2-row3-row-row'>
+                  <p><b>MOVIE SEAT BOOKING SYSTEM</b></p>
+                </div>
+                <div className='col2-row3-row-row'>
+                  <p><i>- 1st semester project</i></p> 
+                </div>
+              </div>
+              <div className='col2-row3-row'>
+                <div className='col2-row3-row-row'>
+                <p><b>PC game </b>(Unity)</p>                
+                </div>
+                <div className='col2-row3-row-row'>
+                  <p><i>- 2nd semester project</i></p>
+                </div>
+              </div>
+              <div className='col2-row3-row'>
+                <div className='col2-row3-row-row'>
+                <p><b>Mealting </b>(Metero JS)</p>
+                </div>
+                <div className='col2-row3-row-row'>
+                  <p><i>- 4th semester project</i></p>
+                </div>
+              </div>
+              <div className='col2-row3-row'>
+                <div className='col2-row3-row-row'>
+                <p><b>Easy Cook </b>(Android)</p>
+                </div>
+                <div className='col2-row3-row-row'>
+                  <p><i>- 6th semester project</i></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      {/* <Router> */}
         {/* Sidebar */}
-        <div className="sidebar">
+        {/* <div className="sidebar"> */}
         
           {/* Logo */}
-          <div className="logo">
+          {/* <div className="logo">
             <a><img src="h.jpg" alt="logo"/></a>
-          </div>
+          </div> */}
           
           {/* Navigation */}
-            <nav>  
+            {/* <nav>  
                 <Link to="/" className="nav-item">About</Link>
                 <Link to="/portfolio" className="nav-item">Portfolio</Link>
                 <a href="mailto:hkarmacharya@gmail.com" className="nav-item contact">Contact</a>
                 <a href="https://github.com/t4kaha00" className="nav-item">Github</a>
-            </nav>
-        </div>
-
-        {/* Sorted arrays list with input */}
-        <div className="content">
-          <input 
-            type="number" value={this.state.value} onChange={this.onChangeValue} />
-          <br />
-          <button type="button" onClick={this.AddItem} >Add</button>
-          <br />
-          <br />
-          {/* Sorts the array of numbers in a descending order and maps it as a list */}
-          {this.state.numbers.sort((a, b) => b - a ).map( (item, i) => (
-            <li key={i}> {item}  </li>
-          ))}
-          <div>
-            {/* Prints the second value from the sorted array which is in descending order */}
-            <p>The second largest number is {this.state.numbers[1]}</p>
-          </div>
-        </div>
-
-        <Route exact path="/about" component={About} />
+            </nav> */}
+        {/* </div> */}
+        {/* <Route exact path="/about" component={About} />
         <Route path="/portfolio" component={Portfolio} />
-        <Route path="/contact" component={Contact} />
-        </Router>
+        <Route path="/contact" component={Contact} /> */}
+        {/* </Router> */}
 
        
 
@@ -109,7 +282,14 @@ function Portfolio() {
 }
 
 function About() {
-
+  return(
+    <div className="content">
+     <div className="portfolio">
+      asdfasdfasdf
+     </div>
+   </div>
+  );
+  
 }
 
 function Contact() {
