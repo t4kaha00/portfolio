@@ -50,8 +50,8 @@ class App extends Component {
               <div className='col1-row1-row'>
                 <ul>
                   <li><a href="mailto:hkarmacharya@gmail.com">hkarmacharya@gmail.com</a><br/></li>
-                  <li><a href='https://github.com/t4kaha00'>https://github.com/t4kaha00</a><br/></li>
-                  <li><a href='http://www.linkedin.com/in/harjit-karmacharya'>http://www.linkedin.com/in/harjit-karmacharya</a></li>
+                  <li><a href='https://github.com/t4kaha00'>Github</a><br/></li>
+                  <li><a href='http://www.linkedin.com/in/harjit-karmacharya'><img src="mine.jpg" alt="logo"/></a></li>
                 </ul>
               </div>
             </div>

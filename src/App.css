@@ -19,6 +19,11 @@ p {
   color: #171616;
 }
 
+img {
+  width: 100px;
+  height: 100px;
+}
+
 .resume {
   width: 50em;
   margin: auto;
