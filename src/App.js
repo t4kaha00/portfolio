@@ -106,7 +106,7 @@ class App extends Component {
             {/* Languages */}
             <div className='col1-row3 languages'>
               <div className='col1-row3-row'>
-                <h2><u>Languages</u></h2> 
+                <h2><u>LANGUAGES</u></h2> 
               </div>
               <div className='col1-row3-row'>
                 <div>
@@ -155,11 +155,12 @@ class App extends Component {
                 <div>
                   <a href='https://www.oamk.fi/'>
                     <div className='col2-row1-row-row'>
-                      <h4 className='heading1'>Bachelors of Engineering in Information and Communications Technology</h4>
+                      <h4 className='heading1'>Bachelors of Engineering</h4>
                       <p>Aug 2014 - Aug 2020</p>
                     </div>
                     <div className='col2-row1-row-row'>
                       <h3>Oulu University of Applied Sciences</h3>
+                      <i>Information and Communications Technology</i>
                     </div>
                   </a>
                 </div>
@@ -173,7 +174,7 @@ class App extends Component {
                     </div>
                     <div className='col2-row1-row-row'>
                       <h3>Dublin Institute of Technology</h3>
-                      <i>Erasmus Computing</i>
+                      <i>Double Degrree (Erasmus Computing)</i>
                     </div>
                   </a>
                 </div>
@@ -181,7 +182,7 @@ class App extends Component {
             </div>
             <div className='col2-row2'>
               {/* Work */}
-              <h2 className='right-heading2'><u>WORK EXPERIENCE</u></h2>
+              <h2 className='right-heading'><u>WORK EXPERIENCE</u></h2>
               <div className='col2-row2-row cajo'>
                 <div>
                   <a href='https://cajotechnologies.com/'>
@@ -249,7 +250,7 @@ class App extends Component {
             </div>
             <div className='col2-row3'>
               {/* Projects */}
-              <h2 className='col2-row3-row right-heading2'><u>PROJECTS</u></h2>
+              <h2 className='col2-row3-row right-heading'><u>PROJECTS</u></h2>
               <div className='col2-row3-row'>
                 <div className='col2-row3-row-row'>
                   <p><b>MOVIE SEAT BOOKING SYSTEM</b></p>

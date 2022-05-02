@@ -25,12 +25,12 @@ a {
 }
 
 .resume {
-  width: 50em;
+  width: 55em;
   margin: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 4em 2em;
   display: grid;
-  grid-template-columns: 2fr 7fr;
+  grid-template-columns: 5fr 7fr;
 }
 
 /* Left Column --------------------------------------------------------------------*/
@@ -41,11 +41,16 @@ a {
 
 .col1-row1, .col1-row2,
 .col1-row3, .col1-row4 {
-  margin-top: 25px;
+  margin-top: 1em;
+  margin-left: 1em;
   display: flex;
   flex-direction: column;
 }
 
+.col1-row1-row > h1 {
+  /* font-weight: lighter; */
+  color: #444440;
+}
 .col1-row1-row > h4 {
   font-weight: lighter;
   color: #171616;
@@ -105,18 +110,21 @@ a {
 }
 
 .col2-row1, .col2-row2, .col2-row3 {
-  margin: 1em;
+  margin: 2em;
   display: flex;
   flex-direction: column;
   color: #444440;
 }
 
 .col2-row1-row {
-  margin-top: 2em;
-  margin-bottom: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
   display: grid;
   grid-template-rows: 1fr;
   height: 50px;
+}
+.right-heading2 {
+  margin-bottom: -1em;
 }
 
 .col2-row1-row > div:hover {
@@ -156,14 +164,17 @@ a {
 .col2-row2-row-row > h4 {
   font-size: small;
   margin: 0px;
+  color: #171616;
 }
 
 .col2-row1-row-row > p,
 .col2-row2-row-row > p {
   float: right;
   margin: 7px;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
   font-weight: bold;
+  /* color: #737373; */
 }
 
 .col2-row1-row-row > ul > li >p,
@@ -179,6 +190,7 @@ a {
 
 .col2-row1-row-row > h3 {
   margin-top: 8px;
+  margin-bottom: 5px;
   font-size: medium;
   color: #737373;
   font-family: Arial, Helvetica, sans-serif;

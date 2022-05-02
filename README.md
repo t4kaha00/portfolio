@@ -1,7 +1,7 @@
-You can view it [here](https://harjit.herokuapp.com).
+You can view it [here](https://harjitkarmacharya.com).
 
 ## Personal Website
 
-This website acts as my workshop. Whenever I have to try new things I try it here. 
+Hosted through Heroku platform. 
 
-I will be updating it frequently.
+https://harjit.herokuapp.com/
