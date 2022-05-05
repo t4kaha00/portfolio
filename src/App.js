@@ -172,6 +172,11 @@ function Resume() {
 
           {/* Right Column */}
           <div className='right'>
+          <div className='save-icon'>
+            <a href='harjit karmacharya.pdf' download>
+              <img src="save.png" alt="mail" width="30px"/>
+            </a>
+          </div>
             <div className='col2-row1'>
               {/* Education */}
               <h2 className='col2-row1-row right-heading2'><u>EDUCATION HISTORY</u></h2>
