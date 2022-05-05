@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import './App.css';
 
 class App extends Component {
@@ -14,33 +15,56 @@ class App extends Component {
   }
 
   // Updates the value everytime there is a change in the input field
-  onChangeValue = event => {
-    this.setState({ value: event.target.value });
-  };
+  // onChangeValue = event => {
+  //   this.setState({ value: event.target.value });
+  // };
 
   // Adds the value from input field to the numbers array
-  AddItem = () => {
-    this.setState( state => {
-      if(this.state.value.length > 0){
-        // Adds the input value to the numbers array
-        const numbers = state.numbers.concat(state.value);
+  // AddItem = () => {
+  //   this.setState( state => {
+  //     if(this.state.value.length > 0){
+  //       // Adds the input value to the numbers array
+  //       const numbers = state.numbers.concat(state.value);
         
-        return {
-          numbers,
-          value: '',
-        };
-      } else {
-        // Input validation for null value
-        window.alert("Please input a value");
-      }
-    });
+  //       return {
+  //         numbers,
+  //         value: '',
+  //       };
+  //     } else {
+  //       // Input validation for null value
+  //       window.alert("Please input a value");
+  //     }
+  //   });
 
-  };
+  // };
 
   render() {
     return (
       <div className="App">
-        <div className='resume'>
+        <div>
+          <Router>
+            <div className='nav'>
+              <nav className='navigation'>
+                <NavLink exact={true} activeClassName='nav_active' to="/" className="nav-item"><u>Home</u></NavLink>
+                <NavLink activeClassName='nav_active' to="/resume" className="nav-item"><u>Resume</u></NavLink>
+                <NavLink activeClassName='nav_active' to="/fibonacci" className="nav-item"><u>Fibonacci</u></NavLink>
+              </nav>
+            </div>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/resume" component={Resume} />
+              <Route path="/fibonacci" component={Fibonacci} />
+            </Switch>
+          </Router>
+        </div>
+      </div>
+    );
+  }
+}
+
+function Resume() {
+  return (
+    <div className='resume'>
           {/* Left column */}
           <div className='left'>
             {/* Details */}
@@ -287,36 +311,17 @@ class App extends Component {
             </div>
           </div>
         </div>
-      {/* <Router> */}
-        {/* Sidebar */}
-        {/* <div className="sidebar"> */}
-        
-          {/* Logo */}
-          {/* <div className="logo">
-            <a><img src="h.jpg" alt="logo"/></a>
-          </div> */}
-          
-          {/* Navigation */}
-            {/* <nav>  
-                <Link to="/" className="nav-item">About</Link>
-                <Link to="/portfolio" className="nav-item">Portfolio</Link>
-                <a href="mailto:hkarmacharya@gmail.com" className="nav-item contact">Contact</a>
-                <a href="https://github.com/t4kaha00" className="nav-item">Github</a>
-            </nav> */}
-        {/* </div> */}
-        {/* <Route exact path="/about" component={About} />
-        <Route path="/portfolio" component={Portfolio} />
-        <Route path="/contact" component={Contact} /> */}
-        {/* </Router> */}
-
-       
-
-      </div>
-    );
-  }
+  )
 }
 
-function Portfolio() {
+function Home() {
+  return (
+    <div className='home-background'>
+    </div>
+  )
+}
+
+function Fibonacci() {
  
   return (
     //  Content area
@@ -334,21 +339,6 @@ function Portfolio() {
      </div>
    </div>
   );
-}
-
-function About() {
-  return(
-    <div className="content">
-     <div className="portfolio">
-      asdfasdfasdf
-     </div>
-   </div>
-  );
-  
-}
-
-function Contact() {
-
 }
 
 export default App;
