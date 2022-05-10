@@ -177,8 +177,8 @@ function Resume() {
               <img src="save.png" alt="mail" width="30px"/>
             </a>
           </div>
+            {/* Education */}
             <div className='col2-row1'>
-              {/* Education */}
               <h2 className='col2-row1-row right-heading2'><u>EDUCATION HISTORY</u></h2>
               <div className='col2-row1-row ouas'>
                 <div>
@@ -209,8 +209,8 @@ function Resume() {
                 </div>
               </div>
             </div>
+            {/* Work */}
             <div className='col2-row2'>
-              {/* Work */}
               <h2 className='right-heading'><u>WORK EXPERIENCE</u></h2>
               <div className='col2-row2-row cajo'>
                 <div>
@@ -223,6 +223,8 @@ function Resume() {
                       <h2>Cajo Oy</h2>
                       <ul>
                         <li><p>Mapping images into 3D objects online</p></li>
+                        <li><p>Creating image portal in website using PHP</p></li>
+                        <li><p>Image preview in 3D space using ThreeJS</p></li>
                       </ul>
                     </div>
                   </a>
@@ -238,7 +240,7 @@ function Resume() {
                     <div className='col2-row2-row-row'>
                       <h2>Nepgo Oy</h2>   
                       <ul>
-                        <li><p>A demo android application for the startup company oriented for charities</p></li>
+                        <li><p>A demo android application using Android studio</p></li>
                       </ul>
                     </div>
                   </a>
@@ -255,6 +257,10 @@ function Resume() {
                       <h2>Nadaasi Oy</h2>
                       <ul>
                         <li><p>Modern webshop based on javascript and mongoDB</p></li>
+                        <li><p>Backend development using Typescript and integration of MongoDB using ExpressJS</p></li>
+                        <li><p>Frontend development using ReactJS</p></li>
+                        <li><p>Creation and usage of an npm package</p></li>
+                        <li><p>Docker for deployment</p></li>
                       </ul>
                     </div>
                   </a>
@@ -282,7 +288,7 @@ function Resume() {
               <h2 className='col2-row3-row right-heading'><u>PROJECTS</u></h2>
               <div className='col2-row3-row'>
                 <div className='col2-row3-row-row'>
-                  <p><b>MOVIE SEAT BOOKING SYSTEM</b></p>
+                  <p><b>MOVIE SEAT BOOKING SYSTEM </b>(Bootstrap and JS)</p>
                 </div>
                 <div className='col2-row3-row-row'>
                   <p><i>- 1st semester project</i></p> 
@@ -290,7 +296,7 @@ function Resume() {
               </div>
               <div className='col2-row3-row'>
                 <div className='col2-row3-row-row'>
-                <p><b>PC game </b>(Unity)</p>                
+                <p><b>PC game </b>(Unity & Blender)</p>                
                 </div>
                 <div className='col2-row3-row-row'>
                   <p><i>- 2nd semester project</i></p>
@@ -298,7 +304,7 @@ function Resume() {
               </div>
               <div className='col2-row3-row'>
                 <div className='col2-row3-row-row'>
-                <p><b>Mealting </b>(Metero JS)</p>
+                <p><b>Mealting </b>(Meteor JS)</p>
                 </div>
                 <div className='col2-row3-row-row'>
                   <p><i>- 4th semester project</i></p>
