@@ -8,6 +8,9 @@ body {
 .App {
   /* background: rgb(49, 45, 45); */
   /* color: lightgray; */
+  background-image: url(image1.jpg);
+  background-size: cover;
+  background-position: center;
   font-family: Arial, Helvetica, sans-serif;
   /* width: 100%; */
   /* font-size: 1.2rem; */
@@ -16,6 +19,35 @@ body {
   /* margin: 1em; */
   /* width: 50em; */
 }
+
+button {
+  padding: 12px 24px;
+  border: 0;
+  border: 2px solid #333;
+  border-radius: 5px;
+  color: #333;
+  transition: 0.2s;
+}
+
+button::before {
+  /* content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1; */
+}
+
+button:hover {
+  transform: scale(1.1);
+  /* box-shadow: 6px 0px rgb(255, 190, 186); */
+}
+
 p {
   color: #171616;
 }
@@ -61,6 +93,7 @@ a {
   padding: 4em 2em;
   display: grid;
   grid-template-columns: 5fr 7fr;
+  background: white;
 }
 
 .save-icon {
@@ -311,8 +344,9 @@ a {
 
 /* Content area */
 .content {
+  text-align: -webkit-center;
   padding: 10%;
-  flex: 1 1 70%;
+  /* flex: 1 1 70%; */
   min-height: 100vh;
 }
 
@@ -323,7 +357,9 @@ a {
   grid-template-rows: repeat(89, 1fr);
   grid-template-columns: repeat(123, 1fr);
   grid-gap: 5px;
-  position: relative;
+  position: ;
+  aspect-ratio: 2/1;
+  max-width: 70em;
 }
 
 .portfolio-item {
@@ -349,7 +385,7 @@ a {
 .portfolio-item.one {
   grid-row: 1 / span 89;
   grid-column: 1 / span 89;
-  background-image: url(1.jpg);
+  /* background-image: url(1.jpg); */
   /* background-size: cover; */
 }
 .portfolio-item.one:hover {
@@ -377,7 +413,7 @@ a {
 .portfolio-item.two {
   grid-row: 1 / span 55;
   grid-column: 90 / span 55;
-  background-image: url(2.jpg);
+  /* background-image: url(2.jpg); */
 }
 .portfolio-item.two:hover {
   color: black;
@@ -404,7 +440,7 @@ a {
 .portfolio-item.three {
   grid-row: 56 / span 34;
   grid-column: 111 / span 34;
-  background-image: url(3.jpg);
+  /* background-image: url(3.jpg); */
 }
 .portfolio-item.three:hover {
   color: black;
@@ -431,7 +467,7 @@ a {
 .portfolio-item.four {
   grid-row: 69 / span 21;
   grid-column: 90 / span 21;
-  background-image: url(4.jpg);
+  /* background-image: url(4.jpg); */
 }
 .portfolio-item.four:hover {
   color: black;
@@ -458,7 +494,7 @@ a {
 .portfolio-item.five {
   grid-row: 56 / span 13;
   grid-column: 90 / span 13;
-  background-image: url(5.jpg);
+  /* background-image: url(5.jpg); */
 }
 .portfolio-item.five:hover {
   color: black;
@@ -485,7 +521,7 @@ a {
 .portfolio-item.six {
   grid-row: 56 / span 8;
   grid-column: 103 / span 8;
-  background-image: url(6.jpg);
+  /* background-image: url(6.jpg); */
 }
 .portfolio-item.six:hover {
   color: black;
@@ -512,7 +548,7 @@ a {
 .portfolio-item.seven {
   grid-row: 64 / span 5;
   grid-column: 106 / span 5;
-  background-image: url(7.jpg);
+  /* background-image: url(7.jpg); */
 }
 .portfolio-item.seven:hover {
   color: black;
@@ -539,7 +575,7 @@ a {
 .portfolio-item.eight {
   grid-row: 66 / span 3;
   grid-column: 103 / span 3;
-  background-image: url(8.jpg);  
+  /* background-image: url(8.jpg);   */
 }
 .portfolio-item.eight:hover {
   color: black;
@@ -566,7 +602,7 @@ a {
 .portfolio-item.nine {
   grid-row: 64 / span 2;
   grid-column: 103 / span 2;
-  background-image: url(8.jpg);  
+  /* background-image: url(8.jpg);   */
 }
 .portfolio-item.nine:hover {
   color: black;

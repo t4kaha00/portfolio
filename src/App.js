@@ -2,17 +2,35 @@ import React, { Component } from 'react';
 import { Switch } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import './App.css';
+import Fibonacci from './Fibonacci'
+
+// import one from './1.jpg';
+// import two from './2.jpg';
+// import three from './3.jpg';
+// import four from './4.jpg';
+// import five from './5.jpg';
+// import six from './6.jpg';
+// import seven from './7.jpg';
+// import eight from './8.jpg';
+
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = { 
-      open : true,
-      value: '',
-      numbers: [1, 125, 24, 500] 
+      // open : true,
+      // value: '',
+      // numbers: [1, 2, 6, 3, 4, 5],
+      // images: [one, two, three, four, five, six, seven, eight]
     };
   }
+
+  // handler() {
+  //   console.log(this.state.images.indexOf(one))
+  //   this.state.images.push(this.state.images.splice(this.state.images.indexOf(one), 1)[0]);      
+  //   console.log(this.state.images.indexOf(one))
+  // }
 
   // Updates the value everytime there is a change in the input field
   // onChangeValue = event => {
@@ -35,8 +53,7 @@ class App extends Component {
   //       window.alert("Please input a value");
   //     }
   //   });
-
-  // };
+// };
 
   render() {
     return (
@@ -47,13 +64,19 @@ class App extends Component {
               <nav className='navigation'>
                 <NavLink exact={true} activeClassName='nav_active' to="/" className="nav-item"><u>Home</u></NavLink>
                 <NavLink activeClassName='nav_active' to="/resume" className="nav-item"><u>Resume</u></NavLink>
-                <NavLink activeClassName='nav_active' to="/fibonacci" className="nav-item"><u>Fibonacci</u></NavLink>
+                <NavLink 
+                  activeClassName='nav_active' 
+                  to={{
+                    // handler: this.state.handler,
+                    pathname: "/fibonacci", 
+                    state: this.state.images}} 
+                  className="nav-item"><u>Fibonacci</u></NavLink>
               </nav>
             </div>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/resume" component={Resume} />
-              <Route path="/fibonacci" component={Fibonacci} />
+              <Route path="/fibonacci" component={Fibonacci} handler={this.state.handler} />
             </Switch>
           </Router>
         </div>
@@ -64,7 +87,8 @@ class App extends Component {
 
 function Resume() {
   return (
-    <div className='resume'>
+    // <div className='home-backgroud'>
+      <div className='resume'>
           {/* Left column */}
           <div className='left'>
             {/* Details */}
@@ -296,7 +320,7 @@ function Resume() {
               </div>
               <div className='col2-row3-row'>
                 <div className='col2-row3-row-row'>
-                <p><b>PC game </b>(Unity & Blender)</p>                
+                <p><b>PC game </b><br />(Unity & Blender)</p>                
                 </div>
                 <div className='col2-row3-row-row'>
                   <p><i>- 2nd semester project</i></p>
@@ -322,6 +346,7 @@ function Resume() {
             </div>
           </div>
         </div>
+    // </div>
   )
 }
 
@@ -332,24 +357,39 @@ function Home() {
   )
 }
 
-function Fibonacci() {
+// function Fibonacci() {
+//   var images = [one, two, three, four, five, six, seven, eight]
  
-  return (
-    //  Content area
-     <div className="content">
-     <div className="portfolio">
-       <div className="portfolio-item one" ></div>
-       <div className="portfolio-item two"></div>
-       <div className="portfolio-item three"></div>
-       <div className="portfolio-item four"></div>
-       <div className="portfolio-item five"></div>
-       <div className="portfolio-item six"></div>
-       <div className="portfolio-item seven"></div>
-       <div className="portfolio-item eight"></div>
-       <div className="portfolio-item nine"></div>    
-     </div>
-   </div>
-  );
-}
+//   const next = async () => {
+//     // console.log(images);
+//     // images.push(images.splice(images.indexOf(one), 1));
+//     // console.log(images)
+//   }
+
+//   // function change(e) {
+//   //   e.preventDefault();
+//   //   console.log(images.indexOf(one))
+//   //   console.log(props.location.state)
+//   //   props.location.state.push(props.location.state.splice(props.location.state.indexOf(one), 1)[0]);
+//   // }
+
+//   return (
+//     //  Content area
+//      <div className="content">
+//        {/* <button onClick={() => next()}>Change</button> */}
+//      <div className="portfolio">
+//        <div className="portfolio-item one"    style={{backgroundImage: `url(${images[0]})`}}></div>
+//        <div className="portfolio-item two"    style={{backgroundImage: `url(${images[1]})`}} ></div>
+//        <div className="portfolio-item three"  style={{backgroundImage: `url(${images[2]})`}}></div>
+//        <div className="portfolio-item four"   style={{backgroundImage: `url(${images[3]})`}}></div>
+//        <div className="portfolio-item five"   style={{backgroundImage: `url(${images[4]})`}}></div>
+//        <div className="portfolio-item six"    style={{backgroundImage: `url(${images[5]})`}}></div>
+//        <div className="portfolio-item seven"  style={{backgroundImage: `url(${images[6]})`}}></div>
+//        <div className="portfolio-item eight"  style={{backgroundImage: `url(${images[7]})`}}></div>
+//        <div className="portfolio-item nine"   style={{backgroundImage: `url(${images[8]})`}}></div>    
+//      </div>
+//    </div>
+//   );
+// }
 
 export default App;
