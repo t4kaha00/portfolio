@@ -173,7 +173,7 @@ function Resume() {
           {/* Right Column */}
           <div className='right'>
           <div className='save-icon'>
-            <a href='harjit karmacharya.pdf' download>
+            <a href='harjitkarmacharya.pdf' download>
               <img src="save.png" alt="mail" width="30px"/>
             </a>
           </div>
@@ -203,7 +203,7 @@ function Resume() {
                     </div>
                     <div className='col2-row1-row-row'>
                       <h3>Dublin Institute of Technology</h3>
-                      <i>Double Degrree (Erasmus Computing)</i>
+                      <i>Double Degree (Erasmus Computing)</i>
                     </div>
                   </a>
                 </div>
@@ -254,7 +254,7 @@ function Resume() {
                     <div className='col2-row2-row-row'>
                       <h2>Nadaasi Oy</h2>
                       <ul>
-                        <li><p>Modern webshop based on javascript and mngoDB</p></li>
+                        <li><p>Modern webshop based on javascript and mongoDB</p></li>
                       </ul>
                     </div>
                   </a>
