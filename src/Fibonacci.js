@@ -49,7 +49,7 @@ class Fibonacci extends Component {
                 <br />
                 <br />
 
-                {/* <div className="portfolio">
+                <div className="portfolio">
                     <div className="portfolio-item one"    style={{backgroundImage: `url(${this.state.images[0]})`}}></div>
                     <div className="portfolio-item two"    style={{backgroundImage: `url(${this.state.images[1]})`}} ></div>
                     <div className="portfolio-item three"  style={{backgroundImage: `url(${this.state.images[2]})`}}></div>
@@ -59,7 +59,7 @@ class Fibonacci extends Component {
                     <div className="portfolio-item seven"  style={{backgroundImage: `url(${this.state.images[6]})`}}></div>
                     <div className="portfolio-item eight"  style={{backgroundImage: `url(${this.state.images[7]})`}}></div>
                     <div className="portfolio-item nine"   style={{backgroundImage: `url(${this.state.images[8]})`}}></div>    
-                </div> */}
+                </div>
                 <br />
                 <button onClick={this.previous}>Previous</button>
 
