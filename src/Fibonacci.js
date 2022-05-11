@@ -7,12 +7,13 @@ import five from './5.jpg';
 import six from './6.jpg';
 import seven from './7.jpg';
 import eight from './8.jpg';
+import nine from './9.jpg';
 
 class Fibonacci extends Component {
     constructor() {
         super();
         this.state = {
-            images: [one, two, three, four, five, six, seven, eight]
+            images: [one, two, three, four, five, six, seven, eight, nine]
         }
     }
 
@@ -48,7 +49,7 @@ class Fibonacci extends Component {
                 <br />
                 <br />
 
-                <div className="portfolio">
+                {/* <div className="portfolio">
                     <div className="portfolio-item one"    style={{backgroundImage: `url(${this.state.images[0]})`}}></div>
                     <div className="portfolio-item two"    style={{backgroundImage: `url(${this.state.images[1]})`}} ></div>
                     <div className="portfolio-item three"  style={{backgroundImage: `url(${this.state.images[2]})`}}></div>
@@ -58,7 +59,7 @@ class Fibonacci extends Component {
                     <div className="portfolio-item seven"  style={{backgroundImage: `url(${this.state.images[6]})`}}></div>
                     <div className="portfolio-item eight"  style={{backgroundImage: `url(${this.state.images[7]})`}}></div>
                     <div className="portfolio-item nine"   style={{backgroundImage: `url(${this.state.images[8]})`}}></div>    
-                </div>
+                </div> */}
                 <br />
                 <button onClick={this.previous}>Previous</button>
 
