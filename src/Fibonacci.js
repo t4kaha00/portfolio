@@ -8,12 +8,13 @@ import six from './6.jpg';
 import seven from './7.jpg';
 import eight from './8.jpg';
 import nine from './9.jpg';
+import twogif from './2.gif';
 
 class Fibonacci extends Component {
     constructor() {
         super();
         this.state = {
-            images: [one, two, three, four, five, six, seven, eight, nine]
+            images: [one, twogif, three, four, five, six, seven, eight]
         }
     }
 
@@ -33,10 +34,8 @@ class Fibonacci extends Component {
         const reverse = array.reverse()
         const item1 = reverse.shift()
 
-        console.log(reverse)        
+        console.table(reverse)        
         reverse.push(item1)
-
-        console.log(array)        
         this.setState({
             images: reverse.reverse()
         })
@@ -62,6 +61,12 @@ class Fibonacci extends Component {
                 </div>
                 <br />
                 <button onClick={this.previous}>Previous</button>
+
+                {/* checkbox with modified CSS */}
+                {/* <label>
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                </label> */}
 
             </div>
         )

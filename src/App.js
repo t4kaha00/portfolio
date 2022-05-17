@@ -196,11 +196,17 @@ function Resume() {
 
           {/* Right Column */}
           <div className='right'>
-          <div className='save-icon'>
-            <a href='harjitkarmacharya.pdf' download>
+            <div className='type'>
+              <div className='typing-demo'>
+                Download Resume↓
+              </div>
+            </div>
+            <div className='save-icon'>
+              <a href='harjitkarmacharya.pdf' download>
               <img src="save.png" alt="mail" width="30px"/>
             </a>
-          </div>
+            </div>
+
             {/* Education */}
             <div className='col2-row1'>
               <h2 className='col2-row1-row right-heading2'><u>EDUCATION HISTORY</u></h2>
