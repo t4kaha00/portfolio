@@ -64,6 +64,7 @@ class App extends Component {
               <nav className='navigation'>
                 <NavLink exact={true} activeClassName='nav_active' to="/" className="nav-item"><u>Home</u></NavLink>
                 <NavLink activeClassName='nav_active' to="/resume" className="nav-item"><u>Resume</u></NavLink>
+                <NavLink activeClassName='nav_active' to="/background" className="nav-item"><u>Background</u></NavLink>
                 <NavLink 
                   activeClassName='nav_active' 
                   to={{
@@ -76,6 +77,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/resume" component={Resume} />
+              <Route exact path="/background" component={Background}/>
               <Route path="/fibonacci" component={Fibonacci} handler={this.state.handler} />
             </Switch>
           </Router>
@@ -313,8 +315,8 @@ function Resume() {
                 </div>
               </div>
             </div>
-            <div className='col2-row3'>
               {/* Projects */}
+            <div className='col2-row3'>
               <h2 className='col2-row3-row right-heading'><u>PROJECTS</u></h2>
               <div className='col2-row3-row'>
                 <div className='col2-row3-row-row'>
@@ -359,6 +361,26 @@ function Resume() {
 function Home() {
   return (
     <div className='home-background'>
+
+    </div>
+  )
+}
+
+function Background() {
+  return (
+    <div className='header'>
+      // First container
+      <div className='container container_solid'>
+        <div className='title_wrapper'>
+          <h1>Harjit Karmacharya</h1>
+        </div>
+      </div>
+      // Second container
+      <div className='container container_image' aria-hidden="true">
+        <div className='title_wrapper'>
+          <h1>Harjit Karmacharya</h1>
+        </div>
+      </div>
     </div>
   )
 }

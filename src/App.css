@@ -79,13 +79,88 @@ a {
 }
 
 .home-background {
-  transform: translateY(100%);
+  /* transform: translateY(100%); */
   /* background-image: url(image1.jpg); */
   /* background-repeat: no-repeat; */
   /* background-position: center; */
   /* background-size: cover; */
   height: 100vh;
 }
+
+.header {
+  height: 200vh;
+}
+
+.container {
+  clip: rect(0, auto, auto 0);
+  overflow: hidden;
+  position: absolute;
+  height: 100vh;
+  left: 0;
+  width: 100%;
+  mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  /* -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%); */
+}
+.container_solid {
+  background: white;
+  top: 0;
+}
+.title_wrapper {
+  position: fixed;
+  display: block;
+  margin: auto;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.title_wrapper h1 {
+  text-align: center;
+  font-size: 500%;
+  text-transform: uppercase;
+  font-family: serif;
+  font-weight: 900;
+}
+@media (max-width: 700px) {
+  .title_wrapper h1 {
+    font-size: 250%;
+  }
+}
+.container_solid .title_wrapper h1 {
+  background: url(image1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  color: black;
+}
+.container_image {  
+  /* Grab a free image from unsplash */  
+  background-image: url(image1.jpg);  
+  background-size: cover;  
+  background-position: center;  
+  background-attachment: fixed;  
+  /* position the second container below the first container */  
+  top: 100vh;  
+ }  
+ .container_image .title_wrapper h1 {  
+  color: white;  
+ }  
+ /* section {  
+  min-height: 100vh;  
+  padding: 2em;  
+  margin: auto;  
+  max-width: 800px;  
+ }  
+ section h2 {  
+  font-family: 'Fraunces', serif;  
+ }  
+ section p {  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";  
+ }   */
+
 
 /* Resume section CSS starts here --------------------------------------------------- */
 
@@ -187,7 +262,8 @@ a {
 
 .typing-demo {
   width: 9.5em;
-  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  /* animation: name duration timing-function delay iteration-count direction; */
+  animation: typing 3.5s steps(22), blink .5s step-end infinite alternate;
   animation-iteration-count: infinite;
   white-space: nowrap;
   overflow: hidden;
@@ -360,7 +436,7 @@ a {
   bottom: 100%;
 }
 
-@media (min-width: 1033px) {
+@media (max-width: 746px) {
   .sidebar {
     max-width: 500px;
   }
