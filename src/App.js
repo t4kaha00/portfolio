@@ -4,18 +4,9 @@ import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom"
 import './App.css';
 import Fibonacci from './Fibonacci'
 
-// import one from './1.jpg';
-// import two from './2.jpg';
-// import three from './3.jpg';
-// import four from './4.jpg';
-// import five from './5.jpg';
-// import six from './6.jpg';
-// import seven from './7.jpg';
-// import eight from './8.jpg';
 
 
 class App extends Component {
-
   constructor() {
     super();
     this.state = { 
@@ -357,13 +348,13 @@ function Resume() {
 function Home() {
   return (
     <div className='header'>
-      // First container
+      {/* First container */}
       <div className='container container_solid'>
         <div className='title_wrapper'>
           <h1>Harjit Karmacharya</h1>
         </div>
       </div>
-      // Second container
+      {/* Second container */}
       <div className='container container_image' aria-hidden="true">
         <div className='title_wrapper'>
           <h1>Harjit Karmacharya</h1>
@@ -372,40 +363,5 @@ function Home() {
     </div>
   )
 }
-
-// function Fibonacci() {
-//   var images = [one, two, three, four, five, six, seven, eight]
- 
-//   const next = async () => {
-//     // console.log(images);
-//     // images.push(images.splice(images.indexOf(one), 1));
-//     // console.log(images)
-//   }
-
-//   // function change(e) {
-//   //   e.preventDefault();
-//   //   console.log(images.indexOf(one))
-//   //   console.log(props.location.state)
-//   //   props.location.state.push(props.location.state.splice(props.location.state.indexOf(one), 1)[0]);
-//   // }
-
-//   return (
-//     //  Content area
-//      <div className="content">
-//        {/* <button onClick={() => next()}>Change</button> */}
-//      <div className="portfolio">
-//        <div className="portfolio-item one"    style={{backgroundImage: `url(${images[0]})`}}></div>
-//        <div className="portfolio-item two"    style={{backgroundImage: `url(${images[1]})`}} ></div>
-//        <div className="portfolio-item three"  style={{backgroundImage: `url(${images[2]})`}}></div>
-//        <div className="portfolio-item four"   style={{backgroundImage: `url(${images[3]})`}}></div>
-//        <div className="portfolio-item five"   style={{backgroundImage: `url(${images[4]})`}}></div>
-//        <div className="portfolio-item six"    style={{backgroundImage: `url(${images[5]})`}}></div>
-//        <div className="portfolio-item seven"  style={{backgroundImage: `url(${images[6]})`}}></div>
-//        <div className="portfolio-item eight"  style={{backgroundImage: `url(${images[7]})`}}></div>
-//        <div className="portfolio-item nine"   style={{backgroundImage: `url(${images[8]})`}}></div>    
-//      </div>
-//    </div>
-//   );
-// }
 
 export default App;

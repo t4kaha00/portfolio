@@ -50,7 +50,6 @@ a {
 
 /* Home Background            ------------------------------------------------------ */
 .header {
-  /* transform: translateY(2em); */
   height: 200vh;
 }
 
@@ -100,7 +99,6 @@ a {
   color: black;
 }
 .container_image {  
-  /* Grab a free image from unsplash */  
   background-image: url(image1.jpg);  
   background-size: cover;  
   background-position: center;  
@@ -111,19 +109,6 @@ a {
  .container_image .title_wrapper h1 {  
   color: white;  
  }  
- /* section {  
-  min-height: 100vh;  
-  padding: 2em;  
-  margin: auto;  
-  max-width: 800px;  
- }  
- section h2 {  
-  font-family: 'Fraunces', serif;  
- }  
- section p {  
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";  
- }   */
-
 
 /* Resume section CSS starts here --------------------------------------------------- */
 
