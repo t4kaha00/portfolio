@@ -43,24 +43,24 @@ class Fibonacci extends Component {
 
     render() {
         return (
-            <div className="content">
-                <button onClick={this.next}>Next</button>
+            <div className="fibonacci_page">
+                <button onClick={this.next} className="change">Next</button>
                 <br />
                 <br />
 
-                <div className="portfolio">
-                    <div className="portfolio-item one"    style={{backgroundImage: `url(${this.state.images[0]})`}}></div>
-                    <div className="portfolio-item two"    style={{backgroundImage: `url(${this.state.images[1]})`}} ></div>
-                    <div className="portfolio-item three"  style={{backgroundImage: `url(${this.state.images[2]})`}}></div>
-                    <div className="portfolio-item four"   style={{backgroundImage: `url(${this.state.images[3]})`}}></div>
-                    <div className="portfolio-item five"   style={{backgroundImage: `url(${this.state.images[4]})`}}></div>
-                    <div className="portfolio-item six"    style={{backgroundImage: `url(${this.state.images[5]})`}}></div>
-                    <div className="portfolio-item seven"  style={{backgroundImage: `url(${this.state.images[6]})`}}></div>
-                    <div className="portfolio-item eight"  style={{backgroundImage: `url(${this.state.images[7]})`}}></div>
-                    <div className="portfolio-item nine"   style={{backgroundImage: `url(${this.state.images[8]})`}}></div>    
+                <div className="fibonacci">
+                    <div className="fibonacci-item one"    style={{backgroundImage: `url(${this.state.images[0]})`}}></div>
+                    <div className="fibonacci-item two"    style={{backgroundImage: `url(${this.state.images[1]})`}} ></div>
+                    <div className="fibonacci-item three"  style={{backgroundImage: `url(${this.state.images[2]})`}}></div>
+                    <div className="fibonacci-item four"   style={{backgroundImage: `url(${this.state.images[3]})`}}></div>
+                    <div className="fibonacci-item five"   style={{backgroundImage: `url(${this.state.images[4]})`}}></div>
+                    <div className="fibonacci-item six"    style={{backgroundImage: `url(${this.state.images[5]})`}}></div>
+                    <div className="fibonacci-item seven"  style={{backgroundImage: `url(${this.state.images[6]})`}}></div>
+                    <div className="fibonacci-item eight"  style={{backgroundImage: `url(${this.state.images[7]})`}}></div>
+                    <div className="fibonacci-item nine"   style={{backgroundImage: `url(${this.state.images[8]})`}}></div>    
                 </div>
                 <br />
-                <button onClick={this.previous}>Previous</button>
+                <button onClick={this.previous} className="change">Previous</button>
 
                 {/* checkbox with modified CSS */}
                 {/* <label>

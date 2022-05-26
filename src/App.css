@@ -8,7 +8,7 @@ body {
 .App {
   /* background: rgb(49, 45, 45); */
   /* color: lightgray; */
-  background-image: url(image1.jpg);
+  /* background-image: url(image1.jpg); */
   background-size: cover;
   background-position: center ;
   font-family: Arial, Helvetica, sans-serif;
@@ -18,36 +18,6 @@ body {
   /* padding: 2em; */
   /* margin: 1em; */
   /* width: 50em; */
-}
-
-button {
-  padding: 12px 24px;
-  border: 0;
-  border: 2px solid #333;
-  border-radius: 5px;
-  color: #333;
-  transition: 0.2s;
-  cursor: pointer;
-  /* background-color: #fec7d7 #ff8e3c; #d9376e #bae8e8*/
-}
-
-button::before {
-  /* content: '';
-  display: block;
-  background: black;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1; */
-}
-
-button:hover {
-  transform: scale(1.1);
-  /* box-shadow: 6px 0px rgb(255, 190, 186); */
 }
 
 p {
@@ -63,7 +33,7 @@ a {
 .nav_active {
   display: none;
 }
-
+/* Navigation ---------------------------------------------------------------------- */
 .navigation {
   float: left;
   display: flex;
@@ -78,16 +48,9 @@ a {
   text-shadow: 2px 2px 8px #888;
 }
 
-.home-background {
-  /* transform: translateY(100%); */
-  /* background-image: url(image1.jpg); */
-  /* background-repeat: no-repeat; */
-  /* background-position: center; */
-  /* background-size: cover; */
-  height: 100vh;
-}
-
+/* Home Background            ------------------------------------------------------ */
 .header {
+  /* transform: translateY(2em); */
   height: 200vh;
 }
 
@@ -103,7 +66,7 @@ a {
 }
 .container_solid {
   background: white;
-  top: 0;
+  top: 2em;
 }
 .title_wrapper {
   position: fixed;
@@ -389,6 +352,338 @@ a {
   float: right;
 }
 
+/* Fibonacci Page ------------------------------------------------------------------------ */
+.fibonacci_page {
+  text-align: -webkit-center;
+  padding: 10%;
+  min-height: 100vh;
+}
+
+/* Next and previous button for Fibonacci page ------------------------------------------- */
+.change {
+  padding: 12px 24px;
+  border: 0;
+  border: 2px solid #333;
+  border-radius: 5px;
+  color: #333;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.change:hover {
+  transform: scale(1.1);
+}
+
+
+/* Implementing the golden ratio or Fibonacci sequence ---------------------------------------------------------------------------*/
+.fibonacci {
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(89, 1fr);
+  grid-template-columns: repeat(123, 1fr);
+  grid-gap: 5px;
+  position: ;
+  aspect-ratio: 2/1;
+  max-width: 70em;
+}
+
+.fibonacci-item {
+  background: lightcoral;
+  color: lightcoral;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 1.5em;
+  background-size: cover;
+  background-position: top left;
+  transition: all ease-in-out 300ms;
+  position: relative;
+  z-index: 10;
+  border-radius: 25px;  
+}
+
+.fibonacci-item::before {
+  border-radius: 25px;
+}
+
+.fibonacci-item.one {
+  grid-row: 1 / span 89;
+  grid-column: 1 / span 89;
+  /* background-image: url(1.jpg); */
+  /* background-size: cover; */
+}
+.fibonacci-item.one:hover {
+  color: black;
+  cursor: pointer;
+  background-position-x: center;
+}
+.fibonacci-item.one::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+.fibonacci-item.one:hover::before {
+  opacity: 0.2;
+}
+
+.fibonacci-item.two {
+  grid-row: 1 / span 55;
+  grid-column: 90 / span 55;
+  /* background-image: url(2.jpg); */
+}
+.fibonacci-item.two:hover {
+  color: black;
+  cursor: pointer;
+  background-position-x: center;
+}
+.fibonacci-item.two::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+.fibonacci-item.two:hover::before {
+  opacity: 0.2;
+}
+
+.fibonacci-item.three {
+  grid-row: 56 / span 34;
+  grid-column: 111 / span 34;
+  /* background-image: url(3.jpg); */
+}
+.fibonacci-item.three:hover {
+  color: black;
+  cursor: pointer;
+  background-position-x: right;
+}
+.fibonacci-item.three::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+.fibonacci-item.three:hover::before {
+  opacity: 0.2;
+}
+
+.fibonacci-item.four {
+  grid-row: 69 / span 21;
+  grid-column: 90 / span 21;
+  /* background-image: url(4.jpg); */
+}
+.fibonacci-item.four:hover {
+  color: black;
+  cursor: pointer;
+  background-position-x: center;
+}
+.fibonacci-item.four::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+.fibonacci-item.four:hover::before {
+  opacity: 0.2;
+}
+
+.fibonacci-item.five {
+  grid-row: 56 / span 13;
+  grid-column: 90 / span 13;
+  /* background-image: url(5.jpg); */
+}
+.fibonacci-item.five:hover {
+  color: black;
+  cursor: pointer;
+  background-position-x: center;
+}
+.fibonacci-item.five::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+.fibonacci-item.five:hover::before {
+  opacity: 0.2;
+}
+
+.fibonacci-item.six {
+  grid-row: 56 / span 8;
+  grid-column: 103 / span 8;
+  /* background-image: url(6.jpg); */
+}
+.fibonacci-item.six:hover {
+  color: black;
+  cursor: pointer;
+  background-position-x: center;
+}
+.fibonacci-item.six::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+.fibonacci-item.six:hover::before {
+  opacity: 0.2;
+}
+
+.fibonacci-item.seven {
+  grid-row: 64 / span 5;
+  grid-column: 106 / span 5;
+  /* background-image: url(7.jpg); */
+}
+.fibonacci-item.seven:hover {
+  color: black;
+  cursor: pointer;
+  background-position-x: center;
+}
+.fibonacci-item.seven::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+.fibonacci-item.seven:hover::before {
+  opacity: 0.2;
+}
+
+.fibonacci-item.eight {
+  grid-row: 66 / span 3;
+  grid-column: 103 / span 3;
+  /* background-image: url(8.jpg);   */
+}
+.fibonacci-item.eight:hover {
+  color: black;
+  cursor: pointer;
+  background-position-x: center;
+}
+.fibonacci-item.eight::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+.fibonacci-item.eight:hover::before {
+  opacity: 0.2;
+}
+
+.fibonacci-item.nine {
+  grid-row: 64 / span 2;
+  grid-column: 103 / span 2;
+  /* background-image: url(8.jpg);   */
+}
+.fibonacci-item.nine:hover {
+  color: black;
+  cursor: pointer;
+  background-position-x: center;
+}
+.fibonacci-item.nine::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+.fibonacci-item.nine:hover::before {
+  opacity: 0.2;
+}
+
+
+/* Checkbox CSS modified -------------------------------------------------------------------------------------------------*/
+/* label {
+  display: block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+input {
+  position: absolute;
+  transform: scale(0);
+}
+
+input:checked ~ .checkbox {
+  transform: rotate(45deg);
+  width: 20px;
+  margin-left: 16px;
+  border-color: #24c78e;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0;
+}
+
+.checkbox {
+  display: block;
+  width: inherit;
+  height: inherit;
+  border: 3px solid #434343;
+  border-radius: 6px;
+  transition: all 0.375s;
+} */
+
 /* Navigation Bar */
 /* .sidebar {
   background: #4f4f4f;
@@ -451,320 +746,3 @@ a {
     left: -25%;
   }
 }   */
-
-/* Content area */
-.content {
-  text-align: -webkit-center;
-  padding: 10%;
-  /* flex: 1 1 70%; */
-  min-height: 100vh;
-}
-
-/* Implementing the golden ratio or Fibonacci sequence */
-.portfolio {
-  display: grid;
-  height: 100%;
-  grid-template-rows: repeat(89, 1fr);
-  grid-template-columns: repeat(123, 1fr);
-  grid-gap: 5px;
-  position: ;
-  aspect-ratio: 2/1;
-  max-width: 70em;
-}
-
-.portfolio-item {
-  background: lightcoral;
-  color: lightcoral;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  font-size: 1.5em;
-  background-size: cover;
-  background-position: top left;
-  transition: all ease-in-out 300ms;
-  position: relative;
-  z-index: 10;
-  border-radius: 25px;  
-}
-
-.portfolio-item::before {
-  border-radius: 25px;
-}
-
-.portfolio-item.one {
-  grid-row: 1 / span 89;
-  grid-column: 1 / span 89;
-  /* background-image: url(1.jpg); */
-  /* background-size: cover; */
-}
-.portfolio-item.one:hover {
-  color: black;
-  cursor: pointer;
-  background-position-x: center;
-}
-.portfolio-item.one::before {
-  content: '';
-  display: block;
-  background: black;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1;
-}
-.portfolio-item.one:hover::before {
-  opacity: 0.2;
-}
-
-.portfolio-item.two {
-  grid-row: 1 / span 55;
-  grid-column: 90 / span 55;
-  /* background-image: url(2.jpg); */
-}
-.portfolio-item.two:hover {
-  color: black;
-  cursor: pointer;
-  background-position-x: center;
-}
-.portfolio-item.two::before {
-  content: '';
-  display: block;
-  background: black;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1;
-}
-.portfolio-item.two:hover::before {
-  opacity: 0.2;
-}
-
-.portfolio-item.three {
-  grid-row: 56 / span 34;
-  grid-column: 111 / span 34;
-  /* background-image: url(3.jpg); */
-}
-.portfolio-item.three:hover {
-  color: black;
-  cursor: pointer;
-  background-position-x: right;
-}
-.portfolio-item.three::before {
-  content: '';
-  display: block;
-  background: black;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1;
-}
-.portfolio-item.three:hover::before {
-  opacity: 0.2;
-}
-
-.portfolio-item.four {
-  grid-row: 69 / span 21;
-  grid-column: 90 / span 21;
-  /* background-image: url(4.jpg); */
-}
-.portfolio-item.four:hover {
-  color: black;
-  cursor: pointer;
-  background-position-x: center;
-}
-.portfolio-item.four::before {
-  content: '';
-  display: block;
-  background: black;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1;
-}
-.portfolio-item.four:hover::before {
-  opacity: 0.2;
-}
-
-.portfolio-item.five {
-  grid-row: 56 / span 13;
-  grid-column: 90 / span 13;
-  /* background-image: url(5.jpg); */
-}
-.portfolio-item.five:hover {
-  color: black;
-  cursor: pointer;
-  background-position-x: center;
-}
-.portfolio-item.five::before {
-  content: '';
-  display: block;
-  background: black;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1;
-}
-.portfolio-item.five:hover::before {
-  opacity: 0.2;
-}
-
-.portfolio-item.six {
-  grid-row: 56 / span 8;
-  grid-column: 103 / span 8;
-  /* background-image: url(6.jpg); */
-}
-.portfolio-item.six:hover {
-  color: black;
-  cursor: pointer;
-  background-position-x: center;
-}
-.portfolio-item.six::before {
-  content: '';
-  display: block;
-  background: black;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1;
-}
-.portfolio-item.six:hover::before {
-  opacity: 0.2;
-}
-
-.portfolio-item.seven {
-  grid-row: 64 / span 5;
-  grid-column: 106 / span 5;
-  /* background-image: url(7.jpg); */
-}
-.portfolio-item.seven:hover {
-  color: black;
-  cursor: pointer;
-  background-position-x: center;
-}
-.portfolio-item.seven::before {
-  content: '';
-  display: block;
-  background: black;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1;
-}
-.portfolio-item.seven:hover::before {
-  opacity: 0.2;
-}
-
-.portfolio-item.eight {
-  grid-row: 66 / span 3;
-  grid-column: 103 / span 3;
-  /* background-image: url(8.jpg);   */
-}
-.portfolio-item.eight:hover {
-  color: black;
-  cursor: pointer;
-  background-position-x: center;
-}
-.portfolio-item.eight::before {
-  content: '';
-  display: block;
-  background: black;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1;
-}
-.portfolio-item.eight:hover::before {
-  opacity: 0.2;
-}
-
-.portfolio-item.nine {
-  grid-row: 64 / span 2;
-  grid-column: 103 / span 2;
-  /* background-image: url(8.jpg);   */
-}
-.portfolio-item.nine:hover {
-  color: black;
-  cursor: pointer;
-  background-position-x: center;
-}
-.portfolio-item.nine::before {
-  content: '';
-  display: block;
-  background: black;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1;
-}
-.portfolio-item.nine:hover::before {
-  opacity: 0.2;
-}
-
-
-/* Checkbox CSS modified */
-/* label {
-  display: block;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
-
-input {
-  position: absolute;
-  transform: scale(0);
-}
-
-input:checked ~ .checkbox {
-  transform: rotate(45deg);
-  width: 20px;
-  margin-left: 16px;
-  border-color: #24c78e;
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-radius: 0;
-}
-
-.checkbox {
-  display: block;
-  width: inherit;
-  height: inherit;
-  border: 3px solid #434343;
-  border-radius: 6px;
-  transition: all 0.375s;
-} */

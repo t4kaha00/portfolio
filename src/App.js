@@ -64,7 +64,6 @@ class App extends Component {
               <nav className='navigation'>
                 <NavLink exact={true} activeClassName='nav_active' to="/" className="nav-item"><u>Home</u></NavLink>
                 <NavLink activeClassName='nav_active' to="/resume" className="nav-item"><u>Resume</u></NavLink>
-                <NavLink activeClassName='nav_active' to="/background" className="nav-item"><u>Background</u></NavLink>
                 <NavLink 
                   activeClassName='nav_active' 
                   to={{
@@ -77,7 +76,6 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/resume" component={Resume} />
-              <Route exact path="/background" component={Background}/>
               <Route path="/fibonacci" component={Fibonacci} handler={this.state.handler} />
             </Switch>
           </Router>
@@ -89,7 +87,6 @@ class App extends Component {
 
 function Resume() {
   return (
-    // <div className='home-backgroud'>
       <div className='resume'>
           {/* Left column */}
           <div className='left'>
@@ -354,19 +351,10 @@ function Resume() {
             </div>
           </div>
         </div>
-    // </div>
   )
 }
 
 function Home() {
-  return (
-    <div className='home-background'>
-
-    </div>
-  )
-}
-
-function Background() {
   return (
     <div className='header'>
       // First container
