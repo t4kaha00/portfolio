@@ -347,7 +347,9 @@ function Resume() {
 
 function Home() {
   return (
-    <div>
+    <div 
+      // style={{textAlign: '-webkit-center'}}
+      >
     <div className='header'>
       {/* First container */}
       <div className='container container_solid'>
@@ -362,40 +364,53 @@ function Home() {
         </div>
       </div>
     </div>
-      {/* Timeline */}
-      <div className='timeline'>
-        <div className='timeline_container right'>
-          <div className='date'>1 Sep 2011</div>  
-          <div className="content">  
-            <h2>Capital College and Research Center</h2>  
-            <p>  
-              High School<br />
-              <small><i>Physics and Mathematics Major</i></small>
-            </p>  
-          </div>
+    {/* Timeline */}
+    <div className='timeline'>
+      <div className='timeline_container right'>
+        <div className='date'>1 Sep 2011</div>  
+        <div className="content">  
+          <h2>Capital College and Research Center</h2>  
+          <p>  
+            High School<br />
+            <small><i>Physics and Mathematics Major</i></small>
+          </p>  
         </div>
-        <div className='timeline_container left'>
-          <div className="date">27 Aug 2014</div>  
-          <div className="content">  
-            <h2>Oulu University of Applied Sciences</h2>  
-            <p>  
-              Bachelors in Engineering <br />
-              <small><i>Information and Communications Technology</i></small>
-            </p>  
-          </div>
+      </div>
+      <div className='timeline_container left'>
+        <div className="date">27 Aug 2014</div>  
+        <div className="content">  
+          <h2>Oulu University of Applied Sciences</h2>  
+          <p>  
+            Bachelors in Engineering <br />
+            <small><i>Information and Communications Technology</i></small>
+          </p>  
         </div>
-        <div className='timeline_container right'>
-          <div className="date">5 Sep 2016</div>  
-          <div className="content">  
-            <h2>Dublin Institute of Technology</h2>  
-            <p>  
-            Bachelors in Computer Sciences <br />
-              <small><i>Double Degree (Erasmus Computing)</i></small>
-            </p>  
-          </div>
-        </div>  
+      </div>
+      <div className='timeline_container right'>
+        <div className="date">5 Sep 2016</div>  
+        <div className="content">  
+          <h2>Dublin Institute of Technology</h2>  
+          <p>  
+          Bachelors in Computer Sciences <br />
+            <small><i>Double Degree (Erasmus Computing)</i></small>
+          </p>  
+        </div>
+      </div>  
+    </div>
+
+    {/* H Logo  */}
+    <div style={{width: '100%', textAlign: '-webkit-center', marginBottom: '1em'}}>
+      <div className='logo_container'>
+        <div className='logo_horizontal'>
+          <div className='horizontal_white white1'></div>
+          <div className='horizontal_black black1'></div>
+          <div className='horizontal_blank'></div>
+          <div className='horizontal_black black2'></div>
+          <div className='horizontal_white white2'></div>
+        </div>
       </div>
     </div>
+  </div>
   )
 }
 

@@ -109,6 +109,7 @@ a {
  .container_image .title_wrapper h1 {  
   color: white;  
  }  
+ /* Scroll effect ends here */
 
 
  /* Timeline CSS -------------------------------------------------------------------- */
@@ -294,11 +295,65 @@ a {
     border-radius: 500px 0 0 500px;
   }
 }
+/* timeline CSS in homepage ends here */
+
+/* H Logo CSS ---------------------------------------------------------------------- */
+.logo_container {
+  width: 15em;
+  aspect-ratio: 1/1;
+  border: 1.5em solid black;
+  border-radius: 50%;
+  text-align: -webkit-center;
+}
+
+.logo_horizontal {
+  margin: -1.5em -1.5em -1.5em -1.5em;
+  height: 18em;
+  width: 40%;
+  /* div modified to letter h through grid columns */
+  display: grid;
+  grid-template-columns: 1.5em 1.5em 4.5em 1.5em 1.5em;
+  align-content: space-around;
+  justify-content: center;
+}
+/* horizontal black line for letter h */
+.horizontal_black {
+  background-color: black; 
+}
+/* horizontal white line for letter h */
+.horizontal_white {
+  background: none;
+}
+.black1 {
+  height: 9em;
+  transform: translateY(-1em);
+}
+.white1 {
+  background-color: white;
+  height: 13em;
+  transform: translateY(-2em);
+}
+.horizontal_blank {
+  height: 5em;
+  width: 4.5em;
+  border: 1.5em solid black;
+  border-bottom: 0px white;
+  border-radius: 50% 50% 0 0;
+  transform: translate(-1.5em, 3em);
+}
+.black2 {
+  height: 8em;
+  transform: translateY(6em);
+}
+.white2 {
+  background-color: white;
+  transform: translateY(2em);
+}
+/* h logo CSS ends here */
 
 
 
 /* Resume section CSS starts here --------------------------------------------------- */
-
 .resume {
   width: 55em;
   margin: auto;
