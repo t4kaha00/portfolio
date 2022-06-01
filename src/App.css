@@ -117,7 +117,7 @@ a {
   position: relative;
   width: 100%;
   max-width: 1140px;
-  min-height: 94vh;
+  min-height: 74vh;
   margin: 2em auto;
   padding: 15px 0;
 }
@@ -299,20 +299,20 @@ a {
 
 /* H Logo CSS ---------------------------------------------------------------------- */
 .logo_container {
-  width: 15em;
+  width: 7em;
   aspect-ratio: 1/1;
-  border: 1.5em solid black;
+  border: 1em solid black;
   border-radius: 50%;
   text-align: -webkit-center;
 }
 
 .logo_horizontal {
   margin: -1.5em -1.5em -1.5em -1.5em;
-  height: 18em;
-  width: 40%;
+  /* height: 8em; */
+  /* width: 40%; */
   /* div modified to letter h through grid columns */
   display: grid;
-  grid-template-columns: 1.5em 1.5em 4.5em 1.5em 1.5em;
+  grid-template-columns: 1em 1em 2em 1em 1em;
   align-content: space-around;
   justify-content: center;
 }
@@ -325,29 +325,29 @@ a {
   background: none;
 }
 .black1 {
-  height: 9em;
-  transform: translateY(-1em);
+  height: 5em;
+  transform: translateY(1em);
 }
 .white1 {
   background-color: white;
-  height: 13em;
-  transform: translateY(-2em);
+  height: 5em;
+  /* transform: translateY(1em); */
 }
 .horizontal_blank {
-  height: 5em;
-  width: 4.5em;
-  border: 1.5em solid black;
+  height: 3em;
+  width: 2em;
+  border: 1em solid black;
   border-bottom: 0px white;
   border-radius: 50% 50% 0 0;
-  transform: translate(-1.5em, 3em);
+  transform: translate(-1em, 3em);
 }
 .black2 {
-  height: 8em;
-  transform: translateY(6em);
+  height: 4em;
+  transform: translateY(5em);
 }
 .white2 {
   background-color: white;
-  transform: translateY(2em);
+  transform: translateY(5em);
 }
 /* h logo CSS ends here */
 
@@ -582,8 +582,9 @@ a {
 /* Fibonacci Page ------------------------------------------------------------------------ */
 .fibonacci_page {
   text-align: -webkit-center;
-  padding: 10%;
-  min-height: 100vh;
+  padding: 5%;
+  /* max-height: 50vh; */
+  /* min-height: 50vh; */
 }
 
 /* Next and previous button for Fibonacci page ------------------------------------------- */
