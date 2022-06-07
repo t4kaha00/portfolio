@@ -12,6 +12,7 @@
     "react-scripts": "^2.1.8"
   },
   "scripts": {
+    "server-start": "nodemon ./backend/server.js",
     "start": "set PORT=3006 && react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
