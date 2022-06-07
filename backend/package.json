@@ -4,7 +4,7 @@
   "description": "Backend for Portfolio",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start-server": "nodemon server.js"
   },
   "author": "Harjit Karmacharya",
   "license": "ISC",

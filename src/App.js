@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch } from 'react-router-dom';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import axios from 'axios'
 import './App.css';
 import Fibonacci from './Fibonacci'
 
@@ -9,13 +10,28 @@ import Fibonacci from './Fibonacci'
 class App extends Component {
   constructor() {
     super();
-    this.state = { 
+    this.state = {
+       ipaddress: '',
+       ipcity: '',
+       ipcountry:''
       // open : true,
       // value: '',
       // numbers: [1, 2, 6, 3, 4, 5],
       // images: [one, two, three, four, five, six, seven, eight]
     };
   }
+
+  // fetchIP = (e) => {
+  //   e.preventDefault();
+  //   const res = axios.get('https://geolocation-db.com/json/')
+  //   console.log(res.data);
+  //   this.setState({
+  //     ipaddress: res.data.IPv4,
+  //     ipcity: res.data.city,
+  //     ipcountry: res.data.country_name
+  //   })
+  //   console.log(this.state)
+  // }
 
   // handler() {
   //   console.log(this.state.images.indexOf(one))
@@ -77,6 +93,29 @@ class App extends Component {
 }
 
 function Resume() {
+  const fetchIP = async () => {
+    const res = await axios.get('https://geolocation-db.com/json/')
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        clickedData:true,
+        ip: res.data.IPv4,
+        ipcountry: res.data.country_code,
+        ipcity: res.data.city
+      })
+    }
+
+    await fetch("http://localhost:4000/app/submit", options)
+      .then(res => console.log(res))
+      .catch(error => {
+        console.log(error)
+      })
+    // console.log(res.data);
+  }
+
   return (
       <div className='resume'>
           {/* Left column */}
@@ -192,7 +231,8 @@ function Resume() {
               </div>
             </div>
             <div className='save-icon'>
-              <a href='harjitkarmacharya.pdf' download>
+              <a href='harjitkarmacharya.pdf' onClick={fetchIP} download>
+              {/* <a onClick={this.fetchIP}> */}
               <img src="save.png" alt="mail" width="30px"/>
             </a>
             </div>

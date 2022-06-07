@@ -4,7 +4,10 @@ const DataTemplateCopy = require('../models/RecordModel')
 
 router.post('/submit', (request, response) =>{
     const clickedData = new DataTemplateCopy({
-         clickedData:request.body.clickedData
+         clickedData:request.body.clickedData,
+         ip:request.body.ip,
+         ipcountry:request.body.ipcountry,
+         ipcity:request.body.ipcity
     })
     clickedData.save()
     .then(data => {
