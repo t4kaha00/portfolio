@@ -21,18 +21,6 @@ class App extends Component {
     };
   }
 
-  // fetchIP = (e) => {
-  //   e.preventDefault();
-  //   const res = axios.get('https://geolocation-db.com/json/')
-  //   console.log(res.data);
-  //   this.setState({
-  //     ipaddress: res.data.IPv4,
-  //     ipcity: res.data.city,
-  //     ipcountry: res.data.country_name
-  //   })
-  //   console.log(this.state)
-  // }
-
   // handler() {
   //   console.log(this.state.images.indexOf(one))
   //   this.state.images.push(this.state.images.splice(this.state.images.indexOf(one), 1)[0]);      
@@ -108,7 +96,7 @@ function Resume() {
       })
     }
 
-    await fetch("http://localhost:4000/app/submit", options)
+    await fetch("/app/submit", options)
       .then(res => console.log(res))
       .catch(error => {
         console.log(error)
