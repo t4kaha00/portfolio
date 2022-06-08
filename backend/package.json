@@ -4,7 +4,7 @@
   "description": "Backend for Portfolio",
   "main": "server.js",
   "scripts": {
-    "start-server": "nodemon server.js"
+    "start": "nodemon server.js"
   },
   "author": "Harjit Karmacharya",
   "license": "ISC",
@@ -12,7 +12,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.3.5",
+    "mongoose": "^6.3.6",
     "nodemon": "^2.0.16"
   }
 }
