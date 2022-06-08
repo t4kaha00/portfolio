@@ -1,1 +1,1 @@
-web: cd backend && npm start
+api: node backend/server.js
