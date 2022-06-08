@@ -1,2 +1,2 @@
-api: cd backend && node server.js
+api: cd backend && nodemon server.js
 web: npm start
