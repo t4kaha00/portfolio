@@ -13,7 +13,7 @@
   "scripts": {
     "start": "cd backend && node server.js",
     "build": "react-scripts build",
-    "install-client": "npm install",
+    "install-client": "npm install && cd backend && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start-client": "react-scripts start",
     "test": "react-scripts test",
