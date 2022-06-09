@@ -21,6 +21,13 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    this.get()
+  }
+
+  get = () => {
+    axios.get('/app').then((response) => {console.log(response)})
+  }
   // handler() {
   //   console.log(this.state.images.indexOf(one))
   //   this.state.images.push(this.state.images.splice(this.state.images.indexOf(one), 1)[0]);      

@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const routesUrls = require('./routes/routes')
 const cors = require('cors')
+const path = require('path')
 
 const PORT = process.env.PORT || 8080;
 
@@ -16,7 +17,7 @@ app.use(cors())
 
 // In production mode, use build folder for staic web for faster loading
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('../build'));
+    app.use(express.static(path.join(__dirname + "/../build")));
 }
 app.use('/app', routesUrls)
 app.listen(PORT, () => console.log(`Server is starting at ${PORT}`))

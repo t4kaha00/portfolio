@@ -18,4 +18,8 @@ router.post('/submit', (request, response) =>{
     })
 })
 
+router.get('/', (request, response) => {
+    DataTemplateCopy.find({}).then((data) => {response.json(data), console.log(data.length + " addresses found")}).catch(( error) => {console.log(error)})
+})
+
 module.exports = router
