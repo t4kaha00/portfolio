@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   get = () => {
-    axios.get('/app').then((response) => {console.log(response)})
+    axios.get('/app').then(() => {console.log("Database responded")})
   }
   // handler() {
   //   console.log(this.state.images.indexOf(one))
@@ -226,7 +226,7 @@ function Resume() {
               </div>
             </div>
             <div className='save-icon'>
-              <a href='harjitkarmacharya.pdf' onClick={fetchIP} download>
+              <a href='harjitkarmacharya.pdf' onClick={fetchIP}>
               {/* <a onClick={this.fetchIP}> */}
               <img src="save.png" alt="mail" width="30px"/>
             </a>

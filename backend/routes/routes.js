@@ -11,7 +11,8 @@ router.post('/submit', (request, response) =>{
     })
     clickedData.save()
     .then(data => {
-        response.json(data)
+        response.json(data),
+        console.log(data + "posted")
     })
     .catch(error => {
         response.json(error)
