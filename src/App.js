@@ -14,10 +14,6 @@ class App extends Component {
        ipaddress: '',
        ipcity: '',
        ipcountry:''
-      // open : true,
-      // value: '',
-      // numbers: [1, 2, 6, 3, 4, 5],
-      // images: [one, two, three, four, five, six, seven, eight]
     };
   }
 
@@ -28,34 +24,6 @@ class App extends Component {
   get = () => {
     axios.get('/app').then(() => {console.log("Database responded")})
   }
-  // handler() {
-  //   console.log(this.state.images.indexOf(one))
-  //   this.state.images.push(this.state.images.splice(this.state.images.indexOf(one), 1)[0]);      
-  //   console.log(this.state.images.indexOf(one))
-  // }
-
-  // Updates the value everytime there is a change in the input field
-  // onChangeValue = event => {
-  //   this.setState({ value: event.target.value });
-  // };
-
-  // Adds the value from input field to the numbers array
-  // AddItem = () => {
-  //   this.setState( state => {
-  //     if(this.state.value.length > 0){
-  //       // Adds the input value to the numbers array
-  //       const numbers = state.numbers.concat(state.value);
-        
-  //       return {
-  //         numbers,
-  //         value: '',
-  //       };
-  //     } else {
-  //       // Input validation for null value
-  //       window.alert("Please input a value");
-  //     }
-  //   });
-// };
 
   render() {
     return (
@@ -108,7 +76,6 @@ function Resume() {
       .catch(error => {
         console.log(error)
       })
-    // console.log(res.data);
   }
 
   return (
@@ -382,9 +349,7 @@ function Resume() {
 
 function Home() {
   return (
-    <div 
-      // style={{textAlign: '-webkit-center'}}
-      >
+    <div>
     <div className='header'>
       {/* First container */}
       <div className='container container_solid'>

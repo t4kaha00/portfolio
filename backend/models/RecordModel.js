@@ -23,4 +23,4 @@ const DataTemplate = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('CLickeDataTable', DataTemplate)
+module.exports = mongoose.model('CLickedDataTable', DataTemplate)
