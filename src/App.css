@@ -373,6 +373,16 @@ a {
   background: #f4f4f4;
 }
 
+/* Copy button ---------------------------------------------------------------------------- */
+.email > span {
+  position: relative;
+  top: 2px;
+  left: 1em;
+  display: none;
+}
+.email:hover > span {
+  display: inline;
+}
 .col1-row1, .col1-row2,
 .col1-row3, .col1-row4 {
   margin-top: 1em;

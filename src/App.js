@@ -78,6 +78,11 @@ function Resume() {
       })
   }
 
+  const copy = () => {
+    navigator.clipboard.writeText("hkarmacharya@gmail.com")
+    alert('copied email address')
+  }
+
   return (
       <div className='resume'>
           {/* Left column */}
@@ -91,17 +96,22 @@ function Resume() {
               <div className='col1-row1-row'>
                 <div className='col1-row1-row-row1'>
                   <img src="gmail.png" alt="mail" width="20px"/>
-                  <a href="mailto:hkarmacharya@gmail.com">Gmail</a>
+                  <a className="email" href="mailto:hkarmacharya@gmail.com" onClick={copy}>
+                    hkarmacharya@gmail.com
+                    <span>
+                      <img src='copy.jpg' width="14px" alt='copy'/>
+                    </span>
+                  </a>
                 </div>
                 <br/>
                 <div className='col1-row1-row-row1'>
                   <img src="linkedin2.png" alt="linkedin" width="20px"/>
-                  <a href='http://www.linkedin.com/in/harjit-karmacharya'>LinkedIn</a>
+                  <a href='http://www.linkedin.com/in/harjit-karmacharya' target="_blank">LinkedIn</a>
                 </div>
                 <br/>
                 <div className='col1-row1-row-row1'>
                   <img src="github.png" alt="github" width="20px"/>
-                  <a href='https://github.com/t4kaha00'>Github</a>
+                  <a href='https://github.com/t4kaha00' target="_blank">Github</a>
                 </div>
               </div>
             </div>
@@ -174,11 +184,11 @@ function Resume() {
               <div className='col1-row4-row'>
                 <ul>
                   <li>
-                    <a href='https://nadaasi.com'><img src='nadaasi.png' width={100} alt="Nadaasi"/></a>
+                    <a href='https://nadaasi.com' target="_blank"><img src='nadaasi.png' width={100} alt="Nadaasi"/></a>
                   </li>
                   <br/>
                   <li>
-                    <a href='https://lianatech.herokuapp.com'><img src='liana.svg' width={100} alt="Lianatech"/></a>
+                    <a href='https://lianatech.herokuapp.com' target="_blank"><img src='liana.svg' width={100} alt="Lianatech"/></a>
                   </li>
                 </ul>
               </div>
@@ -204,7 +214,7 @@ function Resume() {
               <h2 className='col2-row1-row right-heading2'><u>EDUCATION HISTORY</u></h2>
               <div className='col2-row1-row ouas'>
                 <div>
-                  <a href='https://www.oamk.fi/'>
+                  <a href='https://www.oamk.fi/' target="_blank">
                     <div className='col2-row1-row-row'>
                       <h4 className='heading1'>Bachelors of Engineering</h4>
                       <p>Aug 2014 - Aug 2020</p>
@@ -218,7 +228,7 @@ function Resume() {
               </div>
               <div className='col2-row1-row dit'>
                 <div>
-                  <a href='https://www.tudublin.ie/'>
+                  <a href='https://www.tudublin.ie/' target="_blank">
                     <div className='col2-row1-row-row'>
                       <h4 className='heading1'>Bachelors in Computer Science</h4>
                       <p>Sep 2016 - May 2017</p>
@@ -236,7 +246,7 @@ function Resume() {
               <h2 className='right-heading'><u>WORK EXPERIENCE</u></h2>
               <div className='col2-row2-row cajo'>
                 <div>
-                  <a href='https://cajotechnologies.com/'>
+                  <a href='https://cajotechnologies.com/' target="_blank">
                     <div className='col2-row2-row-row'>
                       <h4 className='right-heading1'>IMAGE MODIFICATION PORTAL</h4>
                       <p>Jan 2017 - April 2017</p>
@@ -254,7 +264,7 @@ function Resume() {
               </div>
               <div className='col2-row2-row nepgo'>
                 <div>
-                  <a href='https://www.nepgo.com/'>
+                  <a href='https://www.nepgo.com/' target="_blank">
                     <div className='col2-row2-row-row'>
                       <h4 className='right-heading1'>ANDROID APPLICATION</h4>
                       <p>Jan 2017 - Mar 2017</p>
@@ -270,7 +280,7 @@ function Resume() {
               </div>
               <div className='col2-row2-row nadaasi'>
                 <div>
-                  <a href='https://nadaasi.com/'>
+                  <a href='https://nadaasi.com/' target="_blank">
                     <div className='col2-row2-row-row'>
                       <h4 className='right-heading1'>WEBSHOP</h4>
                       <p>Jun 2020 - Dec 2020</p>
@@ -290,7 +300,7 @@ function Resume() {
               </div>
               <div className='col2-row2-row nclean'>
                 <div>
-                  <a href='https://nadaasi.com/'>
+                  <a href='https://nclean.fi/' target="_blank">
                     <div className='col2-row2-row-row'>
                       <h4 className='right-heading1'>SUPERVISOR</h4>
                       <p>Jan 2019 - Apr 2021</p>
