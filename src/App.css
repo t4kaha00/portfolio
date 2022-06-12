@@ -620,7 +620,7 @@ a {
   grid-template-rows: repeat(89, 1fr);
   grid-template-columns: repeat(123, 1fr);
   grid-gap: 5px;
-  position: ;
+  /* position: absolute; */
   aspect-ratio: 2/1;
   max-width: 70em;
 }

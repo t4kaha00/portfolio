@@ -72,7 +72,7 @@ function Resume() {
     }
 
     await fetch("/app/submit", options)
-      .then(res => console.log(res))
+      .then(res => console.log("Clicked"))
       .catch(error => {
         console.log(error)
       })
