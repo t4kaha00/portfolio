@@ -3,6 +3,7 @@ import { Switch } from 'react-router-dom';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import axios from 'axios'
 import './App.css';
+import './menu.css';
 import Fibonacci from './Fibonacci'
 
 
@@ -13,7 +14,8 @@ class App extends Component {
     this.state = {
        ipaddress: '',
        ipcity: '',
-       ipcountry:''
+       ipcountry:'',
+       checked: false 
     };
   }
 
@@ -25,6 +27,15 @@ class App extends Component {
     axios.get('/app').then(() => {console.log("Database responded")})
   }
 
+  uncheck = (e) => {
+    e.preventDefault();
+    this.setState({checked: !this.state.checked})
+  }
+
+  change = () => {
+    this.setState({checked: !this.state.checked})
+  }
+
   render() {
     return (
       <div className="App">
@@ -32,21 +43,48 @@ class App extends Component {
           <Router>
             <div className='nav'>
               <nav className='navigation'>
-                <NavLink exact={true} activeClassName='nav_active' to="/" className="nav-item"><u>Home</u></NavLink>
-                <NavLink activeClassName='nav_active' to="/resume" className="nav-item"><u>Resume</u></NavLink>
-                <NavLink 
-                  activeClassName='nav_active' 
-                  to={{
-                    // handler: this.state.handler,
-                    pathname: "/fibonacci", 
-                    state: this.state.images}} 
-                  className="nav-item"><u>Fibonacci</u></NavLink>
+              <label>
+                <input type="checkbox" checked={this.state.checked}
+                onChange={this.change}/>
+                <span className="menu">
+                  <span className="hamburger"></span>
+                </span>
+                <ul>
+                  <li onClick={this.uncheck} activeclassname='nav_active'>
+                    <NavLink 
+                      exact={true}
+                      activeClassName='nav_active' 
+                      to="/" className="nav-item">
+                        <u>Home</u>
+                    </NavLink>
+                  </li>
+                  <li onClick={this.uncheck} activeclassname='nav_active'> 
+                    <NavLink 
+                      activeClassName='nav_active'
+                      to="/resume" className="nav-item">
+                        <u>Resume</u>
+                    </NavLink>
+                  </li>
+                  <li onClick={this.uncheck} activeclassname='nav_active'>
+                    <NavLink
+                      activeClassName='nav_active' 
+                      to={{
+                        pathname: "/fibonacci", 
+                        state: this.state.images}} 
+                        className="nav-item"><u>Fibonacci</u>
+                    </NavLink>
+                  </li>
+                </ul>
+                </label>
+                
+                
+                
               </nav>
             </div>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/resume" component={Resume} />
-              <Route path="/fibonacci" component={Fibonacci} handler={this.state.handler} />
+              <Route path="/fibonacci" component={Fibonacci} />
             </Switch>
           </Router>
         </div>
@@ -106,12 +144,12 @@ function Resume() {
                 <br/>
                 <div className='col1-row1-row-row1'>
                   <img src="linkedin2.png" alt="linkedin" width="20px"/>
-                  <a href='http://www.linkedin.com/in/harjit-karmacharya' target="_blank">LinkedIn</a>
+                  <a href='http://www.linkedin.com/in/harjit-karmacharya' target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
                 <br/>
                 <div className='col1-row1-row-row1'>
                   <img src="github.png" alt="github" width="20px"/>
-                  <a href='https://github.com/t4kaha00' target="_blank">Github</a>
+                  <a href='https://github.com/t4kaha00' target="_blank" rel="noopener noreferrer">Github</a>
                 </div>
               </div>
             </div>
@@ -184,11 +222,11 @@ function Resume() {
               <div className='col1-row4-row'>
                 <ul>
                   <li>
-                    <a href='https://nadaasi.com' target="_blank"><img src='nadaasi.png' width={100} alt="Nadaasi"/></a>
+                    <a href='https://nadaasi.com' target="_blank" rel="noopener noreferrer"><img src='nadaasi.png' width={100} alt="Nadaasi"/></a>
                   </li>
                   <br/>
                   <li>
-                    <a href='https://lianatech.herokuapp.com' target="_blank"><img src='liana.svg' width={100} alt="Lianatech"/></a>
+                    <a href='https://lianatech.herokuapp.com' target="_blank" rel="noopener noreferrer"><img src='liana.svg' width={100} alt="Lianatech"/></a>
                   </li>
                 </ul>
               </div>
@@ -203,7 +241,7 @@ function Resume() {
               </div>
             </div>
             <div className='save-icon'>
-              <a href='harjitkarmacharya.pdf' target="_blank" onClick={fetchIP}>
+              <a href='harjitkarmacharya.pdf' onClick={fetchIP}>
               {/* <a onClick={this.fetchIP}> */}
               <img src="save.png" alt="mail" width="30px"/>
             </a>
@@ -214,7 +252,7 @@ function Resume() {
               <h2 className='col2-row1-row right-heading2'><u>EDUCATION HISTORY</u></h2>
               <div className='col2-row1-row ouas'>
                 <div>
-                  <a href='https://www.oamk.fi/' target="_blank">
+                  <a href='https://www.oamk.fi/' target="_blank" rel="noopener noreferrer">
                     <div className='col2-row1-row-row'>
                       <h4 className='heading1'>Bachelors of Engineering</h4>
                       <p>Aug 2014 - Aug 2020</p>
@@ -228,7 +266,7 @@ function Resume() {
               </div>
               <div className='col2-row1-row dit'>
                 <div>
-                  <a href='https://www.tudublin.ie/' target="_blank">
+                  <a href='https://www.tudublin.ie/' target="_blank" rel="noopener noreferrer">
                     <div className='col2-row1-row-row'>
                       <h4 className='heading1'>Bachelors in Computer Science</h4>
                       <p>Sep 2016 - May 2017</p>
@@ -246,7 +284,7 @@ function Resume() {
               <h2 className='right-heading'><u>WORK EXPERIENCE</u></h2>
               <div className='col2-row2-row cajo'>
                 <div>
-                  <a href='https://cajotechnologies.com/' target="_blank">
+                  <a href='https://cajotechnologies.com/' target="_blank" rel="noopener noreferrer">
                     <div className='col2-row2-row-row'>
                       <h4 className='right-heading1'>IMAGE MODIFICATION PORTAL</h4>
                       <p>Jan 2017 - April 2017</p>
@@ -264,7 +302,7 @@ function Resume() {
               </div>
               <div className='col2-row2-row nepgo'>
                 <div>
-                  <a href='https://www.nepgo.com/' target="_blank">
+                  <a href='https://www.nepgo.com/' target="_blank" rel="noopener noreferrer">
                     <div className='col2-row2-row-row'>
                       <h4 className='right-heading1'>ANDROID APPLICATION</h4>
                       <p>Jan 2017 - Mar 2017</p>
@@ -280,7 +318,7 @@ function Resume() {
               </div>
               <div className='col2-row2-row nadaasi'>
                 <div>
-                  <a href='https://nadaasi.com/' target="_blank">
+                  <a href='https://nadaasi.com/' target="_blank" rel="noopener noreferrer">
                     <div className='col2-row2-row-row'>
                       <h4 className='right-heading1'>WEBSHOP</h4>
                       <p>Jun 2020 - Dec 2020</p>
@@ -300,7 +338,7 @@ function Resume() {
               </div>
               <div className='col2-row2-row nclean'>
                 <div>
-                  <a href='https://nclean.fi/' target="_blank">
+                  <a href='https://nclean.fi/' target="_blank" rel="noopener noreferrer">
                     <div className='col2-row2-row-row'>
                       <h4 className='right-heading1'>SUPERVISOR</h4>
                       <p>Jan 2019 - Apr 2021</p>
