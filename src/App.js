@@ -103,7 +103,7 @@ function Resume() {
       },
       body: JSON.stringify({
         clickedData:true,
-        ip: res.data.IPv4,
+        ipaddress: res.data.IPv4,
         ipcountry: res.data.country_code,
         ipcity: res.data.city
       })
