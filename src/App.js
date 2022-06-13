@@ -241,7 +241,7 @@ function Resume() {
               </div>
             </div>
             <div className='save-icon'>
-              <a href='harjitkarmacharya.pdf' onClick={fetchIP}>
+              <a href='harjitkarmacharya.pdf'  target="_blank" rel="noopener noreferrer" onClick={fetchIP}>
               {/* <a onClick={this.fetchIP}> */}
               <img src="save.png" alt="mail" width="30px"/>
             </a>
