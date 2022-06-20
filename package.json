@@ -10,16 +10,13 @@
     "react-router-dom": "^5.3.1",
     "react-scripts": "^2.1.8"
   },
+  "proxy": "http://harjitkarmacharya.com/app",
   "scripts": {
-    "start": "cd backend && node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "install-client": "npm install && cd backend && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
-    "start-client": "react-scripts start",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
