@@ -118,7 +118,8 @@ function Resume() {
 
   const copy = () => {
     navigator.clipboard.writeText("hkarmacharya@gmail.com")
-    alert('copied email address')
+    const element = document.getElementsByClassName('copy')[0].className;
+    document.getElementsByClassName('copy')[0].className ='copied'
   }
 
   return (
@@ -134,9 +135,9 @@ function Resume() {
               <div className='col1-row1-row'>
                 <div className='col1-row1-row-row1'>
                   <img src="gmail.png" alt="mail" width="20px"/>
-                  <a className="email" href="mailto:hkarmacharya@gmail.com" onClick={copy}>
+                  <a className="email" onClick={copy}>
                     hkarmacharya@gmail.com
-                    <span>
+                    <span className='copy'>
                       <img src='copy.jpg' width="14px" alt='copy'/>
                     </span>
                   </a>

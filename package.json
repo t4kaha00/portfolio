@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "install-client": "npm install && cd backend && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
-    "test": "react-scripts test"
+    "test-start": "react-scripts --openssl-legacy-provider start"
   },
   "eslintConfig": {
     "extends": "react-app"
