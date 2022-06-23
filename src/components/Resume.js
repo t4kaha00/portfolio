@@ -27,7 +27,6 @@ class Resume extends Component{
     
     copy = () => {
       navigator.clipboard.writeText("hkarmacharya@gmail.com")
-      const element = document.getElementsByClassName('copy')[0].className;
       document.getElementsByClassName('copy')[0].className ='copied'
     }
 
