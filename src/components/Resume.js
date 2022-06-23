@@ -138,6 +138,10 @@ class Resume extends Component{
                         <li>
                           <a href='https://lianatech.herokuapp.com' target="_blank" rel="noopener noreferrer"><img src='liana.svg' width={100} alt="Lianatech"/></a>
                         </li>
+                        <br/>
+                        <li>
+                          <a href='http://mern-stack-trial.herokuapp.com/' target="_blank" rel="noopener noreferrer">mern-stack-trial.herokuapp.com</a>
+                        </li>
                       </ul>
                     </div>
                   </div>
