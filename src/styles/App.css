@@ -1,0 +1,434 @@
+* { box-sizing: content-box; }  
+
+/* body */
+body {
+  margin: 0;
+}
+
+.App {
+  background-size: cover;
+  background-position: center ;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  color: #171616;
+}
+
+a {
+  text-decoration: none;
+  color: #444440;
+}
+
+/* The navigation component hides when active ---------------------------------------*/
+.nav_active {
+  display: none;
+}
+/* Navigation ---------------------------------------------------------------------- */
+.navigation {
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  font-size: x-large;
+  width: 100%;
+  justify-content: center;
+}
+.navigation > a {
+  color: #000000;
+}
+
+/* Home Background            ------------------------------------------------------ */
+.header {
+  height: 200vh;
+  margin-top: 50px;
+}
+
+.container {
+  clip: rect(0, auto, auto 0);
+  overflow: hidden;
+  position: absolute;
+  height: 100vh;
+  left: 0;
+  width: 100%;
+  mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+}
+.container_solid {
+  background: white;
+}
+.title_wrapper {
+  position: fixed;
+  display: block;
+  margin: auto;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.title_wrapper h1 {
+  text-align: center;
+  font-size: 500%;
+  text-transform: uppercase;
+  font-family: serif;
+  font-weight: 900;
+}
+@media (max-width: 700px) {
+  .title_wrapper h1 {
+    font-size: 250%;
+  }
+}
+.container_solid .title_wrapper h1 {
+  background: url(../images/image1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  color: black;
+}
+.container_image {  
+  background-image: url(../images/image1.jpg);  
+  background-size: cover;  
+  background-position: center;  
+  background-attachment: fixed;  
+  /* position the second container below the first container */  
+  top: 100vh;  
+ }  
+ .container_image .title_wrapper h1 {  
+  color: white;  
+ }  
+ /* Scroll effect ends here */
+
+
+ /* Timeline CSS -------------------------------------------------------------------- */
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  min-height: 74vh;
+  margin: 2em auto;
+  padding: 15px 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: #006E51;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline_container {
+  padding: 15px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+
+.timeline_container.left {
+  left: -5.4%;
+}
+
+.timeline_container.right {
+  left: 50%;
+}
+
+.timeline_container::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  right: -8px;
+  background: #ffffff;
+  border: 2px solid #006E51;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.timeline_container.right::after {
+  left: -8px;
+}
+
+.timeline_container::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  top: calc(50% - 1px);
+  right: 8px;
+  background: #006E51;
+  z-index: 1;
+}
+
+.timeline_container.right::before {
+  left: 8px;
+}
+
+.timeline_container .date {
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 8px);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #006E51;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.timeline_container.left .date {
+  right: -110px;
+}
+
+.timeline_container.right .date {
+  left: -110px;
+}
+
+.timeline_container .icon {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 9px 0;
+  top: calc(50% - 20px);
+  background: #F6D155;
+  border: 2px solid #006E51;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #006E51;
+  z-index: 1;
+}
+
+.timeline_container.left .icon {
+  right: 56px;
+}
+
+.timeline_container.right .icon {
+  left: 56px;
+}
+
+.timeline_container .content {
+  padding: 30px 90px 30px 30px;
+  background: #F6D155;
+  position: relative;
+  border-radius: 0 500px 500px 0;
+}
+
+.timeline_container.right .content {
+  padding: 30px 30px 30px 90px;
+  border-radius: 500px 0 0 500px;
+}
+
+.timeline_container .content h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: normal;
+  color: #006E51;
+}
+
+.timeline_container .content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+@media (max-width: 767.98px) {
+  .timeline::after {
+    left: 90px;
+  }
+
+  .timeline_container {
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 30px;
+  }
+
+  .timeline_container.right {
+    left: 0%;
+  }
+
+  .timeline_container.left::after, 
+  .timeline_container.right::after {
+    left: 82px;
+  }
+
+  .timeline_container.left::before,
+  .timeline_container.right::before {
+    left: 100px;
+    border-color: transparent #006E51 transparent transparent;
+  }
+
+  .timeline_container.left .date,
+  .timeline_container.right .date {
+    right: auto;
+    left: 15px;
+  }
+
+  .timeline_container.left .icon,
+  .timeline_container.right .icon {
+    right: auto;
+    left: 146px;
+  }
+
+  .timeline_container.left .content,
+  .timeline_container.right .content {
+    padding: 30px 30px 30px 90px;
+    border-radius: 500px 0 0 500px;
+  }
+}
+/* timeline CSS in homepage ends here */
+
+/* H Logo CSS ---------------------------------------------------------------------- */
+.logo_container {
+  width: 7em;
+  aspect-ratio: 1/1;
+  border: 1em solid black;
+  border-radius: 50%;
+  text-align: -webkit-center;
+}
+
+.logo_horizontal {
+  margin: -1.5em -1.5em -1.5em -1.5em;
+  /* div modified to letter h through grid columns */
+  display: grid;
+  grid-template-columns: 1em 1em 2em 1em 1em;
+  align-content: space-around;
+  justify-content: center;
+}
+/* horizontal black line for letter h */
+.horizontal_black {
+  background-color: black; 
+}
+/* horizontal white line for letter h */
+.horizontal_white {
+  background: none;
+}
+.black1 {
+  height: 5em;
+  transform: translateY(1em);
+}
+.white1 {
+  background-color: white;
+  height: 5em;
+}
+.horizontal_blank {
+  height: 3em;
+  width: 2em;
+  border: 1em solid black;
+  border-bottom: 0px white;
+  border-radius: 50% 50% 0 0;
+  transform: translate(-1em, 3em);
+}
+.black2 {
+  height: 4em;
+  transform: translateY(5em);
+}
+.white2 {
+  background-color: white;
+  transform: translateY(5em);
+}
+/* h logo CSS ends here */
+
+
+/* Checkbox CSS modified -------------------------------------------------------------------------------------------------*/
+/* label {
+  display: block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+input {
+  position: absolute;
+  transform: scale(0);
+}
+
+input:checked ~ .checkbox {
+  transform: rotate(45deg);
+  width: 20px;
+  margin-left: 16px;
+  border-color: #24c78e;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0;
+}
+
+.checkbox {
+  display: block;
+  width: inherit;
+  height: inherit;
+  border: 3px solid #434343;
+  border-radius: 6px;
+  transition: all 0.375s;
+} */
+
+/* Navigation Bar */
+/* .sidebar {
+  background: #4f4f4f;
+  flex: 1 1 15%;
+  min-width: 285px;
+  padding: 3em;
+  margin: .5em;
+  border-radius: 25px;
+}
+
+.logo {
+  margin-bottom: 2em;
+}
+
+.logo img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.nav-item {
+  color: #460d0d;
+  text-decoration: none;
+  font-size: 1.7rem;
+  display: inline-block;
+  margin-right: 2em;  
+  position: relative;
+}
+
+.nav-item.contact::before {
+  content: "hkarmacharya@gmail.com";
+  display: block;
+  position: absolute;
+  background-color: gray;
+  border-radius: 5px;
+  bottom: 0;
+  left: -100%;
+  padding: 0 .5em;
+  transform: scale(0);
+  transition: 
+    transform ease-out 150ms,
+    bottom ease-out 150ms;
+}
+.nav-item.contact:hover::before {
+  transform: scale(0.75);
+  bottom: 100%;
+}
+
+@media (max-width: 746px) {
+  .sidebar {
+    max-width: 500px;
+  }
+  .logo {
+    margin-bottom: 5em;
+  }
+  .nav-item {
+    display: block;
+    margin: 7vh 0;
+  }
+  .nav-item.contact::before {
+    left: -25%;
+  }
+}   */

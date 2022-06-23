@@ -1,0 +1,244 @@
+/* Resume section CSS starts here --------------------------------------------------- */
+.resume {
+    width: 55em;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 4em 2em;
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    background: white;
+  }
+  
+  .save-icon {
+    float: right;}
+  
+  /* Left Column of Resume --------------------------------------------------------------------*/
+  .resume > .left {
+    padding: 1em;
+    background: #f4f4f4;
+  }
+  
+  /* Copy button ---------------------------------------------------------------------------- */
+  .email > span {
+    position: relative;
+    top: 2px;
+    left: 1em;
+    display: none;
+  }
+  .email:hover > span {
+    cursor: pointer;
+    display: inline;
+  }
+  .copied {
+    opacity: 0;
+  }
+  
+  .col1-row1, .col1-row2,
+  .col1-row3, .col1-row4 {
+    margin-top: 1em;
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .col1-row1-row > h1 {
+    color: #444440;
+  }
+  .col1-row1-row > h4 {
+    font-weight: lighter;
+    color: #171616;
+  }
+  .col1-row1-row > ul,
+  .col1-row4-row > ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .col1-row1-row > ul > li {
+    margin-top: 1em;
+  }
+  .col1-row1-row > ul > li > a, 
+  .col1-row4-row > ul > li > a {
+    text-decoration: none;
+    color: #444440;
+  }
+  
+  .col1-row2-row > h2, 
+  .col1-row3-row > h2,
+  .col1-row4-row > h2 {
+    margin-top: 5px;
+    color: #444440;
+  }
+  
+  .col1-row2-row > p {
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  .col1-row2-row > ul >li {
+    margin: 5px;
+  }
+  
+  .col1-row1-row-row1 {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
+  
+  /* Grid for Language section */
+  .col1-row3-row > div {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  .dots {
+    transform: scale(2);
+    justify-self: start;
+    margin-left: 10px;
+    letter-spacing: 2px;
+  }
+  
+  .col1-row4-row > ul > li:hover {
+    transition: .2s;  /* delays the hover effect */
+    transform: scale(1, 1.15); /* becomes 1.05* bigger */
+  }
+  
+  /* Right column of Resume -------------------------------------------------------------------------- */
+  .right {
+    padding-left: 1em;
+  }
+  
+  .type {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    float: none;
+    /* transform: translateX(-10px); */
+  }
+  
+  .typing-demo {
+    width: 9.5em;
+    /* animation: name duration timing-function delay iteration-count direction; */
+    animation: typing 3.5s steps(22), blink .5s step-end infinite alternate;
+    animation-iteration-count: infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: .8em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .col2-row1, .col2-row2, .col2-row3 {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    color: #444440;
+    align-content: space-between;
+  }
+  
+  .col2-row1-row {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-rows: 1fr;
+    height: 50px;
+  }
+  .right-heading2 {
+    margin-bottom: -1em;
+  }
+  
+  .col2-row1-row > div:hover {
+    transition: .2s;  /* delays the hover effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 3px;
+    transform: scale(1.05);
+  }
+  
+  .col2-row2-row > div:hover {
+    transition: .2s;  /* delays the hover effect */
+    transform: scale(1.05);
+    padding-top: 5px;
+    padding-left: 5px;
+    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .col2-row2-row-row > h2 {
+    margin: 0;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: larger;
+    color: #737373;
+  }
+  
+  .col2-row2-row-row > ul {
+    margin: 0;
+    margin-bottom: 2em;
+    color: #171616;
+  }
+  
+  .col2-row1-row-row > h4, 
+  .col2-row2-row-row > h4 {
+    font-size: small;
+    margin: 0px;
+    color: #171616;
+  }
+  
+  .col2-row1-row-row > p,
+  .col2-row2-row-row > p {
+    float: right;
+    margin: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    /* color: #737373; */
+  }
+  
+  .col2-row1-row-row > ul > li >p,
+  .col2-row2-row-row > ul > li > p {
+    margin: 7px;
+    font-size: 12px;
+  }
+  
+  .col2-row1-row-row > i {
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .col2-row1-row-row > h3 {
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-size: medium;
+    color: #737373;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .col2-row3-row {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+  
+  .col2-row3-row {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  }
+  .col2-row3-row-row {
+    margin-bottom: 5px;
+  }
+  
+  .col2-row3-row-row > p {
+    font-size: small;
+    margin: 0;
+  }
+  .col2-row3-row-row > p > i {
+    float: right;
+  }
