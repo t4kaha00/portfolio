@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { axiosInstance } from '../config'
 import React, { Component } from 'react';
 import '../styles/resume.css';
 
@@ -18,8 +19,11 @@ class Resume extends Component{
         })
       }
     
-      await fetch("/app/submit", options)
-        .then(res => console.log("Clicked"))
+      await axiosInstance({
+        url: '/app/submit',
+        method: 'POST',
+        data: options
+      }).then(res => console.log("Fetched!!"))
         .catch(error => {
           console.log(error)
         })
