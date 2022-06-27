@@ -7,16 +7,10 @@ class Resume extends Component{
     fetchIP = async () => {
       const res = await axios.get('https://geolocation-db.com/json/')
       const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
           clickedData:true,
           ipaddress: res.data.IPv4,
           ipcountry: res.data.country_code,
           ipcity: res.data.city
-        })
       }
     
       await axiosInstance({
