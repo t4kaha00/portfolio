@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Switch } from 'react-router-dom';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import axios from 'axios'
+import { axiosInstance } from './config'
+import axios from 'axios';
 import './App.css';
 import './menu.css';
 import Fibonacci from './Fibonacci'
@@ -24,7 +25,7 @@ class App extends Component {
   }
 
   get = () => {
-    axios.get('/app').then(() => {console.log("Database responded")})
+    axiosInstance.get('/app').then(() => {console.log("Database responded")})
   }
 
   uncheck = (e) => {
@@ -109,16 +110,19 @@ function Resume() {
       })
     }
 
-    await fetch("/app/submit", options)
-      .then(res => console.log("Clicked"))
-      .catch(error => {
+    axiosInstance({
+      url: '/app/submit',
+      method: 'POST',
+      data: options
+    })
+    .then(res => console.log("Fetched"))
+    .catch(error => {
         console.log(error)
       })
   }
 
   const copy = () => {
     navigator.clipboard.writeText("hkarmacharya@gmail.com")
-    const element = document.getElementsByClassName('copy')[0].className;
     document.getElementsByClassName('copy')[0].className ='copied'
   }
 
