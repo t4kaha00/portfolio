@@ -1,0 +1,293 @@
+
+/* Fibonacci Page ------------------------------------------------------------------------ */
+.fibonacci_page {
+    text-align: -webkit-center;
+    margin-top: 2em;
+    padding: 5%;
+  }
+  
+  /* Next and previous button for Fibonacci page ------------------------------------------- */
+  .change {
+    padding: 12px 24px;
+    border: 0;
+    border: 2px solid #333;
+    box-shadow: #444440 4px 4px 0px;
+    border-radius: 8px;
+    color: #333;
+    transition: transform 200ms, box-shadow 200ms;
+    cursor: pointer;
+    transform: translateX(15%);
+  }
+  
+  /* when button clicked */
+  .change:active {
+    transform: translateY(4px) translateX(calc(15% + 4px));
+    box-shadow: #444440 0px 0px 0px;
+  }
+  
+  
+  /* Implementing the golden ratio or Fibonacci sequence ---------------------------------------------------------------------------*/
+  .fibonacci {
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(89, 1fr);
+    grid-template-columns: repeat(123, 1fr);
+    grid-gap: 5px;
+    aspect-ratio: 2/1;
+    max-width: 70em;
+  }
+  
+  .fibonacci-item {
+    background: lightcoral;
+    color: lightcoral;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 1.5em;
+    background-size: cover;
+    background-position: top left;
+    transition: all ease-in-out 300ms;
+    position: relative;
+    z-index: 10;
+    border-radius: 25px;  
+  }
+  
+  .fibonacci-item::before {
+    border-radius: 25px;
+  }
+  
+  .fibonacci-item.one {
+    grid-row: 1 / span 89;
+    grid-column: 1 / span 89;
+  }
+  .fibonacci-item.one:hover {
+    color: black;
+    cursor: pointer;
+    background-position-x: center;
+  }
+  .fibonacci-item.one::before {
+    content: '';
+    display: block;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out 300ms;
+    z-index: -1;
+  }
+  .fibonacci-item.one:hover::before {
+    opacity: 0.2;
+  }
+  
+  .fibonacci-item.two {
+    grid-row: 1 / span 55;
+    grid-column: 90 / span 55;
+  }
+  .fibonacci-item.two:hover {
+    color: black;
+    cursor: pointer;
+    background-position-x: center;
+  }
+  .fibonacci-item.two::before {
+    content: '';
+    display: block;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out 300ms;
+    z-index: -1;
+  }
+  .fibonacci-item.two:hover::before {
+    opacity: 0.2;
+  }
+  
+  .fibonacci-item.three {
+    grid-row: 56 / span 34;
+    grid-column: 111 / span 34;
+  }
+  .fibonacci-item.three:hover {
+    color: black;
+    cursor: pointer;
+    background-position-x: right;
+  }
+  .fibonacci-item.three::before {
+    content: '';
+    display: block;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out 300ms;
+    z-index: -1;
+  }
+  .fibonacci-item.three:hover::before {
+    opacity: 0.2;
+  }
+  
+  .fibonacci-item.four {
+    grid-row: 69 / span 21;
+    grid-column: 90 / span 21;
+  }
+  .fibonacci-item.four:hover {
+    color: black;
+    cursor: pointer;
+    background-position-x: center;
+  }
+  .fibonacci-item.four::before {
+    content: '';
+    display: block;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out 300ms;
+    z-index: -1;
+  }
+  .fibonacci-item.four:hover::before {
+    opacity: 0.2;
+  }
+  
+  .fibonacci-item.five {
+    grid-row: 56 / span 13;
+    grid-column: 90 / span 13;
+  }
+  .fibonacci-item.five:hover {
+    color: black;
+    cursor: pointer;
+    background-position-x: center;
+  }
+  .fibonacci-item.five::before {
+    content: '';
+    display: block;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out 300ms;
+    z-index: -1;
+  }
+  .fibonacci-item.five:hover::before {
+    opacity: 0.2;
+  }
+  
+  .fibonacci-item.six {
+    grid-row: 56 / span 8;
+    grid-column: 103 / span 8;
+  }
+  .fibonacci-item.six:hover {
+    color: black;
+    cursor: pointer;
+    background-position-x: center;
+  }
+  .fibonacci-item.six::before {
+    content: '';
+    display: block;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out 300ms;
+    z-index: -1;
+  }
+  .fibonacci-item.six:hover::before {
+    opacity: 0.2;
+  }
+  
+  .fibonacci-item.seven {
+    grid-row: 64 / span 5;
+    grid-column: 106 / span 5;
+  }
+  .fibonacci-item.seven:hover {
+    color: black;
+    cursor: pointer;
+    background-position-x: center;
+  }
+  .fibonacci-item.seven::before {
+    content: '';
+    display: block;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out 300ms;
+    z-index: -1;
+  }
+  .fibonacci-item.seven:hover::before {
+    opacity: 0.2;
+  }
+  
+  .fibonacci-item.eight {
+    grid-row: 66 / span 3;
+    grid-column: 103 / span 3;
+  }
+  .fibonacci-item.eight:hover {
+    color: black;
+    cursor: pointer;
+    background-position-x: center;
+  }
+  .fibonacci-item.eight::before {
+    content: '';
+    display: block;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out 300ms;
+    z-index: -1;
+  }
+  .fibonacci-item.eight:hover::before {
+    opacity: 0.2;
+  }
+  
+  .fibonacci-item.nine {
+    grid-row: 64 / span 2;
+    grid-column: 103 / span 2;
+  }
+  .fibonacci-item.nine:hover {
+    color: black;
+    cursor: pointer;
+    background-position-x: center;
+  }
+  .fibonacci-item.nine::before {
+    content: '';
+    display: block;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out 300ms;
+    z-index: -1;
+  }
+  .fibonacci-item.nine:hover::before {
+    opacity: 0.2;
+  }
+  

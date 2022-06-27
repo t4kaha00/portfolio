@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { Switch } from 'react-router-dom';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+<<<<<<< HEAD
 import { axiosInstance } from './config'
 import axios from 'axios';
 import './App.css';
 import './menu.css';
 import Fibonacci from './Fibonacci'
+=======
+import axios from 'axios'
+import './styles/App.css';
+import './styles/menu.css';
+import Fibonacci from './components/Fibonacci'
+import Resume from './components/Resume'
+>>>>>>> 53721cc4109b1d88ef82a79644650b350e4e60b5
 
 
 
@@ -77,9 +85,6 @@ class App extends Component {
                   </li>
                 </ul>
                 </label>
-                
-                
-                
               </nav>
             </div>
             <Switch>
@@ -94,6 +99,7 @@ class App extends Component {
   }
 }
 
+<<<<<<< HEAD
 function Resume() {
   const fetchIP = async () => {
     const res = await axios.get('https://geolocation-db.com/json/')
@@ -400,6 +406,8 @@ function Resume() {
   )
 }
 
+=======
+>>>>>>> 53721cc4109b1d88ef82a79644650b350e4e60b5
 function Home() {
   return (
     <div>
