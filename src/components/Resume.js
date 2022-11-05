@@ -197,7 +197,7 @@ class Resume extends Component{
                         <a href='https://cajotechnologies.com/' target="_blank" rel="noopener noreferrer">
                           <div className='col2-row2-row-row'>
                             <h4 className='right-heading1'>IMAGE MODIFICATION PORTAL</h4>
-                            <p>Jan 2017 - April 2017</p>
+                            <p>2017</p>
                           </div>
                           <div className='col2-row2-row-row'>
                             <h2>Cajo Oy</h2>
@@ -215,7 +215,7 @@ class Resume extends Component{
                         <a href='https://www.nepgo.com/' target="_blank" rel="noopener noreferrer">
                           <div className='col2-row2-row-row'>
                             <h4 className='right-heading1'>ANDROID APPLICATION</h4>
-                            <p>Jan 2017 - Mar 2017</p>
+                            <p>2017</p>
                           </div>
                           <div className='col2-row2-row-row'>
                             <h2>Nepgo Oy</h2>   
@@ -231,7 +231,7 @@ class Resume extends Component{
                         <a href='https://nadaasi.com/' target="_blank" rel="noopener noreferrer">
                           <div className='col2-row2-row-row'>
                             <h4 className='right-heading1'>WEBSHOP</h4>
-                            <p>Jun 2020 - Dec 2020</p>
+                            <p>2020</p>
                           </div>
                           <div className='col2-row2-row-row'>
                             <h2>Nadaasi Oy</h2>
