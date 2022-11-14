@@ -55,7 +55,7 @@ class App extends Component {
                     <NavLink 
                       exact={true}
                       activeClassName='nav_active' 
-                      to="/" className="nav-item">
+                      to="/home" className="nav-item">
                         <u>Home</u>
                     </NavLink>
                   </li>
@@ -80,7 +80,7 @@ class App extends Component {
               </nav>
             </div>
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/home" component={Home} />
               <Route exact path="/resume" component={Resume} />
               <Route path="/fibonacci" component={Fibonacci} />
             </Switch>
