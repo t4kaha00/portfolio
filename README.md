@@ -1,7 +1,7 @@
-You can view it [here](https://harjitkarmacharya.com).
+You can view it [here](https://t4kaha00.github.io/portfolio/).
 
 ## Personal Website
 
-Hosted through Heroku platform. 
+Hosted through Github Pages. 
 
-https://harjit.herokuapp.com/
+https://t4kaha00.github.io/portfolio/
