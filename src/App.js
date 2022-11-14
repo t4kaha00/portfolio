@@ -55,14 +55,14 @@ class App extends Component {
                     <NavLink 
                       exact={true}
                       activeClassName='nav_active' 
-                      to="/portfolio" className="nav-item">
+                      to="/" className="nav-item">
                         <u>Home</u>
                     </NavLink>
                   </li>
                   <li onClick={this.uncheck} activeclassname='nav_active'> 
                     <NavLink 
                       activeClassName='nav_active'
-                      to="/portfolio/resume" className="nav-item">
+                      to="/resume" className="nav-item">
                         <u>Resume</u>
                     </NavLink>
                   </li>
@@ -70,7 +70,7 @@ class App extends Component {
                     <NavLink
                       activeClassName='nav_active' 
                       to={{
-                        pathname: "/portfolio/fibonacci", 
+                        pathname: "/fibonacci", 
                         state: this.state.images}} 
                         className="nav-item"><u>Fibonacci</u>
                     </NavLink>
@@ -80,9 +80,9 @@ class App extends Component {
               </nav>
             </div>
             <Switch>
-              <Route exact path="/portfolio/" component={Home} />
-              <Route exact path="/portfolio/resume" component={Resume} />
-              <Route path="/portfolio/fibonacci" component={Fibonacci} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/resume" component={Resume} />
+              <Route path="/fibonacci" component={Fibonacci} />
             </Switch>
           </Router>
         </div>
