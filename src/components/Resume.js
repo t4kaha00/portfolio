@@ -136,7 +136,7 @@ class Resume extends Component{
                         </li>
                         <br/>
                         <li>
-                          <a href='http://mern-stack-trial.herokuapp.com/' target="_blank" rel="noopener noreferrer">mern-stack-trial.herokuapp.com</a>
+                          <a href='https://mern-stack-trial.netlify.app/' target="_blank" rel="noopener noreferrer">MERN PROJECT</a>
                         </li>
                       </ul>
                     </div>
@@ -268,34 +268,34 @@ class Resume extends Component{
                     <h2 className='col2-row3-row right-heading'><u>PROJECTS</u></h2>
                     <div className='col2-row3-row'>
                       <div className='col2-row3-row-row'>
-                        <p><b>MOVIE SEAT BOOKING SYSTEM </b>(Bootstrap and JS)</p>
+                        <p><b>MOVIE SEAT BOOKING SYSTEM</b></p>
                       </div>
                       <div className='col2-row3-row-row'>
-                        <p><i>- 1st semester project</i></p> 
-                      </div>
-                    </div>
-                    <div className='col2-row3-row'>
-                      <div className='col2-row3-row-row'>
-                      <p><b>PC game </b><br />(Unity & Blender)</p>                
-                      </div>
-                      <div className='col2-row3-row-row'>
-                        <p><i>- 2nd semester project</i></p>
+                        <p><i>(Bootstrap and JS)</i></p> 
                       </div>
                     </div>
                     <div className='col2-row3-row'>
                       <div className='col2-row3-row-row'>
-                      <p><b>Mealting </b>(Meteor JS)</p>
+                      <p><b>PC game </b></p>                
                       </div>
                       <div className='col2-row3-row-row'>
-                        <p><i>- 4th semester project</i></p>
+                        <p><i>(Unity & Blender)</i></p>
                       </div>
                     </div>
                     <div className='col2-row3-row'>
                       <div className='col2-row3-row-row'>
-                      <p><b>Easy Cook </b>(Android)</p>
+                      <p><b>Mealting </b></p>
                       </div>
                       <div className='col2-row3-row-row'>
-                        <p><i>- 6th semester project</i></p>
+                        <p><i>(Meteor JS)</i></p>
+                      </div>
+                    </div>
+                    <div className='col2-row3-row'>
+                      <div className='col2-row3-row-row'>
+                      <p><b>Easy Cook </b></p>
+                      </div>
+                      <div className='col2-row3-row-row'>
+                        <p><i>(Android)</i></p>
                       </div>
                     </div>
       
