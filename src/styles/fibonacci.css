@@ -291,3 +291,45 @@
     opacity: 0.2;
   }
   
+  @media only screen and (max-width: 768px) {
+    .fibonacci {
+      grid-template-columns: repeat(89, 1fr);
+      grid-template-rows: repeat(123, 1fr);
+    }
+    .fibonacci-item.one {
+      grid-row: 1 / span 82;
+      grid-column: 1 / span 89;
+    }
+    .fibonacci-item.two {
+      grid-row: 83 / span 41;
+    grid-column: 1 / span 44;
+    }
+    .fibonacci-item.three {
+      grid-row: -21 / span 20;
+      grid-column: 45 / span 45;
+    }
+    .fibonacci-item.four {
+      grid-row: 83 / span 21;
+      grid-column: -22 / span 21;
+    }
+    .fibonacci-item.five {
+      grid-row: 83 / span 13;
+      grid-column: 45 / span 24;
+    }
+    .fibonacci-item.six {
+      grid-row: 96 / span 8;
+      grid-column: 45 / span 12;
+    }
+    .fibonacci-item.seven {
+      grid-row: 99 / span 5;
+      grid-column: -34 / span 12;
+    }
+    .fibonacci-item.eight {
+      grid-row: 96 / span 3;
+      grid-column: -28 / span 6;
+    }
+    .fibonacci-item.nine {
+      grid-row: 96 / span 3;
+      grid-column: 57 / span 6;
+    }
+  }
