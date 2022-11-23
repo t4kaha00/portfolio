@@ -292,9 +292,13 @@
   }
   
   @media only screen and (max-width: 768px) {
+    .fibonacci_page {
+      margin-top: 6em;
+    }
     .fibonacci {
       grid-template-columns: repeat(89, 1fr);
       grid-template-rows: repeat(123, 1fr);
+      grid-gap: 3px;
     }
     .fibonacci-item.one {
       grid-row: 1 / span 82;
