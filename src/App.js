@@ -6,8 +6,15 @@ import './styles/App.css';
 import './styles/menu.css';
 import Fibonacci from './components/Fibonacci';
 import Resume from './components/Resume';
-
-
+import one from './images/1.jpg';
+import twogif from './images/2.gif';
+import three from './images/3.jpg';
+import four from './images/4.jpg';
+import five from './images/5.jpg';
+import six from './images/6.jpg';
+import seven from './images/7.jpg';
+import eight from './images/8.jpg';
+import nine from './images/9.jpg';
 
 class App extends Component {
   constructor() {
@@ -16,7 +23,8 @@ class App extends Component {
        ipaddress: '',
        ipcity: '',
        ipcountry:'',
-       checked: false 
+       checked: false,
+       images: [one, twogif, three, four, five, six, seven, eight, nine]
     };
   }
 
@@ -70,8 +78,8 @@ class App extends Component {
                     <NavLink
                       activeClassName='nav_active' 
                       to={{
-                        pathname: "/fibonacci", 
-                        state: this.state.images}} 
+                        pathname: "/fibonacci"
+                      }} 
                         className="nav-item"><u>Fibonacci</u>
                     </NavLink>
                   </li>
@@ -82,7 +90,10 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/resume" component={Resume} />
-              <Route path="/fibonacci" component={Fibonacci} />
+              <Route 
+                path="/fibonacci"
+                render={(props) => <Fibonacci {...props} images={this.state.images}/>}
+                />
             </Switch>
           </Router>
         </div>
