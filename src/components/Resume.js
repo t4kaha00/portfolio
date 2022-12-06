@@ -132,10 +132,6 @@ class Resume extends Component{
                         </li>
                         <br/>
                         <li>
-                          <a href='https://lianatech.herokuapp.com' target="_blank" rel="noopener noreferrer"><img src='liana.svg' width={100} alt="Lianatech"/></a>
-                        </li>
-                        <br/>
-                        <li>
                           <a href='https://mern-stack-trial.netlify.app/' target="_blank" rel="noopener noreferrer">MERN PROJECT</a>
                         </li>
                       </ul>

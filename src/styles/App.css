@@ -307,12 +307,14 @@ a {
   }
 
   .timeline_container.right {
-    left: calc(5% + 50px - 1em);
-    width: calc(100% - (5% + 50px));
+    left: 5%;
+    padding-left: 50px;
+    width: calc(95% - 50px);
   }
   .timeline_container.left {
-    left: calc(5% + 50px);
-    width: calc(100% - (5% + 50px));
+    left: 5%;
+    padding-left: 50px;
+    width: calc(95% - 50px);
   }
   .left {
     padding-left: 0;
@@ -324,17 +326,11 @@ a {
   }
 
   .timeline_container.left::after {
-    left: -58px;
-  }
-  .timeline_container.right::after {
-    left: -40px;
+    left: -8px;
   }
 
   .timeline_container.left::before {
-    left: -40px;
-  }
-  .timeline_container.right::before {
-    left: -20px;
+    left: 8px;
   }
 
   .timeline_container.right .date {

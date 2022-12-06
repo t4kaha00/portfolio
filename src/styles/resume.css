@@ -242,3 +242,30 @@
   .col2-row3-row-row > p > i {
     float: right;
   }
+
+  @media only screen and (max-width: 500px) {
+    .resume {
+      width: fit-content;
+      padding: 4em 1em 1em 1em;
+      grid-template-columns: none;
+    }
+    .right {
+      padding-left: 0;
+    }
+    .type, .save-icon {
+      position: fixed;
+      right: 1em;
+    }
+    .type {
+      bottom: 0;
+    }
+    .save-icon {
+      bottom: 1em;
+    }
+    .dit {
+      padding-top: 1em;
+    }
+    .col2-row1, .col2-row2, .col2-row3 {
+      margin: 0.5em 2em;
+    }
+  }
