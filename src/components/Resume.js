@@ -12,7 +12,7 @@ class Resume extends Component{
       }
     
       await axiosInstance({
-        url: '/app/submit',
+        url: '.netlify/functions/postIP',
         method: 'POST',
         data: options
       }).then(res => console.log("Fetched!!"))
