@@ -1,9 +1,17 @@
 import axios from 'axios'
 import { axiosInstance } from '../config'
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import '../styles/resume.css';
+import lang from '../lang/lang.json';
 
 class Resume extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      languages: ['eng', 'fin'],
+      option: 'eng'
+    }
+}
     fetchIP = async () => {
       const res = await axios.get('https://geolocation-db.com/json/')
       const options = {
@@ -26,22 +34,36 @@ class Resume extends Component{
       document.getElementsByClassName('copy')[0].className ='copied'
     }
 
+    
     render() {
-        return (
+      const language = lang[this.state.option]
+      const handleLanguageChange = (e) => {
+        this.setState({option: e.target.value})
+      }
+      
+      return (
+          <div>
+            <select onChange={handleLanguageChange}>
+              {this.state.languages.map((option, index) => (
+                <option key={index} value={option}>
+                  {option}
+                </option>
+                ))}
+            </select>
             <div className='resume'>
                 {/* Left column */}
                 <div className='left'>
                   {/* Details */}
                   <div className='col1-row1 details'>
                     <div className='col1-row1-row'>
-                      <h1>Harjit Karmacharya</h1>
-                      <h4>IT ENGINEER</h4>
+                      <h1>{language.name}</h1>
+                      <h4>{language.profession}</h4>
                     </div>
                     <div className='col1-row1-row'>
                       <div className='col1-row1-row-row1'>
                         <img src="gmail.png" alt="mail" width="20px"/>
                         <a className="email" onClick={this.copy}>
-                          hkarmacharya@gmail.com
+                        {language.email}
                           <span className='copy'>
                             <img src='copy.jpg' width="14px" alt='copy'/>
                           </span>
@@ -50,12 +72,12 @@ class Resume extends Component{
                       <br/>
                       <div className='col1-row1-row-row1'>
                         <img src="linkedin2.png" alt="linkedin" width="20px"/>
-                        <a href='http://www.linkedin.com/in/harjit-karmacharya' target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href='http://www.linkedin.com/in/harjit-karmacharya' target="_blank" rel="noopener noreferrer">{language.linkedin}</a>
                       </div>
                       <br/>
                       <div className='col1-row1-row-row1'>
                         <img src="github.png" alt="github" width="20px"/>
-                        <a href='https://github.com/t4kaha00' target="_blank" rel="noopener noreferrer">Github</a>
+                        <a href='https://github.com/t4kaha00' target="_blank" rel="noopener noreferrer">{language.github}</a>
                       </div>
                     </div>
                   </div>
@@ -63,18 +85,18 @@ class Resume extends Component{
                   {/* Skills */}
                   <div className='col1-row2 skills'>
                     <div className='col1-row2-row'>
-                     <h2><u>SKILLS</u></h2>
+                     <h2><u>{language.skills.heading}</u></h2>
                     </div>
                     <div className='col1-row2-row'>
-                      <p>Mobile development</p>
+                      <p>{language.skills.mobile}</p>
                       <ul><li>Android studio</li></ul>
                     </div>
                     <div className='col1-row2-row'>
-                      <b>Game development</b>
+                      <b>{language.skills.game}</b>
                       <ul><li>Unity, Blender</li></ul>
                     </div>
                     <div className='col1-row2-row'>
-                      <b>Web Development</b>
+                      <b>{language.skills.web}</b>
                       <ul>
                         <li>Angular, Meteor, React</li>
                         <li>Typescript, Express</li>
@@ -82,13 +104,13 @@ class Resume extends Component{
                       </ul>
                     </div>
                     <div className='col1-row2-row'>
-                      <b>Cloud Managament</b>
+                      <b>{language.skills.cloud}</b>
                       <ul>
                         <li>AWS, Docker</li>
                       </ul>
                     </div>
                     <div className='col1-row2-row'>
-                      <b>Hardware</b>
+                      <b>{language.skills.hardware}</b>
                       <ul>
                         <li>Arduino</li>
                         <li>Lego Robots</li>
@@ -99,23 +121,23 @@ class Resume extends Component{
                   {/* Languages */}
                   <div className='col1-row3 languages'>
                     <div className='col1-row3-row'>
-                      <h2><u>LANGUAGES</u></h2> 
+                      <h2><u>{language.languages.heading}</u></h2> 
                     </div>
                     <div className='col1-row3-row'>
                       <div>
-                        <p>English</p>
+                        <p>{language.languages.english}</p>
                         <p className='dots'>••••◦</p>
                       </div>
                       <div>
-                        <p>Finnish</p>
+                        <p>{language.languages.finnish}</p>
                         <p className='dots'>••◦◦◦</p>
                       </div>
                       <div>
-                        <p>Nepali</p>
+                        <p>{language.languages.nepali}</p>
                         <p className='dots'>•••••</p>
                       </div>
                       <div>
-                        <p>Hindi</p>
+                        <p>{language.languages.hindi}</p>
                         <p className='dots'>••••◦</p>
                       </div>
                     </div>
@@ -123,7 +145,7 @@ class Resume extends Component{
                   {/* Live Projects */}
                   <div className='col1-row4 live-projects'>
                     <div className='col1-row4-row'>
-                      <h2><u>LIVE PROJECTS</u></h2>
+                      <h2><u>{language.live_projects.heading}</u></h2>
                     </div>
                     <div className='col1-row4-row'>
                       <ul>
@@ -132,7 +154,7 @@ class Resume extends Component{
                         </li>
                         <br/>
                         <li>
-                          <a href='https://mern-stack-trial.netlify.app/' target="_blank" rel="noopener noreferrer">MERN PROJECT</a>
+                          <a href='https://mern-stack-trial.netlify.app/' target="_blank" rel="noopener noreferrer">{language.live_projects.mern}</a>
                         </li>
                       </ul>
                     </div>
@@ -143,7 +165,7 @@ class Resume extends Component{
                 <div className='right'>
                   <div className='type'>
                     <div className='typing-demo'>
-                      Download Resume↓
+                    {language.download}↓
                     </div>
                   </div>
                   <div className='save-icon'>
@@ -155,17 +177,17 @@ class Resume extends Component{
       
                   {/* Education */}
                   <div className='col2-row1'>
-                    <h2 className='col2-row1-row right-heading2'><u>EDUCATION HISTORY</u></h2>
+                    <h2 className='col2-row1-row right-heading2'><u>{language.education.heading}</u></h2>
                     <div className='col2-row1-row ouas'>
                       <div>
                         <a href='https://www.oamk.fi/' target="_blank" rel="noopener noreferrer">
                           <div className='col2-row1-row-row'>
-                            <h4 className='heading1'>Bachelors of Engineering</h4>
-                            <p>Aug 2014 - Aug 2020</p>
+                            <h4 className='heading1'>{language.education.degree1}</h4>
+                            <p>{language.education.date1}</p>
                           </div>
                           <div className='col2-row1-row-row'>
-                            <h3>Oulu University of Applied Sciences</h3>
-                            <i>Information and Communications Technology</i>
+                            <h3>{language.education.school1}</h3>
+                            <i>{language.education.subject1}</i>
                           </div>
                         </a>
                       </div>
@@ -174,12 +196,12 @@ class Resume extends Component{
                       <div>
                         <a href='https://www.tudublin.ie/' target="_blank" rel="noopener noreferrer">
                           <div className='col2-row1-row-row'>
-                            <h4 className='heading1'>Bachelors in Computer Science</h4>
-                            <p>Sep 2016 - May 2017</p>
+                            <h4 className='heading1'>{language.education.degree2}</h4>
+                            <p>{language.education.date2}</p>
                           </div>
                           <div className='col2-row1-row-row'>
-                            <h3>Dublin Institute of Technology</h3>
-                            <i>Double Degree (Erasmus Computing)</i>
+                            <h3>{language.education.school2}</h3>
+                            <i>{language.education.subject2}</i>
                           </div>
                         </a>
                       </div>
@@ -187,16 +209,16 @@ class Resume extends Component{
                   </div>
                   {/* Work */}
                   <div className='col2-row2'>
-                    <h2 className='right-heading'><u>WORK EXPERIENCE</u></h2>
+                    <h2 className='right-heading'><u>{language.work.heading}</u></h2>
                     <div className='col2-row2-row cajo'>
                       <div>
                         <a href='https://cajotechnologies.com/' target="_blank" rel="noopener noreferrer">
                           <div className='col2-row2-row-row'>
-                            <h4 className='right-heading1'>IMAGE MODIFICATION PORTAL</h4>
-                            <p>2017</p>
+                            <h4 className='right-heading1'>{language.work.job1}</h4>
+                            <p>{language.work.date1}</p>
                           </div>
                           <div className='col2-row2-row-row'>
-                            <h2>Cajo Oy</h2>
+                            <h2>{language.work.company1}</h2>
                             <ul>
                               <li><p>Mapping images into 3D objects online</p></li>
                               <li><p>Creating image portal in website using PHP</p></li>
@@ -210,11 +232,11 @@ class Resume extends Component{
                       <div>
                         <a href='https://www.nepgo.com/' target="_blank" rel="noopener noreferrer">
                           <div className='col2-row2-row-row'>
-                            <h4 className='right-heading1'>ANDROID APPLICATION</h4>
-                            <p>2017</p>
+                            <h4 className='right-heading1'>{language.work.job2}</h4>
+                            <p>{language.work.date2}</p>
                           </div>
                           <div className='col2-row2-row-row'>
-                            <h2>Nepgo Oy</h2>   
+                            <h2>{language.work.company2}</h2>   
                             <ul>
                               <li><p>A demo android application using Android studio</p></li>
                             </ul>
@@ -226,11 +248,11 @@ class Resume extends Component{
                       <div>
                         <a href='https://nadaasi.com/' target="_blank" rel="noopener noreferrer">
                           <div className='col2-row2-row-row'>
-                            <h4 className='right-heading1'>WEBSHOP</h4>
-                            <p>2020</p>
+                            <h4 className='right-heading1'>{language.work.job3}</h4>
+                            <p>{language.work.date3}</p>
                           </div>
                           <div className='col2-row2-row-row'>
-                            <h2>Nadaasi Oy</h2>
+                            <h2>{language.work.company3}</h2>
                             <ul>
                               <li><p>Modern webshop based on javascript and mongoDB</p></li>
                               <li><p>Backend development using Typescript and integration of MongoDB using ExpressJS</p></li>
@@ -246,11 +268,11 @@ class Resume extends Component{
                       <div>
                         <a href='https://nclean.fi/' target="_blank" rel="noopener noreferrer">
                           <div className='col2-row2-row-row'>
-                            <h4 className='right-heading1'>SUPERVISOR</h4>
-                            <p>Jan 2019 - Apr 2021</p>
+                            <h4 className='right-heading1'>{language.work.job4}</h4>
+                            <p>{language.work.date4}</p>
                           </div>
                           <div className='col2-row2-row-row'>
-                            <h2>Nclean Oy</h2>
+                            <h2>{language.work.company4}</h2>
                             <ul>
                               <li><p>Managing the housekeeping department for client hotels (Aalto Inn, Unihome Oy)</p></li>
                             </ul>
@@ -261,10 +283,10 @@ class Resume extends Component{
                   </div>
                     {/* Projects */}
                   <div className='col2-row3'>
-                    <h2 className='col2-row3-row right-heading'><u>PROJECTS</u></h2>
+                    <h2 className='col2-row3-row right-heading'><u>{language.projects.heading}</u></h2>
                     <div className='col2-row3-row'>
                       <div className='col2-row3-row-row'>
-                        <p><b>MOVIE SEAT BOOKING SYSTEM</b></p>
+                        <p><b>{language.projects.app1}</b></p>
                       </div>
                       <div className='col2-row3-row-row'>
                         <p><i>(Bootstrap and JS)</i></p> 
@@ -272,7 +294,7 @@ class Resume extends Component{
                     </div>
                     <div className='col2-row3-row'>
                       <div className='col2-row3-row-row'>
-                      <p><b>PC game </b></p>                
+                      <p><b>{language.projects.app2}</b></p>                
                       </div>
                       <div className='col2-row3-row-row'>
                         <p><i>(Unity & Blender)</i></p>
@@ -280,7 +302,7 @@ class Resume extends Component{
                     </div>
                     <div className='col2-row3-row'>
                       <div className='col2-row3-row-row'>
-                      <p><b>Mealting </b></p>
+                      <p><b>{language.projects.app3}</b></p>
                       </div>
                       <div className='col2-row3-row-row'>
                         <p><i>(Meteor JS)</i></p>
@@ -288,7 +310,7 @@ class Resume extends Component{
                     </div>
                     <div className='col2-row3-row'>
                       <div className='col2-row3-row-row'>
-                      <p><b>Easy Cook </b></p>
+                      <p><b>{language.projects.app4}</b></p>
                       </div>
                       <div className='col2-row3-row-row'>
                         <p><i>(Android)</i></p>
@@ -298,6 +320,7 @@ class Resume extends Component{
                   </div>
                 </div>
               </div>
+          </div>
         )    
     }
 }

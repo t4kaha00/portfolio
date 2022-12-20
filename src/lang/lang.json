@@ -1,0 +1,124 @@
+{
+    "eng": {
+        "download": "Download Resume",
+        "name": "Harjit Karmacharya",
+        "profession": "IT Engineer",
+        "email": "hkarmacharya@gmail.com",
+        "linkedin": "LinkedIn",
+        "github": "Github",
+        "skills": {
+            "heading": "Skills",
+            "mobile": "Mobile Development",
+            "game": "Game Development",
+            "web": "Web Development",
+            "cloud": "Cloud Development",
+            "hardware": "Hardware"
+        },
+        "languages": {
+            "heading": "Languages",
+            "english": "English",
+            "finnish": "Finnish",
+            "nepali": "Nepali",
+            "hindi": "Hindi"
+        },
+        "live_projects": {
+            "heading": "Live Projects",
+            "nadaasi": "Nadaasi",
+            "mern": "MERN project"
+        },
+        "education": {
+            "heading": "Education history",
+            "degree1": "Bachelors of Engineering",
+            "school1": "Oulu University of Applied Sciences",
+            "date1": "Aug 2014 - Aug 2020",
+            "subject1": "Information and Communications Technology",
+            "degree2": "Bachelors in Computer Science",
+            "school2": "Dublin Institute of Technology",
+            "date2": "Sep 2016 - May 2017",
+            "subject2": "Double Degree (Erasmus Computing)"
+        },
+        "work": {
+            "heading": "Work Experience",
+            "job1": "Image Modification Portal",
+            "company1": "Cajo Oy",
+            "date1": "2017",
+            "job2": "Android Application",
+            "company2": "Nepgo Oy",
+            "date2": "2017",
+            "job3": "Webshop",
+            "company3": "Nadaasi Oy",
+            "date3": "2020",
+            "job4": "Supervisor",
+            "company4": "Nclean Oy",
+            "date4": "Jan 2019 - Apr 2021"
+        },
+        "projects": {
+            "heading": "Projects",
+            "app1": "Movie seat booking system",
+            "app2": "PC game",
+            "app3": "Mealting",
+            "app4": "Easy Cook"
+        }
+    },
+    "fin": {
+        "download": "Lataa ansioluettelo",
+        "name": "Harjit Karmacharya",
+        "profession": "IT-insinööri",
+        "email": "hkarmacharya@gmail.com",
+        "linkedin": "LinkedIn",
+        "github": "Github",
+        "skills": {
+            "heading": "Taidot",
+            "mobile": "Mobiilikehitys",
+            "game": "Pelikehitys",
+            "web": "Web-kehitys",
+            "cloud": "Pilvikehitys",
+            "hardware": "Laitteisto"
+        },
+        "languages": {
+            "heading": "Kielet",
+            "english": "Englanti",
+            "finnish": "Suomi",
+            "nepali": "Nepali",
+            "hindi": "Hindi"
+        },
+        "live_projects": {
+            "heading": "Elävät projektit",
+            "nadaasi": "Nadaasi",
+            "mern": "MERN projekti"
+        },
+        "education": {
+            "heading": "Koulutushistoria",
+            "degree1": "Tekniikan kandidaatti",
+            "school1": "Oulun ammattikorkeakoulu",
+            "date1": "Elo 2014 - Elo 2020",
+            "subject1": "Tieto- ja viestintätekniikka",
+            "degree2": "Tietojenkäsittelytieteen kandidaatti",
+            "school2": "Dublin Institute of Technology",
+            "date2": "Syys 2016 - Tou 2017",
+            "subject2": "Kaksoistutkinto (Erasmus Computing)"
+        },
+        "work": {
+            "heading": "Työkokemus",
+            "job1": "Kuvan muokkausportaali",
+            "company1": "Cajo Oy",
+            "date1": "2017",
+            "job2": "Android-sovellus",
+            "company2": "Nepgo Oy",
+            "date2": "2017",
+            "job3": "Verkkokauppa",
+            "company3": "Nadaasi Oy",
+            "date3": "2020",
+            "job4": "Ohjaaja",
+            "company4": "Nclean Oy",
+            "date4": "Tam 2019 - Huh 2021"
+        },
+        "projects": {
+            "heading": "Projektit",
+            "app1": "Elokuvapaikkojen varausjärjestelmä",
+            "app2": "PC-peli",
+            "app3": "Mealting",
+            "app4": "Easy Cook"
+        }
+    }
+}
