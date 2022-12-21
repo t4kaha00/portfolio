@@ -46,7 +46,7 @@ class Resume extends Component{
             <select onChange={handleLanguageChange}>
               {this.state.languages.map((option, index) => (
                 <option key={index} value={option}>
-                  {option}
+                  {option.toUpperCase()}
                 </option>
                 ))}
             </select>
