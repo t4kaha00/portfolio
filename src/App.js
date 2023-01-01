@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch } from 'react-router-dom';
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 import { axiosInstance } from './config';
 import './styles/App.css';
 import './styles/menu.css';
