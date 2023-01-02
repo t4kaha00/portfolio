@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { axiosInstance } from '../config'
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import '../styles/resume.css';
 import lang from '../lang/lang.json';
 
