@@ -6,6 +6,7 @@ import './styles/App.css';
 import './styles/menu.css';
 import Fibonacci from './components/Fibonacci';
 import Resume from './components/Resume';
+import Card from './components/Card';
 import one from './images/1.jpg';
 import twogif from './images/2.gif';
 import three from './images/3.jpg';
@@ -83,6 +84,15 @@ class App extends Component {
                         className="nav-item"><u>Fibonacci</u>
                     </NavLink>
                   </li>
+                  <li onClick={this.uncheck} activeclassname='nav_active'>
+                    <NavLink
+                      activeClassName='nav_active' 
+                      to={{
+                        pathname: "/card"
+                      }} 
+                        className="nav-item"><u>Card</u>
+                    </NavLink>
+                  </li>
                 </ul>
                 </label>
               </nav>
@@ -90,6 +100,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/resume" component={Resume} />
+              <Route exact path="/card" component={Card} />
               <Route 
                 path="/fibonacci"
                 render={(props) => <Fibonacci {...props} images={this.state.images}/>}
