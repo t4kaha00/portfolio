@@ -42,7 +42,7 @@ class Resume extends Component{
       }
       
       return (
-          <div>
+          <div style={{'textAlign':'left'}}>
             <select onChange={handleLanguageChange}>
               {this.state.languages.map((option, index) => (
                 <option key={index} value={option}>

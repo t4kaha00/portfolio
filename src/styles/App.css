@@ -9,6 +9,7 @@ body {
   background-size: cover;
   background-position: center ;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: -webkit-center;
 }
 
 p {
@@ -121,15 +122,15 @@ a {
   padding: 15px 30px;
   position: relative;
   background: inherit;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .timeline_container.left {
-  left: -5.4%;
+  /* left: -5.4%; */
 }
 
 .timeline_container.right {
-  left: 50%;
+  /* left: 50%; */
 }
 
 .timeline_container::after {
@@ -248,15 +249,15 @@ a {
     padding-right: 2em;
   }
   .timeline_container.left {
-    left: 0%;
-    width: 48%;
+    right: 25%;
+    /* width: 48%; */
   }
   .right {
     padding-left: 2%;
   }
   .timeline_container.right {
-    left: 50%;
-    width: 48%;
+    left: 25%;
+    /* width: 48%; */
   }
 }
 
