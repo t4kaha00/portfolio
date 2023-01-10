@@ -122,15 +122,15 @@ a {
   padding: 15px 30px;
   position: relative;
   background: inherit;
-  /* width: 50%; */
+  width: 50%;
 }
 
 .timeline_container.left {
-  /* left: -5.4%; */
+  right: 27.5%;
 }
 
 .timeline_container.right {
-  /* left: 50%; */
+  left: 27%;
 }
 
 .timeline_container::after {
