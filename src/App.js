@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch } from 'react-router-dom';
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
-import { axiosInstance } from './config';
+// import { axiosInstance } from './config';
 import './styles/App.css';
 import './styles/menu.css';
 import Fibonacci from './components/Fibonacci';
@@ -29,13 +29,13 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    this.get()
-  }
+  // componentDidMount() {
+  //   this.get()
+  // }
 
-  get = () => {
-    axiosInstance.get('/app').then(() => {console.log("Database responded")})
-  }
+  // get = () => {
+  //   // axiosInstance.get('/app').then(() => {console.log("Database responded")})
+  // }
 
   uncheck = (e) => {
     e.preventDefault();

@@ -11,318 +11,322 @@ class Resume extends Component{
       languages: ['eng', 'fin'],
       option: 'eng'
     }
-}
-    fetchIP = async () => {
-      const res = await axios.get('https://geolocation-db.com/json/')
-      const options = {
-          clickedData:true,
-          ipdata: res.data
-      }
-    
-      await axiosInstance({
-        url: '.netlify/functions/postIP',
-        method: 'POST',
-        data: options
-      }).then(res => console.log("Fetched!!"))
-        .catch(error => {
-          console.log(error)
-        })
-    }
-    
-    copy = () => {
-      navigator.clipboard.writeText("hkarmacharya@gmail.com")
-      document.getElementsByClassName('copy')[0].className ='copied'
+  }
+  
+  componentDidMount() {
+    this.fetchIP()
+  }
+  
+  fetchIP = async () => {
+    const res = await axios.get('https://geolocation-db.com/json/')
+    const options = {
+      clickedData:true,
+      ipdata: res.data
     }
 
-    
-    render() {
-      const language = lang[this.state.option]
-      const handleLanguageChange = (e) => {
-        this.setState({option: e.target.value})
-      }
-      
-      return (
-          <div style={{'textAlign':'left'}}>
-            <select onChange={handleLanguageChange}>
-              {this.state.languages.map((option, index) => (
-                <option key={index} value={option}>
-                  {option.toUpperCase()}
-                </option>
-                ))}
-            </select>
-            <div className='resume'>
-                {/* Left column */}
-                <div className='left'>
-                  {/* Details */}
-                  <div className='col1-row1 details'>
-                    <div className='col1-row1-row'>
-                      <h1>{language.name}</h1>
-                      <h4>{language.profession}</h4>
-                    </div>
-                    <div className='col1-row1-row'>
-                      <div className='col1-row1-row-row1'>
-                        <img src="gmail.png" alt="mail" width="20px"/>
-                        <a className="email" onClick={this.copy}>
-                        {language.email}
-                          <span className='copy'>
-                            <img src='copy.jpg' width="14px" alt='copy'/>
-                          </span>
-                        </a>
-                      </div>
-                      <br/>
-                      <div className='col1-row1-row-row1'>
-                        <img src="linkedin2.png" alt="linkedin" width="20px"/>
-                        <a href='http://www.linkedin.com/in/harjit-karmacharya' target="_blank" rel="noopener noreferrer">{language.linkedin}</a>
-                      </div>
-                      <br/>
-                      <div className='col1-row1-row-row1'>
-                        <img src="github.png" alt="github" width="20px"/>
-                        <a href='https://github.com/t4kaha00' target="_blank" rel="noopener noreferrer">{language.github}</a>
-                      </div>
-                    </div>
-                  </div>
-      
-                  {/* Skills */}
-                  <div className='col1-row2 skills'>
-                    <div className='col1-row2-row'>
-                     <h2><u>{language.skills.heading}</u></h2>
-                    </div>
-                    <div className='col1-row2-row'>
-                      <p>{language.skills.mobile}</p>
-                      <ul><li>Android studio</li></ul>
-                    </div>
-                    <div className='col1-row2-row'>
-                      <b>{language.skills.game}</b>
-                      <ul><li>Unity, Blender</li></ul>
-                    </div>
-                    <div className='col1-row2-row'>
-                      <b>{language.skills.web}</b>
-                      <ul>
-                        <li>Angular, Meteor, React</li>
-                        <li>Typescript, Express</li>
-                        <li>Python, Java</li>
-                      </ul>
-                    </div>
-                    <div className='col1-row2-row'>
-                      <b>{language.skills.cloud}</b>
-                      <ul>
-                        <li>AWS, Docker</li>
-                      </ul>
-                    </div>
-                    <div className='col1-row2-row'>
-                      <b>{language.skills.hardware}</b>
-                      <ul>
-                        <li>Arduino</li>
-                        <li>Lego Robots</li>
-                        <li>GoPiGo</li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* Languages */}
-                  <div className='col1-row3 languages'>
-                    <div className='col1-row3-row'>
-                      <h2><u>{language.languages.heading}</u></h2> 
-                    </div>
-                    <div className='col1-row3-row'>
-                      <div>
-                        <p>{language.languages.english}</p>
-                        <p className='dots'>••••◦</p>
-                      </div>
-                      <div>
-                        <p>{language.languages.finnish}</p>
-                        <p className='dots'>••◦◦◦</p>
-                      </div>
-                      <div>
-                        <p>{language.languages.nepali}</p>
-                        <p className='dots'>•••••</p>
-                      </div>
-                      <div>
-                        <p>{language.languages.hindi}</p>
-                        <p className='dots'>••••◦</p>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Live Projects */}
-                  <div className='col1-row4 live-projects'>
-                    <div className='col1-row4-row'>
-                      <h2><u>{language.live_projects.heading}</u></h2>
-                    </div>
-                    <div className='col1-row4-row'>
-                      <ul>
-                        <li>
-                          <a href='https://nadaasi.com' target="_blank" rel="noopener noreferrer"><img src='nadaasi.png' width={100} alt="Nadaasi"/></a>
-                        </li>
-                        <br/>
-                        <li>
-                          <a href='https://mern-stack-trial.netlify.app/' target="_blank" rel="noopener noreferrer">{language.live_projects.mern}</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-      
-                {/* Right Column */}
-                <div className='right'>
-                  <div className='type'>
-                    <div className='typing-demo'>
-                    {language.download}↓
-                    </div>
-                  </div>
-                  <div className='save-icon'>
-                    <a href='harjitkarmacharya.pdf'  target="_blank" rel="noopener noreferrer" onClick={this.fetchIP}>
-                    {/* <a onClick={this.fetchIP}> */}
-                    <img src="save.png" alt="mail" width="30px"/>
+    await axiosInstance({
+      url: 'https://mern-stack-trial.netlify.app/.netlify/functions/postIP',
+      method: 'POST',
+      data: options
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
+  
+  copy = () => {
+    navigator.clipboard.writeText("hkarmacharya@gmail.com")
+    document.getElementsByClassName('copy')[0].className ='copied'
+  }
+  
+
+  render() {
+    const language = lang[this.state.option]
+    const handleLanguageChange = (e) => {
+      this.setState({option: e.target.value})
+    }
+
+    return (
+    <div style={{'textAlign':'left'}}>
+      <select onChange={handleLanguageChange}>
+        {this.state.languages.map((option, index) => (
+        <option key={index} value={option}>
+          {option.toUpperCase()}
+        </option>
+        ))}
+      </select>
+      <div className='resume'>
+        {/* Left column */}
+          <div className='left'>
+            {/* Details */}
+            <div className='col1-row1 details'>
+              <div className='col1-row1-row'>
+                <h1>{language.name}</h1>
+                <h4>{language.profession}</h4>
+              </div>
+              <div className='col1-row1-row'>
+                <div className='col1-row1-row-row1'>
+                  <img src="gmail.png" alt="mail" width="20px"/>
+                  <a className="email" onClick={this.copy}>
+                  {language.email}
+                    <span className='copy'>
+                      <img src='copy.jpg' width="14px" alt='copy'/>
+                    </span>
                   </a>
-                  </div>
-      
-                  {/* Education */}
-                  <div className='col2-row1'>
-                    <h2 className='col2-row1-row right-heading2'><u>{language.education.heading}</u></h2>
-                    <div className='col2-row1-row ouas'>
-                      <div>
-                        <a href='https://www.oamk.fi/' target="_blank" rel="noopener noreferrer">
-                          <div className='col2-row1-row-row'>
-                            <h4 className='heading1'>{language.education.degree1}</h4>
-                            <p>{language.education.date1}</p>
-                          </div>
-                          <div className='col2-row1-row-row'>
-                            <h3>{language.education.school1}</h3>
-                            <i>{language.education.subject1}</i>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className='col2-row1-row dit'>
-                      <div>
-                        <a href='https://www.tudublin.ie/' target="_blank" rel="noopener noreferrer">
-                          <div className='col2-row1-row-row'>
-                            <h4 className='heading1'>{language.education.degree2}</h4>
-                            <p>{language.education.date2}</p>
-                          </div>
-                          <div className='col2-row1-row-row'>
-                            <h3>{language.education.school2}</h3>
-                            <i>{language.education.subject2}</i>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Work */}
-                  <div className='col2-row2'>
-                    <h2 className='right-heading'><u>{language.work.heading}</u></h2>
-                    <div className='col2-row2-row cajo'>
-                      <div>
-                        <a href='https://cajotechnologies.com/' target="_blank" rel="noopener noreferrer">
-                          <div className='col2-row2-row-row'>
-                            <h4 className='right-heading1'>{language.work.job1}</h4>
-                            <p>{language.work.date1}</p>
-                          </div>
-                          <div className='col2-row2-row-row'>
-                            <h2>{language.work.company1}</h2>
-                            <ul>
-                              <li><p>Mapping images into 3D objects online</p></li>
-                              <li><p>Creating image portal in website using PHP</p></li>
-                              <li><p>Image preview in 3D space using ThreeJS</p></li>
-                            </ul>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className='col2-row2-row nepgo'>
-                      <div>
-                        <a href='https://www.nepgo.com/' target="_blank" rel="noopener noreferrer">
-                          <div className='col2-row2-row-row'>
-                            <h4 className='right-heading1'>{language.work.job2}</h4>
-                            <p>{language.work.date2}</p>
-                          </div>
-                          <div className='col2-row2-row-row'>
-                            <h2>{language.work.company2}</h2>   
-                            <ul>
-                              <li><p>A demo android application using Android studio</p></li>
-                            </ul>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className='col2-row2-row nadaasi'>
-                      <div>
-                        <a href='https://nadaasi.com/' target="_blank" rel="noopener noreferrer">
-                          <div className='col2-row2-row-row'>
-                            <h4 className='right-heading1'>{language.work.job3}</h4>
-                            <p>{language.work.date3}</p>
-                          </div>
-                          <div className='col2-row2-row-row'>
-                            <h2>{language.work.company3}</h2>
-                            <ul>
-                              <li><p>Modern webshop based on javascript and mongoDB</p></li>
-                              <li><p>Backend development using Typescript and integration of MongoDB using ExpressJS</p></li>
-                              <li><p>Frontend development using ReactJS</p></li>
-                              <li><p>Creation and usage of an npm package</p></li>
-                              <li><p>Docker for deployment</p></li>
-                            </ul>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className='col2-row2-row nclean'>
-                      <div>
-                        <a href='https://nclean.fi/' target="_blank" rel="noopener noreferrer">
-                          <div className='col2-row2-row-row'>
-                            <h4 className='right-heading1'>{language.work.job4}</h4>
-                            <p>{language.work.date4}</p>
-                          </div>
-                          <div className='col2-row2-row-row'>
-                            <h2>{language.work.company4}</h2>
-                            <ul>
-                              <li><p>Managing the housekeeping department for client hotels (Aalto Inn, Unihome Oy)</p></li>
-                            </ul>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                    {/* Projects */}
-                  <div className='col2-row3'>
-                    <h2 className='col2-row3-row right-heading'><u>{language.projects.heading}</u></h2>
-                    <div className='col2-row3-row'>
-                      <div className='col2-row3-row-row'>
-                        <p><b>{language.projects.app1}</b></p>
-                      </div>
-                      <div className='col2-row3-row-row'>
-                        <p><i>(Bootstrap and JS)</i></p> 
-                      </div>
-                    </div>
-                    <div className='col2-row3-row'>
-                      <div className='col2-row3-row-row'>
-                      <p><b>{language.projects.app2}</b></p>                
-                      </div>
-                      <div className='col2-row3-row-row'>
-                        <p><i>(Unity & Blender)</i></p>
-                      </div>
-                    </div>
-                    <div className='col2-row3-row'>
-                      <div className='col2-row3-row-row'>
-                      <p><b>{language.projects.app3}</b></p>
-                      </div>
-                      <div className='col2-row3-row-row'>
-                        <p><i>(Meteor JS)</i></p>
-                      </div>
-                    </div>
-                    <div className='col2-row3-row'>
-                      <div className='col2-row3-row-row'>
-                      <p><b>{language.projects.app4}</b></p>
-                      </div>
-                      <div className='col2-row3-row-row'>
-                        <p><i>(Android)</i></p>
-                      </div>
-                    </div>
-      
-                  </div>
+                </div>
+                <br/>
+                <div className='col1-row1-row-row1'>
+                  <img src="linkedin2.png" alt="linkedin" width="20px"/>
+                  <a href='http://www.linkedin.com/in/harjit-karmacharya' target="_blank" rel="noopener noreferrer">{language.linkedin}</a>
+                </div>
+                <br/>
+                <div className='col1-row1-row-row1'>
+                  <img src="github.png" alt="github" width="20px"/>
+                  <a href='https://github.com/t4kaha00' target="_blank" rel="noopener noreferrer">{language.github}</a>
                 </div>
               </div>
+            </div>
+
+            {/* Skills */}
+            <div className='col1-row2 skills'>
+              <div className='col1-row2-row'>
+                <h2><u>{language.skills.heading}</u></h2>
+              </div>
+              <div className='col1-row2-row'>
+                <p>{language.skills.mobile}</p>
+                <ul><li>Android studio</li></ul>
+              </div>
+              <div className='col1-row2-row'>
+                <b>{language.skills.game}</b>
+                <ul><li>Unity, Blender</li></ul>
+              </div>
+              <div className='col1-row2-row'>
+                <b>{language.skills.web}</b>
+                <ul>
+                  <li>Angular, Meteor, React</li>
+                  <li>Typescript, Express</li>
+                  <li>Python, Java</li>
+                </ul>
+              </div>
+              <div className='col1-row2-row'>
+                <b>{language.skills.cloud}</b>
+                <ul>
+                  <li>AWS, Docker</li>
+                </ul>
+              </div>
+              <div className='col1-row2-row'>
+                <b>{language.skills.hardware}</b>
+                <ul>
+                  <li>Arduino</li>
+                  <li>Lego Robots</li>
+                  <li>GoPiGo</li>
+                </ul>
+              </div>
+            </div>
+            {/* Languages */}
+            <div className='col1-row3 languages'>
+              <div className='col1-row3-row'>
+                <h2><u>{language.languages.heading}</u></h2> 
+              </div>
+              <div className='col1-row3-row'>
+                <div>
+                  <p>{language.languages.english}</p>
+                  <p className='dots'>••••◦</p>
+                </div>
+                <div>
+                  <p>{language.languages.finnish}</p>
+                  <p className='dots'>••◦◦◦</p>
+                </div>
+                <div>
+                  <p>{language.languages.nepali}</p>
+                  <p className='dots'>•••••</p>
+                </div>
+                <div>
+                  <p>{language.languages.hindi}</p>
+                  <p className='dots'>••••◦</p>
+                </div>
+              </div>
+            </div>
+            {/* Live Projects */}
+            <div className='col1-row4 live-projects'>
+              <div className='col1-row4-row'>
+                <h2><u>{language.live_projects.heading}</u></h2>
+              </div>
+              <div className='col1-row4-row'>
+                <ul>
+                  <li>
+                    <a href='https://nadaasi.com' target="_blank" rel="noopener noreferrer"><img src='nadaasi.png' width={100} alt="Nadaasi"/></a>
+                  </li>
+                  <br/>
+                  <li>
+                    <a href='https://mern-stack-trial.netlify.app/' target="_blank" rel="noopener noreferrer">{language.live_projects.mern}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-        )    
-    }
+          
+          {/* Right Column */}
+          <div className='right'>
+            <div className='type'>
+              <div className='typing-demo'>
+              {language.download}↓
+              </div>
+            </div>
+            <div className='save-icon'>
+              <a href='harjitkarmacharya.pdf'  target="_blank" rel="noopener noreferrer" onClick={this.fetchIP}>
+              <img src="save.png" alt="mail" width="30px"/>
+            </a>
+            </div>
+
+            {/* Education */}
+            <div className='col2-row1'>
+              <h2 className='col2-row1-row right-heading2'><u>{language.education.heading}</u></h2>
+              <div className='col2-row1-row ouas'>
+                <div>
+                  <a href='https://www.oamk.fi/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row1-row-row'>
+                      <h4 className='heading1'>{language.education.degree1}</h4>
+                      <p>{language.education.date1}</p>
+                    </div>
+                    <div className='col2-row1-row-row'>
+                      <h3>{language.education.school1}</h3>
+                      <i>{language.education.subject1}</i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className='col2-row1-row dit'>
+                <div>
+                  <a href='https://www.tudublin.ie/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row1-row-row'>
+                      <h4 className='heading1'>{language.education.degree2}</h4>
+                      <p>{language.education.date2}</p>
+                    </div>
+                    <div className='col2-row1-row-row'>
+                      <h3>{language.education.school2}</h3>
+                      <i>{language.education.subject2}</i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/* Work */}
+            <div className='col2-row2'>
+              <h2 className='right-heading'><u>{language.work.heading}</u></h2>
+              <div className='col2-row2-row cajo'>
+                <div>
+                  <a href='https://cajotechnologies.com/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row2-row-row'>
+                      <h4 className='right-heading1'>{language.work.job1}</h4>
+                      <p>{language.work.date1}</p>
+                    </div>
+                    <div className='col2-row2-row-row'>
+                      <h2>{language.work.company1}</h2>
+                      <ul>
+                        <li><p>Mapping images into 3D objects online</p></li>
+                        <li><p>Creating image portal in website using PHP</p></li>
+                        <li><p>Image preview in 3D space using ThreeJS</p></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className='col2-row2-row nepgo'>
+                <div>
+                  <a href='https://www.nepgo.com/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row2-row-row'>
+                      <h4 className='right-heading1'>{language.work.job2}</h4>
+                      <p>{language.work.date2}</p>
+                    </div>
+                    <div className='col2-row2-row-row'>
+                      <h2>{language.work.company2}</h2>   
+                      <ul>
+                        <li><p>A demo android application using Android studio</p></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className='col2-row2-row nadaasi'>
+                <div>
+                  <a href='https://nadaasi.com/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row2-row-row'>
+                      <h4 className='right-heading1'>{language.work.job3}</h4>
+                      <p>{language.work.date3}</p>
+                    </div>
+                    <div className='col2-row2-row-row'>
+                      <h2>{language.work.company3}</h2>
+                      <ul>
+                        <li><p>Modern webshop based on javascript and mongoDB</p></li>
+                        <li><p>Backend development using Typescript and integration of MongoDB using ExpressJS</p></li>
+                        <li><p>Frontend development using ReactJS</p></li>
+                        <li><p>Creation and usage of an npm package</p></li>
+                        <li><p>Docker for deployment</p></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className='col2-row2-row nclean'>
+                <div>
+                  <a href='https://nclean.fi/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row2-row-row'>
+                      <h4 className='right-heading1'>{language.work.job4}</h4>
+                      <p>{language.work.date4}</p>
+                    </div>
+                    <div className='col2-row2-row-row'>
+                      <h2>{language.work.company4}</h2>
+                      <ul>
+                        <li><p>Managing the housekeeping department for client hotels (Aalto Inn, Unihome Oy)</p></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+              {/* Projects */}
+            <div className='col2-row3'>
+              <h2 className='col2-row3-row right-heading'><u>{language.projects.heading}</u></h2>
+              <div className='col2-row3-row'>
+                <div className='col2-row3-row-row'>
+                  <p><b>{language.projects.app1}</b></p>
+                </div>
+                <div className='col2-row3-row-row'>
+                  <p><i>(Bootstrap and JS)</i></p> 
+                </div>
+              </div>
+              <div className='col2-row3-row'>
+                <div className='col2-row3-row-row'>
+                <p><b>{language.projects.app2}</b></p>                
+                </div>
+                <div className='col2-row3-row-row'>
+                  <p><i>(Unity & Blender)</i></p>
+                </div>
+              </div>
+              <div className='col2-row3-row'>
+                <div className='col2-row3-row-row'>
+                <p><b>{language.projects.app3}</b></p>
+                </div>
+                <div className='col2-row3-row-row'>
+                  <p><i>(Meteor JS)</i></p>
+                </div>
+              </div>
+              <div className='col2-row3-row'>
+                <div className='col2-row3-row-row'>
+                <p><b>{language.projects.app4}</b></p>
+                </div>
+                <div className='col2-row3-row-row'>
+                  <p><i>(Android)</i></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+      </div>
+    </div>
+    )
+  }
 }
 
 export default Resume
