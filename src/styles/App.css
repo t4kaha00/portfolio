@@ -127,10 +127,12 @@ a {
 
 .timeline_container.left {
   right: 27.5%;
+  text-align: left;
 }
 
 .timeline_container.right {
   left: 27%;
+  text-align: left;
 }
 
 .timeline_container::after {
