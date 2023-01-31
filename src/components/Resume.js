@@ -93,26 +93,38 @@ class Resume extends Component{
                 <h2><u>{language.skills.heading}</u></h2>
               </div>
               <div className='col1-row2-row'>
-                <p>{language.skills.mobile}</p>
-                <ul><li>Android studio</li></ul>
-              </div>
-              <div className='col1-row2-row'>
-                <b>{language.skills.game}</b>
-                <ul><li>Unity, Blender</li></ul>
-              </div>
-              <div className='col1-row2-row'>
                 <b>{language.skills.web}</b>
                 <ul>
-                  <li>Angular, Meteor, React</li>
+                  <li>React, Redux, Angular, Meteor</li>
                   <li>Typescript, Express</li>
                   <li>Python, Java</li>
+                  <li>PHP</li>
+                </ul>
+              </div>
+              <div className='col1-row2-row'>
+                <b>{language.skills.software}</b>
+                <ul>
+                  <li>Java, C#</li>
                 </ul>
               </div>
               <div className='col1-row2-row'>
                 <b>{language.skills.cloud}</b>
                 <ul>
                   <li>AWS, Docker</li>
+                  <li>Heroku, Netlify</li>
                 </ul>
+              </div>
+              <div className='col1-row2-row'>
+                <p>{language.skills.database}</p>
+                <ul><li>MySQL, MongoDB</li></ul>
+              </div>
+              <div className='col1-row2-row'>
+                <p>{language.skills.mobile}</p>
+                <ul><li>Android studio</li></ul>
+              </div>
+              <div className='col1-row2-row'>
+                <b>{language.skills.game}</b>
+                <ul><li>Unity, Blender</li></ul>
               </div>
               <div className='col1-row2-row'>
                 <b>{language.skills.hardware}</b>
@@ -214,55 +226,21 @@ class Resume extends Component{
             {/* Work */}
             <div className='col2-row2'>
               <h2 className='right-heading'><u>{language.work.heading}</u></h2>
-              <div className='col2-row2-row cajo'>
+              <div className='col2-row2-row kassavirtanen'>
                 <div>
-                  <a href='https://cajotechnologies.com/' target="_blank" rel="noopener noreferrer">
+                  <a href='https://www.kassavirtanen.fi/' target="_blank" rel="noopener noreferrer">
                     <div className='col2-row2-row-row'>
-                      <h4 className='right-heading1'>{language.work.job1}</h4>
-                      <p>{language.work.date1}</p>
+                      <h4 className='right-heading1'>{language.work.job5}</h4>
+                      <p>{language.work.date5}</p>
                     </div>
                     <div className='col2-row2-row-row'>
-                      <h2>{language.work.company1}</h2>
+                      <h2>{language.work.company5}</h2>
                       <ul>
-                        <li><p>Mapping images into 3D objects online</p></li>
-                        <li><p>Creating image portal in website using PHP</p></li>
-                        <li><p>Image preview in 3D space using ThreeJS</p></li>
-                      </ul>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div className='col2-row2-row nepgo'>
-                <div>
-                  <a href='https://www.nepgo.com/' target="_blank" rel="noopener noreferrer">
-                    <div className='col2-row2-row-row'>
-                      <h4 className='right-heading1'>{language.work.job2}</h4>
-                      <p>{language.work.date2}</p>
-                    </div>
-                    <div className='col2-row2-row-row'>
-                      <h2>{language.work.company2}</h2>   
-                      <ul>
-                        <li><p>A demo android application using Android studio</p></li>
-                      </ul>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div className='col2-row2-row nadaasi'>
-                <div>
-                  <a href='https://nadaasi.com/' target="_blank" rel="noopener noreferrer">
-                    <div className='col2-row2-row-row'>
-                      <h4 className='right-heading1'>{language.work.job3}</h4>
-                      <p>{language.work.date3}</p>
-                    </div>
-                    <div className='col2-row2-row-row'>
-                      <h2>{language.work.company3}</h2>
-                      <ul>
-                        <li><p>Modern webshop based on javascript and mongoDB</p></li>
-                        <li><p>Backend development using Typescript and integration of MongoDB using ExpressJS</p></li>
-                        <li><p>Frontend development using ReactJS</p></li>
-                        <li><p>Creation and usage of an npm package</p></li>
-                        <li><p>Docker for deployment</p></li>
+                        <li><p>Maintaining existing codebase and expanding the application to multiple countries</p></li>
+                        <li><p>ReactJS frontend with redux saga middleware</p></li>
+                        <li><p>Backend development in C# using .NET framework</p></li>
+                        <li><p>Microsoft SQL server with stored procedures</p></li>
+                        <li><p>Microsoft Azure for server management</p></li>
                       </ul>
                     </div>
                   </a>
@@ -279,6 +257,59 @@ class Resume extends Component{
                       <h2>{language.work.company4}</h2>
                       <ul>
                         <li><p>Managing the housekeeping department for client hotels (Aalto Inn, Unihome Oy)</p></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className='col2-row2-row nadaasi'>
+                <div>
+                  <a href='https://nadaasi.com/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row2-row-row'>
+                      <h4 className='right-heading1'>{language.work.job3}</h4>
+                      <p>{language.work.date3}</p>
+                    </div>
+                    <div className='col2-row2-row-row'>
+                      <h2>{language.work.company3}</h2>
+                      <ul>
+                        <li><p>A fullstack webshop development with self state management</p></li>
+                        <li><p>Backend development using Typescript and ExpressJS</p></li>
+                        <li><p>Frontend development using React</p></li>
+                        <li><p>MongoDB database management</p></li>
+                        <li><p>NPM package creation (NodeJS)</p></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className='col2-row2-row nepgo'>
+                <div>
+                  <a href='https://www.nepgo.com/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row2-row-row'>
+                      <h4 className='right-heading1'>{language.work.job2}</h4>
+                      <p>{language.work.date2}</p>
+                    </div>
+                    <div className='col2-row2-row-row'>
+                      <h2>{language.work.company2}</h2>   
+                      <ul>
+                        <li><p>Developed a demo android application for the startup company oriented for charities.</p></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className='col2-row2-row cajo'>
+                <div>
+                  <a href='https://cajotechnologies.com/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row2-row-row'>
+                      <h4 className='right-heading1'>{language.work.job1}</h4>
+                      <p>{language.work.date1}</p>
+                    </div>
+                    <div className='col2-row2-row-row'>
+                      <h2>{language.work.company1}</h2>
+                      <ul>
+                        <li><p>Responsible for developing an online image modification portal in PHP</p></li>
+                        <li><p>Utilized ThreeJS for rendering 3D objects and patching custom images for 3D printing</p></li>
                       </ul>
                     </div>
                   </a>

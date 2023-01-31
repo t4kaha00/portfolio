@@ -12,7 +12,9 @@
             "game": "Game Development",
             "web": "Web Development",
             "cloud": "Cloud Development",
-            "hardware": "Hardware"
+            "hardware": "Hardware",
+            "software": "Software",
+            "database": "Database Management"
         },
         "languages": {
             "heading": "Languages",
@@ -39,18 +41,21 @@
         },
         "work": {
             "heading": "Work Experience",
-            "job1": "Image Modification Portal",
+            "job1": "PHP developer",
             "company1": "Cajo Oy",
             "date1": "2017",
-            "job2": "Android Application",
+            "job2": "Android Developer",
             "company2": "Nepgo Oy",
             "date2": "2017",
-            "job3": "Webshop",
+            "job3": "Full stack Developer (Bachelors Thesis)",
             "company3": "Nadaasi Oy",
             "date3": "2020",
             "job4": "Supervisor",
             "company4": "Nclean Oy",
-            "date4": "Jan 2019 - Apr 2021"
+            "date4": "Jan 2019 - Apr 2021",
+            "job5": "Junior Developer",
+            "company5": "Kassavirtanen Oy",
+            "date5": "September 2022 -"
         },
         "projects": {
             "heading": "Projects",
@@ -73,7 +78,9 @@
             "game": "Pelikehitys",
             "web": "Web-kehitys",
             "cloud": "Pilvikehitys",
-            "hardware": "Laitteisto"
+            "hardware": "Laitteisto",
+            "software": "Ohjelmisto",
+            "database": "Tietokannan hallinta"
         },
         "languages": {
             "heading": "Kielet",
@@ -100,18 +107,21 @@
         },
         "work": {
             "heading": "Työkokemus",
-            "job1": "Kuvan muokkausportaali",
+            "job1": "PHP-kehittäjä",
             "company1": "Cajo Oy",
             "date1": "2017",
-            "job2": "Android-sovellus",
+            "job2": "Android-kehittäjä",
             "company2": "Nepgo Oy",
             "date2": "2017",
-            "job3": "Verkkokauppa",
+            "job3": "Full Stack -kehittäjä (kandidaatin tutkielma)",
             "company3": "Nadaasi Oy",
             "date3": "2020",
             "job4": "Ohjaaja",
             "company4": "Nclean Oy",
-            "date4": "Tam 2019 - Huh 2021"
+            "date4": "Tam 2019 - Huh 2021",
+            "job5": "Juniori kehittäjä",
+            "company5": "Kassavirtanen Oy",
+            "date5": "syys 2022 -"
         },
         "projects": {
             "heading": "Projektit",
