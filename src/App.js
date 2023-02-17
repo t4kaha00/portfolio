@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { Switch } from 'react-router-dom';
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 // import { axiosInstance } from './config';
@@ -114,13 +114,42 @@ class App extends Component {
 }
 
 function Home() {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let interval = null;
+
+  useEffect(() => {
+    const h1 = document.querySelector("h1")
+    console.log(h1.innerText);
+      let iteration = 0;
+      clearInterval(interval);
+      
+      interval = setInterval(() => {
+        h1.innerText = h1.innerText
+        .split("")
+        .map((letter, index) => {
+          if(index < iteration) {
+            return h1.dataset.value[index];
+          }
+          
+          return letters[Math.floor(Math.random() * 26)]
+      })
+      .join("");
+    
+    if(iteration >= h1.dataset.value.length){ 
+      clearInterval(interval);
+    }
+    
+    iteration += 1 / 3;
+  }, 50);
+  })
+
   return (
     <div>
     <div className='header'>
       {/* First container */}
       <div className='container container_solid'>
         <div className='title_wrapper'>
-          <h1>Harjit Karmacharya</h1>
+          <h1 data-value="Harjit Karmacharya" >Harjit Karmacharya</h1>
         </div>
       </div>
       {/* Second container */}
