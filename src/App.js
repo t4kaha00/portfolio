@@ -191,6 +191,24 @@ function Home() {
           </p>  
         </div>
       </div>  
+      <div className='timeline_container left'>
+        <div className="date">05 Jan 2019</div>  
+        <div className="content">  
+          <h2>Nclean Oy</h2>  
+          <p>  
+            Supervisor <br />
+          </p>  
+        </div>
+      </div>
+      <div className='timeline_container right'>
+        <div className="date">15 Sep 2022</div>  
+        <div className="content">  
+          <h2>Kassavirtanen Oy</h2>  
+          <p>  
+            Junior Developer <br />
+          </p>  
+        </div>
+      </div>
     </div>
 
     {/* H Logo  */}
