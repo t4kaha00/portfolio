@@ -4,9 +4,9 @@ import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 // import { axiosInstance } from './config';
 import './styles/App.css';
 import './styles/menu.css';
-import Fibonacci from './components/Fibonacci';
 import Resume from './components/Resume';
-import Card from './components/Card';
+// import Card from './components/Card';
+// import Fibonacci from './components/Fibonacci';
 import one from './images/1.jpg';
 import twogif from './images/2.gif';
 import three from './images/3.jpg';
@@ -75,7 +75,7 @@ class App extends Component {
                         <u>Resume</u>
                     </NavLink>
                   </li>
-                  <li onClick={this.uncheck} activeclassname='nav_active'>
+                  {/* <li onClick={this.uncheck} activeclassname='nav_active'>
                     <NavLink
                       activeClassName='nav_active' 
                       to={{
@@ -83,8 +83,8 @@ class App extends Component {
                       }} 
                         className="nav-item"><u>Fibonacci</u>
                     </NavLink>
-                  </li>
-                  <li onClick={this.uncheck} activeclassname='nav_active'>
+                  </li> */}
+                  {/* <li onClick={this.uncheck} activeclassname='nav_active'>
                     <NavLink
                       activeClassName='nav_active' 
                       to={{
@@ -92,7 +92,7 @@ class App extends Component {
                       }} 
                         className="nav-item"><u>Card</u>
                     </NavLink>
-                  </li>
+                  </li> */}
                 </ul>
                 </label>
               </nav>
@@ -100,11 +100,11 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/resume" component={Resume} />
-              <Route exact path="/card" component={Card} />
-              <Route 
+              {/* <Route exact path="/card" component={Card} /> */}
+              {/* <Route 
                 path="/fibonacci"
                 render={(props) => <Fibonacci {...props} images={this.state.images}/>}
-                />
+                /> */}
             </Switch>
           </Router>
         </div>
