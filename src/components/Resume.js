@@ -160,7 +160,7 @@ class Resume extends Component{
               </div>
             </div>
             {/* Live Projects */}
-            <div className='col1-row4 live-projects'>
+            <!-- <div className='col1-row4 live-projects'>
               <div className='col1-row4-row'>
                 <h2><u>{language.live_projects.heading}</u></h2>
               </div>
@@ -171,7 +171,7 @@ class Resume extends Component{
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> -->
           </div>
           
           {/* Right Column */}
