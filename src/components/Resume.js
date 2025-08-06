@@ -169,10 +169,6 @@ class Resume extends Component{
                   <li>
                     <a href='https://nadaasi.com' target="_blank" rel="noopener noreferrer"><img src='nadaasi.png' width={100} alt="Nadaasi"/></a>
                   </li>
-                  <br/>
-                  <li>
-                    <a href='https://mern-stack-trial.netlify.app/' target="_blank" rel="noopener noreferrer">{language.live_projects.mern}</a>
-                  </li>
                 </ul>
               </div>
             </div>
