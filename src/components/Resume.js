@@ -159,19 +159,6 @@ class Resume extends Component{
                 </div>
               </div>
             </div>
-            {/* Live Projects */}
-            <!-- <div className='col1-row4 live-projects'>
-              <div className='col1-row4-row'>
-                <h2><u>{language.live_projects.heading}</u></h2>
-              </div>
-              <div className='col1-row4-row'>
-                <ul>
-                  <li>
-                    <a href='https://nadaasi.com' target="_blank" rel="noopener noreferrer"><img src='nadaasi.png' width={100} alt="Nadaasi"/></a>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
           </div>
           
           {/* Right Column */}
