@@ -205,7 +205,7 @@ function Home() {
         <div className="content">  
           <h2>Kassavirtanen Oy</h2>  
           <p>  
-            Junior Developer <br />
+            Full Stack Developer <br />
           </p>  
         </div>
       </div>
