@@ -182,40 +182,8 @@ class Resume extends Component{
               <a href='harjitkarmacharya.pdf' target="_blank" rel="noopener noreferrer" onClick={this.fetchIP}>
                 <img src="save.png" alt="mail" width="30px" />
               </a>
-            </div>
+            </div>            
 
-            {/* Education */}
-            <div className='col2-row1'>
-              <h2 className='col2-row1-row right-heading2'><u>{language.education.heading}</u></h2>
-              <div className='col2-row1-row ouas'>
-                <div>
-                  <a href='https://www.oamk.fi/' target="_blank" rel="noopener noreferrer">
-                    <div className='col2-row1-row-row'>
-                      <h4 className='heading1'>{language.education.degree1}</h4>
-                      <p>{language.education.date1}</p>
-                    </div>
-                    <div className='col2-row1-row-row'>
-                      <h3>{language.education.school1}</h3>
-                      <i>{language.education.subject1}</i>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div className='col2-row1-row dit'>
-                <div>
-                  <a href='https://www.tudublin.ie/' target="_blank" rel="noopener noreferrer">
-                    <div className='col2-row1-row-row'>
-                      <h4 className='heading1'>{language.education.degree2}</h4>
-                      <p>{language.education.date2}</p>
-                    </div>
-                    <div className='col2-row1-row-row'>
-                      <h3>{language.education.school2}</h3>
-                      <i>{language.education.subject2}</i>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
             {/* Work */}
             <div className='col2-row2'>
               <h2 className='right-heading'><u>{language.work.heading}</u></h2>
@@ -239,7 +207,7 @@ class Resume extends Component{
                   </a>
                 </div>
               </div>
-              <div className='col2-row2-row nclean'>
+              {/* <div className='col2-row2-row nclean'>
                 <div>
                   <a href='https://nclean.fi/' target="_blank" rel="noopener noreferrer">
                     <div className='col2-row2-row-row'>
@@ -254,7 +222,7 @@ class Resume extends Component{
                     </div>
                   </a>
                 </div>
-              </div>
+              </div> */}
               <div className='col2-row2-row nadaasi'>
                 <div>
                   <a href='https://nadaasi.com/' target="_blank" rel="noopener noreferrer">
@@ -309,8 +277,40 @@ class Resume extends Component{
                 </div>
               </div>
             </div>
+            {/* Education */}
+            <div className='col2-row1'>
+              <h2 className='col2-row1-row right-heading2'><u>{language.education.heading}</u></h2>
+              <div className='col2-row1-row ouas'>
+                <div>
+                  <a href='https://www.oamk.fi/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row1-row-row'>
+                      <h4 className='heading1'>{language.education.degree1}</h4>
+                      <p>{language.education.date1}</p>
+                    </div>
+                    <div className='col2-row1-row-row'>
+                      <h3>{language.education.school1}</h3>
+                      <i>{language.education.subject1}</i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className='col2-row1-row dit'>
+                <div>
+                  <a href='https://www.tudublin.ie/' target="_blank" rel="noopener noreferrer">
+                    <div className='col2-row1-row-row'>
+                      <h4 className='heading1'>{language.education.degree2}</h4>
+                      <p>{language.education.date2}</p>
+                    </div>
+                    <div className='col2-row1-row-row'>
+                      <h3>{language.education.school2}</h3>
+                      <i>{language.education.subject2}</i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
             {/* Projects */}
-            <div className='col2-row3'>
+            {/* <div className='col2-row3'>
               <h2 className='col2-row3-row right-heading'><u>{language.projects.heading}</u></h2>
               <div className='col2-row3-row'>
                 <div className='col2-row3-row-row'>
@@ -345,7 +345,7 @@ class Resume extends Component{
                 </div>
               </div>
 
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
