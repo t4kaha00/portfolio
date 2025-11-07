@@ -67,7 +67,13 @@ class Resume extends Component{
               <div className='col1-row1-row'>
                 <div className='col1-row1-row-row1'>
                   <img src="gmail.png" alt="mail" width="20px"/>
-                  <a className="email" onClick={this.copy}>
+                  <a
+                    className="email"
+                    href="mailto:hkarmacharya@gmail.com"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      this.copy();
+                    }}>
                   {language.email}
                     <span className='copy'>
                       <img src='copy.jpg' width="14px" alt='copy'/>
