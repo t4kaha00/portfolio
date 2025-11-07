@@ -47,16 +47,20 @@ class Resume extends Component{
     }
 
     return (
-    <div style={{'textAlign':'left'}}>
-      <select onChange={handleLanguageChange}>
-        {this.state.languages.map((option, index) => (
-        <option key={index} value={option}>
-          {option.toUpperCase()}
-        </option>
-        ))}
-      </select>
-      <div className='resume'>
-        {/* Left column */}
+      <div style={{ 'textAlign': 'left' }}>
+        <select
+          id='langSelect'
+          onChange={handleLanguageChange}
+          style={{ margin: '15px', padding: '10px' }}
+        >
+          {this.state.languages.map((option, index) => (
+            <option key={index} value={option}>
+              {option.toUpperCase()}
+            </option>
+          ))}
+        </select>
+        <div className='resume'>
+          {/* Left column */}
           <div className='left'>
             {/* Details */}
             <div className='col1-row1 details'>
@@ -66,7 +70,7 @@ class Resume extends Component{
               </div>
               <div className='col1-row1-row'>
                 <div className='col1-row1-row-row1'>
-                  <img src="gmail.png" alt="mail" width="20px"/>
+                  <img src="gmail.png" alt="mail" width="20px" />
                   <a
                     className="email"
                     href="mailto:hkarmacharya@gmail.com"
@@ -74,20 +78,20 @@ class Resume extends Component{
                       e.preventDefault();
                       this.copy();
                     }}>
-                  {language.email}
+                    {language.email}
                     <span className='copy'>
-                      <img src='copy.jpg' width="14px" alt='copy'/>
+                      <img src='copy.jpg' width="14px" alt='copy' />
                     </span>
                   </a>
                 </div>
-                <br/>
+                <br />
                 <div className='col1-row1-row-row1'>
-                  <img src="linkedin2.png" alt="linkedin" width="20px"/>
+                  <img src="linkedin2.png" alt="linkedin" width="20px" />
                   <a href='http://www.linkedin.com/in/harjit-karmacharya' target="_blank" rel="noopener noreferrer">{language.linkedin}</a>
                 </div>
-                <br/>
+                <br />
                 <div className='col1-row1-row-row1'>
-                  <img src="github.png" alt="github" width="20px"/>
+                  <img src="github.png" alt="github" width="20px" />
                   <a href='https://github.com/t4kaha00' target="_blank" rel="noopener noreferrer">{language.github}</a>
                 </div>
               </div>
@@ -144,7 +148,7 @@ class Resume extends Component{
             {/* Languages */}
             <div className='col1-row3 languages'>
               <div className='col1-row3-row'>
-                <h2><u>{language.languages.heading}</u></h2> 
+                <h2><u>{language.languages.heading}</u></h2>
               </div>
               <div className='col1-row3-row'>
                 <div>
@@ -166,18 +170,18 @@ class Resume extends Component{
               </div>
             </div>
           </div>
-          
+
           {/* Right Column */}
           <div className='right'>
             <div className='type'>
               <div className='typing-demo'>
-              {language.download}↓
+                {language.download}↓
               </div>
             </div>
             <div className='save-icon'>
-              <a href='harjitkarmacharya.pdf'  target="_blank" rel="noopener noreferrer" onClick={this.fetchIP}>
-              <img src="save.png" alt="mail" width="30px"/>
-            </a>
+              <a href='harjitkarmacharya.pdf' target="_blank" rel="noopener noreferrer" onClick={this.fetchIP}>
+                <img src="save.png" alt="mail" width="30px" />
+              </a>
             </div>
 
             {/* Education */}
@@ -279,7 +283,7 @@ class Resume extends Component{
                       <p>{language.work.date2}</p>
                     </div>
                     <div className='col2-row2-row-row'>
-                      <h2>{language.work.company2}</h2>   
+                      <h2>{language.work.company2}</h2>
                       <ul>
                         <li><p>Developed a demo android application for the startup company oriented for charities.</p></li>
                       </ul>
@@ -305,7 +309,7 @@ class Resume extends Component{
                 </div>
               </div>
             </div>
-              {/* Projects */}
+            {/* Projects */}
             <div className='col2-row3'>
               <h2 className='col2-row3-row right-heading'><u>{language.projects.heading}</u></h2>
               <div className='col2-row3-row'>
@@ -313,12 +317,12 @@ class Resume extends Component{
                   <p><b>{language.projects.app1}</b></p>
                 </div>
                 <div className='col2-row3-row-row'>
-                  <p><i>(Bootstrap and JS)</i></p> 
+                  <p><i>(Bootstrap and JS)</i></p>
                 </div>
               </div>
               <div className='col2-row3-row'>
                 <div className='col2-row3-row-row'>
-                <p><b>{language.projects.app2}</b></p>                
+                  <p><b>{language.projects.app2}</b></p>
                 </div>
                 <div className='col2-row3-row-row'>
                   <p><i>(Unity & Blender)</i></p>
@@ -326,7 +330,7 @@ class Resume extends Component{
               </div>
               <div className='col2-row3-row'>
                 <div className='col2-row3-row-row'>
-                <p><b>{language.projects.app3}</b></p>
+                  <p><b>{language.projects.app3}</b></p>
                 </div>
                 <div className='col2-row3-row-row'>
                   <p><i>(Meteor JS)</i></p>
@@ -334,7 +338,7 @@ class Resume extends Component{
               </div>
               <div className='col2-row3-row'>
                 <div className='col2-row3-row-row'>
-                <p><b>{language.projects.app4}</b></p>
+                  <p><b>{language.projects.app4}</b></p>
                 </div>
                 <div className='col2-row3-row-row'>
                   <p><i>(Android)</i></p>
@@ -343,8 +347,8 @@ class Resume extends Component{
 
             </div>
           </div>
+        </div>
       </div>
-    </div>
     )
   }
 }
