@@ -139,7 +139,7 @@ function Home() {
         clearInterval(intervalRef.current);
       }
 
-      iteration += 1 / 3; // optional: slower reveal    
+      iteration += 1 / 2; // optional: slower reveal    
     }, 50);
   })
 
