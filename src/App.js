@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component, useEffect, useRef } from 'react';
 import { Switch } from 'react-router-dom';
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 // import { axiosInstance } from './config';
@@ -115,32 +115,32 @@ class App extends Component {
 
 function Home() {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  let interval = null;
+  const intervalRef = useRef(null);
 
   useEffect(() => {
     const h1 = document.querySelector("h1")
-    console.log(h1.innerText);
-      let iteration = 0;
-      clearInterval(interval);
-      
-      interval = setInterval(() => {
-        h1.innerText = h1.innerText
+    if (!h1) return; // safety check
+
+    let iteration = 0;
+
+    intervalRef.current = setInterval(() => {
+      h1.innerText = h1.innerText
         .split("")
         .map((letter, index) => {
-          if(index < iteration) {
+          if (index < iteration) {
             return h1.dataset.value[index];
           }
-          
+
           return letters[Math.floor(Math.random() * 26)]
-      })
-      .join("");
-    
-    if(iteration >= h1.dataset.value.length){ 
-      clearInterval(interval);
-    }
-    
-    iteration += 1;
-  }, 50);
+        })
+        .join("");
+
+      if (iteration >= h1.dataset.value.length) {
+        clearInterval(intervalRef.current);
+      }
+
+      iteration += 1 / 3; // optional: slower reveal    
+    }, 50);
   })
 
   return (
