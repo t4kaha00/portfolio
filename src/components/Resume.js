@@ -197,11 +197,12 @@ class Resume extends Component{
                     <div className='col2-row2-row-row'>
                       <h2>{language.work.company5}</h2>
                       <ul>
-                        <li><p>Maintaining existing codebase and expanding the application to multiple countries</p></li>
-                        <li><p>ReactJS frontend with redux saga middleware</p></li>
-                        <li><p>Backend development in C# using .NET framework</p></li>
-                        <li><p>Microsoft SQL server with stored procedures</p></li>
-                        <li><p>Microsoft Azure for server management</p></li>
+                        <li><p>Expanded a financial application to support operations in multiple countries, driving business scalability.</p></li>
+                        <li><p>Enhanced the ReactJS frontend with Redux-Saga middleware to optimize state management and user interactions.</p></li>
+                        <li><p>Developed backend systems with C# and .NET framework, ensuring robust and maintainable solutions.</p></li>
+                        <li><p>Implemented complex stored procedures in Microsoft SQL Server.</p></li>
+                        <li><p>Introduced SSDT for versioning and tracking stored procedure changes, resulting in improved collaboration between developers and more reliable production releases.</p></li>
+                        <li><p>Managed deployments and server configurations on Microsoft Azure.</p></li>
                       </ul>
                     </div>
                   </a>
@@ -233,11 +234,10 @@ class Resume extends Component{
                     <div className='col2-row2-row-row'>
                       <h2>{language.work.company3}</h2>
                       <ul>
-                        <li><p>A fullstack webshop development with self state management</p></li>
-                        <li><p>Backend development using Typescript and ExpressJS</p></li>
-                        <li><p>Frontend development using React</p></li>
-                        <li><p>MongoDB database management</p></li>
-                        <li><p>NPM package creation (NodeJS)</p></li>
+                        <li><p>Developed and deployed a self-managed webshop application using React and Node.js.</p></li>
+                        <li><p>Designed backend systems with TypeScript and ExpressJS, reducing API response times.</p></li>
+                        <li><p>Managed and optimized a MongoDB database, ensuring data integrity and scalability.</p></li>
+                        <li><p>Created a custom NPM package to streamline development for future projects.</p></li>
                       </ul>
                     </div>
                   </a>
@@ -269,8 +269,8 @@ class Resume extends Component{
                     <div className='col2-row2-row-row'>
                       <h2>{language.work.company1}</h2>
                       <ul>
-                        <li><p>Responsible for developing an online image modification portal in PHP</p></li>
-                        <li><p>Utilized ThreeJS for rendering 3D objects and patching custom images for 3D printing</p></li>
+                        <li><p>Developed an online image modification portal using PHP and ThreeJS.</p></li>
+                        <li><p>Rendered 3D objects and enabled custom image patching for 3D printing.</p></li>
                       </ul>
                     </div>
                   </a>
