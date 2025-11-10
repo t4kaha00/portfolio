@@ -184,6 +184,21 @@ class Resume extends Component{
               </a>
             </div>            
 
+            <div className='col2-row2'>
+              <h2>IT Engineer</h2>
+              <div className='col2-row2-row'>
+                <p style={{ margin: 0 }}>
+                  An IT engineering graduate with expertise in full-stack web
+                  development, cloud management, and scalable application
+                  design. Skilled in driving end-to-end software development
+                  projects, leveraging modern frameworks like React, Node.js,
+                  and Azure to deliver innovative solutions. Passionate about
+                  optimizing performance and delivering impactful digital
+                  experiences.
+                </p>
+              </div>
+            </div>
+
             {/* Work */}
             <div className='col2-row2'>
               <h2 className='right-heading'><u>{language.work.heading}</u></h2>
