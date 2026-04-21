@@ -1,6 +1,5 @@
-import axios from 'axios'
 import { axiosInstance } from '../config'
-import React, { Component } from 'react'
+import { Component } from 'react'
 import '../styles/resume.css'
 import lang from '../lang/lang.json'
 
@@ -14,23 +13,12 @@ class Resume extends Component {
   }
 
   componentDidMount() {
-    this.fetchIP()
+    this.trackVisit()
   }
 
-  fetchIP = async () => {
-    const res = await axios.get('https://geolocation-db.com/json/')
-    const options = {
-      clickedData: true,
-      ipdata: res.data
-    }
-
-    await axiosInstance({
-      url: 'https://mern-stack-trial.netlify.app/.netlify/functions/postIP',
-      method: 'POST',
-      data: options
-    }).catch((error) => {
-      console.log(error)
-    })
+  trackVisit = async () => {
+    const url = '.netlify/functions/postIP/visit'
+    await axiosInstance.get(url).catch(() => {})
   }
 
   copy = () => {
@@ -288,22 +276,6 @@ class Resume extends Component {
                   </a>
                 </div>
               </div>
-              {/* <div className='col2-row2-row nclean'>
-                <div>
-                  <a href='https://nclean.fi/' target="_blank" rel="noopener noreferrer">
-                    <div className='col2-row2-row-row'>
-                      <h4 className='right-heading1'>{language.work.job4}</h4>
-                      <p>{language.work.date4}</p>
-                    </div>
-                    <div className='col2-row2-row-row'>
-                      <h2>{language.work.company4}</h2>
-                      <ul>
-                        <li><p>Managing the housekeeping department for client hotels (Aalto Inn, Unihome Oy)</p></li>
-                      </ul>
-                    </div>
-                  </a>
-                </div>
-              </div> */}
               <div className="col2-row2-row nadaasi">
                 <div>
                   <a
@@ -446,43 +418,6 @@ class Resume extends Component {
                 </div>
               </div>
             </div>
-            {/* Projects */}
-            {/* <div className='col2-row3'>
-              <h2 className='col2-row3-row right-heading'><u>{language.projects.heading}</u></h2>
-              <div className='col2-row3-row'>
-                <div className='col2-row3-row-row'>
-                  <p><b>{language.projects.app1}</b></p>
-                </div>
-                <div className='col2-row3-row-row'>
-                  <p><i>(Bootstrap and JS)</i></p>
-                </div>
-              </div>
-              <div className='col2-row3-row'>
-                <div className='col2-row3-row-row'>
-                  <p><b>{language.projects.app2}</b></p>
-                </div>
-                <div className='col2-row3-row-row'>
-                  <p><i>(Unity & Blender)</i></p>
-                </div>
-              </div>
-              <div className='col2-row3-row'>
-                <div className='col2-row3-row-row'>
-                  <p><b>{language.projects.app3}</b></p>
-                </div>
-                <div className='col2-row3-row-row'>
-                  <p><i>(Meteor JS)</i></p>
-                </div>
-              </div>
-              <div className='col2-row3-row'>
-                <div className='col2-row3-row-row'>
-                  <p><b>{language.projects.app4}</b></p>
-                </div>
-                <div className='col2-row3-row-row'>
-                  <p><i>(Android)</i></p>
-                </div>
-              </div>
-
-            </div> */}
           </div>
         </div>
       </div>
