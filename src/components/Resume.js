@@ -92,7 +92,8 @@ function Resume() {
 
   return (
     <div style={{ textAlign: 'left' }}>
-      <div className='lang-toggle'>
+      <div className="resume">
+        <div className='lang-toggle'>
         {LANGUAGE_OPTIONS.map(opt => (
           <button
             key={opt}
@@ -103,8 +104,6 @@ function Resume() {
           </button>
         ))}
       </div>
-
-      <div className="resume">
         {/* Left column */}
         <div className="left">
           {/* Details */}

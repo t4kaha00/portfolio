@@ -86,6 +86,7 @@
 
   /* Css for Language section box*/
   .lang-toggle {
+    grid-column: 2;
     display: flex;
     margin: 15px;
     border: 1px solid #ccc;
