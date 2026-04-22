@@ -190,7 +190,6 @@ class Resume extends Component {
                 href="harjitkarmacharya.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={this.fetchIP}
               >
                 <img src="save.png" alt="mail" width="30px" />
               </a>
