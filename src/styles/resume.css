@@ -1,307 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+body,
+.resume {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2c2c2c;
+}
+
+/* Name */
+.resume h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Section headings like Work Experience, Skills */
+.resume h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Job title, degree */
+.resume h3,
+.resume h4 {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Body text, bullets */
+.resume p,
+.resume li {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #444;
+}
+
+/* Profession subtitle under name */
+.resume h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Labels like company names */
+.resume a {
+  font-size: 16px;
+}
+
 /* Resume section CSS starts here --------------------------------------------------- */
 .resume {
-    width: 55em;
-    margin: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 4em 2em;
-    display: grid;
-    grid-template-columns: 5fr 7fr;
-    background: white;
-  }
-  
-  .save-icon {
-    float: right;}
-  
-  /* Left Column of Resume --------------------------------------------------------------------*/
-  .resume > .left {
-    padding: 1em;
-    background: #f4f4f4;
-  }
-  
-  /* Copy button ---------------------------------------------------------------------------- */
-  .email > span {
-    position: relative;
-    top: 2px;
-    left: 1em;
-    display: none;
-  }
-  .email:hover > span {
-    cursor: pointer;
-    display: inline;
-  }
-  .copied {
-    opacity: 0;
-  }
-  
-  .col1-row1, .col1-row2,
-  .col1-row3, .col1-row4 {
-    margin-top: 1em;
-    margin-left: 1em;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .col1-row1-row > h1 {
-    color: #444440;
-  }
-  .col1-row1-row > h4 {
-    font-weight: lighter;
-    color: #171616;
-  }
-  .col1-row1-row > ul,
-  .col1-row4-row > ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
-  .col1-row1-row > ul > li {
-    margin-top: 1em;
-  }
-  .col1-row1-row > ul > li > a, 
-  .col1-row4-row > ul > li > a {
-    text-decoration: none;
-    color: #444440;
-  }
-  
-  .col1-row2-row > h2, 
-  .col1-row3-row > h2,
-  .col1-row4-row > h2 {
-    margin-top: 5px;
-    color: #444440;
-  }
-  
-  .col1-row2-row > p {
-    color: #000000;
-    font-weight: bold;
-  }
-  
-  .col1-row2-row > ul >li {
-    margin: 5px;
-  }
-  
-  .col1-row1-row-row1 {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-  }
+  width: 55em;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 4em 2em;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  background: white;
+}
 
-  /* Css for Language section box*/
-  .lang-toggle {
-    grid-column: 2;
-    display: flex;
-    margin: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    overflow: hidden;
+.save-icon {
+  float: right;
+}
+
+/* Left Column of Resume --------------------------------------------------------------------*/
+.resume > .left {
+  padding: 1em;
+  background: #f4f4f4;
+}
+
+/* Copy button ---------------------------------------------------------------------------- */
+.email > span {
+  position: relative;
+  top: 2px;
+  left: 1em;
+  display: none;
+}
+.email:hover > span {
+  cursor: pointer;
+  display: inline;
+}
+.copied {
+  opacity: 0;
+}
+
+.col1-row1,
+.col1-row2,
+.col1-row3,
+.col1-row4 {
+  margin-top: 1em;
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.col1-row1-row > h1 {
+  color: #444440;
+}
+.col1-row1-row > h4 {
+  font-weight: lighter;
+  color: #171616;
+}
+.col1-row1-row > ul,
+.col1-row4-row > ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.col1-row1-row > ul > li {
+  margin-top: 1em;
+}
+.col1-row1-row > ul > li > a,
+.col1-row4-row > ul > li > a {
+  text-decoration: none;
+  color: #444440;
+}
+
+.col1-row2-row > h2,
+.col1-row3-row > h2,
+.col1-row4-row > h2 {
+  margin-top: 5px;
+  color: #444440;
+}
+
+.col1-row2-row > p {
+  color: #000000;
+  font-weight: bold;
+}
+
+.col1-row2-row > ul > li {
+  margin: 5px;
+}
+
+.col1-row1-row-row1 {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+/* Css for Language section box*/
+.lang-toggle {
+  grid-column: 2;
+  display: flex;
+  margin: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.lang-btn {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: none;
+  background: #fff;
+  color: #888;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.lang-btn + .lang-btn {
+  border-left: 1px solid #ccc;
+}
+
+.lang-btn.active {
+  background: #333;
+  color: #fff;
+}
+
+.lang-btn:hover:not(.active) {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Grid for Language section */
+.col1-row3-row > div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.dots {
+  transform: scale(2);
+  justify-self: start;
+  margin-left: 10px;
+  letter-spacing: 2px;
+}
+
+.col1-row4-row > ul > li:hover {
+  transition: 0.2s; /* delays the hover effect */
+  transform: scale(1, 1.15); /* becomes 1.05* bigger */
+}
+
+/* Right column of Resume -------------------------------------------------------------------------- */
+.right {
+  padding-left: 1em;
+}
+
+.type {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  float: none;
+  /* transform: translateX(-10px); */
+}
+
+.typing-demo {
+  width: 9.5em;
+  /* animation: name duration timing-function delay iteration-count direction; */
+  animation: typing 3.5s steps(22), blink 0.5s step-end infinite alternate;
+  animation-iteration-count: infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 0.8em;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.col2-row1,
+.col2-row2,
+.col2-row3 {
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  color: #444440;
+  align-content: space-between;
+}
+
+.col2-row1-row {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-rows: 1fr;
+  height: 50px;
+}
+.right-heading2 {
+  margin-bottom: -1em;
+}
+
+.col2-row1-row > div:hover {
+  transition: 0.2s; /* delays the hover effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 3px;
+  transform: scale(1.05);
+}
+
+.col2-row2-row > div:hover {
+  transition: 0.2s; /* delays the hover effect */
+  transform: scale(1.05);
+  padding-top: 5px;
+  padding-left: 5px;
+  box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.col2-row2-row-row > h2 {
+  margin: 0;
+  margin-top: 10px;
+  font-size: larger;
+  color: #737373;
+}
+
+.col2-row2-row-row > ul {
+  margin: 0;
+  margin-bottom: 2em;
+  color: #171616;
+}
+
+.col2-row1-row-row > h4,
+.col2-row2-row-row > h4 {
+  font-size: small;
+  margin: 0px;
+  color: #171616;
+}
+
+.col2-row1-row-row > p,
+.col2-row2-row-row > p {
+  float: right;
+  margin: 7px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  /* color: #737373; */
+}
+
+.col2-row1-row-row > ul > li > p,
+.col2-row2-row-row > ul > li > p {
+  margin: 7px;
+  font-size: 14px;
+}
+
+.col2-row1-row-row > i {
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.col2-row1-row-row > h3 {
+  margin-top: 8px;
+  margin-bottom: 5px;
+  font-size: medium;
+  color: #737373;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.col2-row3-row {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.col2-row3-row {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+.col2-row3-row-row {
+  margin-bottom: 5px;
+}
+
+.col2-row3-row-row > p {
+  font-size: small;
+  margin: 0;
+}
+.col2-row3-row-row > p > i {
+  float: right;
+}
+
+@media only screen and (max-width: 500px) {
+  .resume {
     width: fit-content;
+    padding: 4em 1em 1em 1em;
+    grid-template-columns: none;
   }
-
-  .lang-btn {
-    padding: 6px 14px;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    border: none;
-    background: #fff;
-    color: #888;
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
-  }
-
-  .lang-btn + .lang-btn {
-    border-left: 1px solid #ccc;
-  }
-
-  .lang-btn.active {
-    background: #333;
-    color: #fff;
-  }
-
-  .lang-btn:hover:not(.active) {
-    background: #f0f0f0;
-    color: #333;
-  }
-  
-  /* Grid for Language section */
-  .col1-row3-row > div {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-  }
-  .dots {
-    transform: scale(2);
-    justify-self: start;
-    margin-left: 10px;
-    letter-spacing: 2px;
-  }
-  
-  .col1-row4-row > ul > li:hover {
-    transition: .2s;  /* delays the hover effect */
-    transform: scale(1, 1.15); /* becomes 1.05* bigger */
-  }
-  
-  /* Right column of Resume -------------------------------------------------------------------------- */
   .right {
-    padding-left: 1em;
+    padding-left: 0;
   }
-  
+  .type,
+  .save-icon {
+    position: fixed;
+    right: 1em;
+  }
   .type {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    float: none;
-    /* transform: translateX(-10px); */
+    bottom: 0;
   }
-  
-  .typing-demo {
-    width: 9.5em;
-    /* animation: name duration timing-function delay iteration-count direction; */
-    animation: typing 3.5s steps(22), blink .5s step-end infinite alternate;
-    animation-iteration-count: infinite;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    font-family: monospace;
-    font-size: .8em;
+  .save-icon {
+    bottom: 1em;
   }
-  
-  @keyframes typing {
-    from {
-      width: 0;
-    }
+  .dit {
+    padding-top: 1em;
   }
-  
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
+  .col2-row1,
+  .col2-row2,
+  .col2-row3 {
+    margin: 0.5em 2em;
   }
-  
-  .col2-row1, .col2-row2, .col2-row3 {
-    margin: 2em;
-    display: flex;
-    flex-direction: column;
-    color: #444440;
-    align-content: space-between;
-  }
-  
-  .col2-row1-row {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    display: grid;
-    grid-template-rows: 1fr;
-    height: 50px;
-  }
-  .right-heading2 {
-    margin-bottom: -1em;
-  }
-  
-  .col2-row1-row > div:hover {
-    transition: .2s;  /* delays the hover effect */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 3px;
-    transform: scale(1.05);
-  }
-  
-  .col2-row2-row > div:hover {
-    transition: .2s;  /* delays the hover effect */
-    transform: scale(1.05);
-    padding-top: 5px;
-    padding-left: 5px;
-    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.1), 0 0px 20px 0 rgba(0, 0, 0, 0.1);
-  }
-  
-  .col2-row2-row-row > h2 {
-    margin: 0;
-    margin-top: 10px;
-    font-size: larger;
-    color: #737373;
-  }
-  
-  .col2-row2-row-row > ul {
-    margin: 0;
-    margin-bottom: 2em;
-    color: #171616;
-  }
-  
-  .col2-row1-row-row > h4, 
-  .col2-row2-row-row > h4 {
-    font-size: small;
-    margin: 0px;
-    color: #171616;
-  }
-  
-  .col2-row1-row-row > p,
-  .col2-row2-row-row > p {
-    float: right;
-    margin: 7px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    font-weight: bold;
-    /* color: #737373; */
-  }
-  
-  .col2-row1-row-row > ul > li >p,
-  .col2-row2-row-row > ul > li > p {
-    margin: 7px;
-    font-size: 12px;
-  }
-  
-  .col2-row1-row-row > i {
-    font-size: small;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .col2-row1-row-row > h3 {
-    margin-top: 8px;
-    margin-bottom: 5px;
-    font-size: medium;
-    color: #737373;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .col2-row3-row {
-    display: grid;
-    grid-template-rows: 1fr;
-  }
-  
-  .col2-row3-row {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-  }
-  .col2-row3-row-row {
-    margin-bottom: 5px;
-  }
-  
-  .col2-row3-row-row > p {
-    font-size: small;
-    margin: 0;
-  }
-  .col2-row3-row-row > p > i {
-    float: right;
-  }
-
-  @media only screen and (max-width: 500px) {
-    .resume {
-      width: fit-content;
-      padding: 4em 1em 1em 1em;
-      grid-template-columns: none;
-    }
-    .right {
-      padding-left: 0;
-    }
-    .type, .save-icon {
-      position: fixed;
-      right: 1em;
-    }
-    .type {
-      bottom: 0;
-    }
-    .save-icon {
-      bottom: 1em;
-    }
-    .dit {
-      padding-top: 1em;
-    }
-    .col2-row1, .col2-row2, .col2-row3 {
-      margin: 0.5em 2em;
-    }
-  }
+}
