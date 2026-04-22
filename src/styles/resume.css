@@ -83,6 +83,42 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
   }
+
+  /* Css for Language section box*/
+  .lang-toggle {
+    display: flex;
+    margin: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    width: fit-content;
+  }
+
+  .lang-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: none;
+    background: #fff;
+    color: #888;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .lang-btn + .lang-btn {
+    border-left: 1px solid #ccc;
+  }
+
+  .lang-btn.active {
+    background: #333;
+    color: #fff;
+  }
+
+  .lang-btn:hover:not(.active) {
+    background: #f0f0f0;
+    color: #333;
+  }
   
   /* Grid for Language section */
   .col1-row3-row > div {

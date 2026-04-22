@@ -92,18 +92,18 @@ function Resume() {
 
   return (
     <div style={{ textAlign: 'left' }}>
-      <select
-        id="langSelect"
-        value={option}
-        onChange={(e) => setOption(e.target.value)}
-        style={{ margin: '15px', padding: '10px' }}
-      >
-        {LANGUAGE_OPTIONS.map((opt) => (
-          <option key={opt} value={opt}>
+      <div className='lang-toggle'>
+        {LANGUAGE_OPTIONS.map(opt => (
+          <button
+            key={opt}
+            className={`lang-btn ${option === opt ? 'active' : ''}`}
+            onClick={() => setOption(opt)}
+          >
             {opt.toUpperCase()}
-          </option>
+          </button>
         ))}
-      </select>
+      </div>
+
       <div className="resume">
         {/* Left column */}
         <div className="left">
@@ -237,7 +237,7 @@ function Resume() {
               </div>
             ))}
           </div>
-          
+
           {/* Education */}
           <div className="col2-row1">
             <h2 className="col2-row1-row right-heading2">
