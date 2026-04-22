@@ -1,134 +1,182 @@
 {
-    "eng": {
-        "download": "Download Resume",
-        "name": "Harjit Karmacharya",
-        "profession": "IT Engineer",
-        "email": "hkarmacharya@gmail.com",
-        "linkedin": "LinkedIn",
-        "github": "Github",
-        "skills": {
-            "heading": "Skills",
-            "mobile": "Mobile Development",
-            "game": "Game Development",
-            "web": "Web Development",
-            "cloud": "Cloud Development",
-            "hardware": "Hardware",
-            "software": "Software",
-            "database": "Database Management"
-        },
-        "languages": {
-            "heading": "Languages",
-            "english": "English",
-            "finnish": "Finnish",
-            "nepali": "Nepali",
-            "hindi": "Hindi"
-        },
-        "live_projects": {
-            "heading": "Live Projects",
-            "nadaasi": "Nadaasi",
-            "mern": "MERN project"
-        },
-        "education": {
-            "heading": "Education history",
-            "degree1": "Bachelors of Engineering",
-            "school1": "Oulu University of Applied Sciences",
-            "date1": "Aug 2014 - Aug 2020",
-            "subject1": "Information and Communications Technology",
-            "degree2": "Bachelors in Computer Science",
-            "school2": "Dublin Institute of Technology",
-            "date2": "Sep 2016 - May 2017",
-            "subject2": "Double Degree (Erasmus Computing)"
-        },
-        "work": {
-            "heading": "Work Experience",
-            "job1": "PHP developer",
-            "company1": "Cajo Oy",
-            "date1": "2017",
-            "job2": "Android Developer",
-            "company2": "Nepgo Oy",
-            "date2": "2017",
-            "job3": "Full Stack Developer",
-            "company3": "Nadaasi Oy",
-            "date3": "2020",
-            "job4": "Supervisor",
-            "company4": "Nclean Oy",
-            "date4": "Jan 2019 - Apr 2021",
-            "job5": "Full Stack Developer",
-            "company5": "Kassavirtanen Oy",
-            "date5": "September 2022 -"
-        },
-        "projects": {
-            "heading": "Projects",
-            "app1": "Movie seat booking system",
-            "app2": "PC game",
-            "app3": "Mealting",
-            "app4": "Easy Cook"
-        }
+  "eng": {
+    "download": "Download Resume",
+    "name": "Harjit Karmacharya",
+    "profession": "IT Engineer",
+    "summary": "An IT engineering graduate with expertise in full-stack web development, cloud management, and scalable application design. Skilled in driving end-to-end software development projects, leveraging modern frameworks like React, Node.js, and Azure to deliver innovative solutions. Passionate about optimizing performance and delivering impactful digital experiences.",
+    "email": "hkarmacharya@gmail.com",
+    "linkedin": "LinkedIn",
+    "github": "Github",
+    "skills": {
+      "heading": "Skills",
+      "mobile": "Mobile Development",
+      "game": "Game Development",
+      "web": "Web Development",
+      "cloud": "Cloud Development",
+      "hardware": "Hardware",
+      "software": "Software",
+      "database": "Database Management"
     },
-    "fin": {
-        "download": "Lataa ansioluettelo",
-        "name": "Harjit Karmacharya",
-        "profession": "IT-insinööri",
-        "email": "hkarmacharya@gmail.com",
-        "linkedin": "LinkedIn",
-        "github": "Github",
-        "skills": {
-            "heading": "Taitoja",
-            "mobile": "Mobiilikehitys",
-            "game": "Pelikehitys",
-            "web": "Web-kehitys",
-            "cloud": "Pilvikehitys",
-            "hardware": "Laitteisto",
-            "software": "Ohjelmisto",
-            "database": "Tietokannan hallinta"
-        },
-        "languages": {
-            "heading": "Kielet",
-            "english": "Englanti",
-            "finnish": "Suomi",
-            "nepali": "Nepali",
-            "hindi": "Hindi"
-        },
-        "live_projects": {
-            "heading": "Elävät projektit",
-            "nadaasi": "Nadaasi",
-            "mern": "MERN projekti"
-        },
-        "education": {
-            "heading": "Koulutushistoria",
-            "degree1": "Tekniikan kandidaatti",
-            "school1": "Oulun ammattikorkeakoulu",
-            "date1": "Elo 2014 - Elo 2020",
-            "subject1": "Tieto- ja viestintätekniikka",
-            "degree2": "Tietojenkäsittelytieteen kandidaatti",
-            "school2": "Dublin Institute of Technology",
-            "date2": "Syys 2016 - Tou 2017",
-            "subject2": "Kaksoistutkinto (Erasmus Computing)"
-        },
-        "work": {
-            "heading": "Työkokemus",
-            "job1": "PHP-kehittäjä",
-            "company1": "Cajo Oy",
-            "date1": "2017",
-            "job2": "Android-kehittäjä",
-            "company2": "Nepgo Oy",
-            "date2": "2017",
-            "job3": "Full Stack -kehittäjä",
-            "company3": "Nadaasi Oy",
-            "date3": "2020",
-            "job4": "Ohjaaja",
-            "company4": "Nclean Oy",
-            "date4": "Tam 2019 - Huh 2021",
-            "job5": "Full Stack -kehittäjä",
-            "company5": "Kassavirtanen Oy",
-            "date5": "syys 2022 -"
-        },
-        "projects": {
-            "heading": "Projektit",
-            "app1": "Elokuvapaikkojen varausjärjestelmä",
-            "app2": "PC-peli",
-            "app3": "Mealting",
-            "app4": "Easy Cook"
-        }
+    "languages": {
+      "heading": "Languages",
+      "english": "English",
+      "finnish": "Finnish",
+      "nepali": "Nepali",
+      "hindi": "Hindi"
+    },
+    "live_projects": {
+      "heading": "Live Projects",
+      "nadaasi": "Nadaasi",
+      "mern": "MERN project"
+    },
+    "education": {
+      "heading": "Education history",
+      "degree1": "Bachelors of Engineering",
+      "school1": "Oulu University of Applied Sciences",
+      "date1": "Aug 2014 - Aug 2020",
+      "subject1": "Information and Communications Technology",
+      "degree2": "Bachelors in Computer Science",
+      "school2": "Dublin Institute of Technology",
+      "date2": "Sep 2016 - May 2017",
+      "subject2": "Double Degree (Erasmus Computing)"
+    },
+    "work": {
+      "heading": "Work Experience",
+      "job1": "PHP developer",
+      "company1": "Cajo Oy",
+      "date1": "2017",
+      "job2": "Android Developer",
+      "company2": "Nepgo Oy",
+      "date2": "2017",
+      "job3": "Full Stack Developer",
+      "company3": "Nadaasi Oy",
+      "date3": "2020",
+      "job4": "Supervisor",
+      "company4": "Nclean Oy",
+      "date4": "Jan 2019 - Apr 2021",
+      "job5": "Full Stack Developer",
+      "company5": "Kassavirtanen Oy",
+      "date5": "September 2022 -",
+      "bullets": {
+        "job5": [
+          "Expanded a financial application to support operations in multiple countries, driving business scalability.",
+          "Enhanced the ReactJS frontend with Redux-Saga middleware to optimize state management and user interactions.",
+          "Developed backend systems with C# and .NET framework, ensuring robust and maintainable solutions.",
+          "Implemented complex stored procedures in Microsoft SQL Server.",
+          "Introduced SSDT for versioning and tracking stored procedure changes.",
+          "Managed deployments and server configurations on Microsoft Azure."
+        ],
+        "job3": [
+          "Developed and deployed a self-managed webshop application using React and Node.js.",
+          "Designed backend systems with TypeScript and ExpressJS, reducing API response times.",
+          "Managed and optimized a MongoDB database, ensuring data integrity and scalability.",
+          "Created a custom NPM package to streamline development for future projects."
+        ],
+        "job2": [
+          "Developed a demo android application for the startup company oriented for charities."
+        ],
+        "job1": [
+          "Developed an online image modification portal using PHP and ThreeJS.",
+          "Rendered 3D objects and enabled custom image patching for 3D printing."
+        ]
+      }
+    },
+    "projects": {
+      "heading": "Projects",
+      "app1": "Movie seat booking system",
+      "app2": "PC game",
+      "app3": "Mealting",
+      "app4": "Easy Cook"
     }
+  },
+  "fin": {
+    "download": "Lataa ansioluettelo",
+    "name": "Harjit Karmacharya",
+    "profession": "IT-insinööri",
+    "summary": "IT-insinööri, jolla on asiantuntemusta full stack -web-kehityksestä, pilvinhallinnasta ja skaalautuvien sovellusten suunnittelusta. Kokenut ohjelmistokehitysprojektien läpiviemisessä hyödyntäen moderneja teknologioita kuten React, Node.js ja Azure innovatiivisten ratkaisujen tuottamiseksi. Intohimoinen suorituskyvyn optimoinnista ja vaikuttavien digitaalisten kokemusten luomisesta.",
+    "email": "hkarmacharya@gmail.com",
+    "linkedin": "LinkedIn",
+    "github": "Github",
+    "skills": {
+      "heading": "Taitoja",
+      "mobile": "Mobiilikehitys",
+      "game": "Pelikehitys",
+      "web": "Web-kehitys",
+      "cloud": "Pilvikehitys",
+      "hardware": "Laitteisto",
+      "software": "Ohjelmisto",
+      "database": "Tietokannan hallinta"
+    },
+    "languages": {
+      "heading": "Kielet",
+      "english": "Englanti",
+      "finnish": "Suomi",
+      "nepali": "Nepali",
+      "hindi": "Hindi"
+    },
+    "live_projects": {
+      "heading": "Elävät projektit",
+      "nadaasi": "Nadaasi",
+      "mern": "MERN projekti"
+    },
+    "education": {
+      "heading": "Koulutushistoria",
+      "degree1": "Tekniikan kandidaatti",
+      "school1": "Oulun ammattikorkeakoulu",
+      "date1": "Elo 2014 - Elo 2020",
+      "subject1": "Tieto- ja viestintätekniikka",
+      "degree2": "Tietojenkäsittelytieteen kandidaatti",
+      "school2": "Dublin Institute of Technology",
+      "date2": "Syys 2016 - Tou 2017",
+      "subject2": "Kaksoistutkinto (Erasmus Computing)"
+    },
+    "work": {
+      "heading": "Työkokemus",
+      "job1": "PHP-kehittäjä",
+      "company1": "Cajo Oy",
+      "date1": "2017",
+      "job2": "Android-kehittäjä",
+      "company2": "Nepgo Oy",
+      "date2": "2017",
+      "job3": "Full Stack -kehittäjä",
+      "company3": "Nadaasi Oy",
+      "date3": "2020",
+      "job4": "Ohjaaja",
+      "company4": "Nclean Oy",
+      "date4": "Tam 2019 - Huh 2021",
+      "job5": "Full Stack -kehittäjä",
+      "company5": "Kassavirtanen Oy",
+      "date5": "syys 2022 -",
+      "bullets": {
+        "job5": [
+          "Laajensin taloushallinnan sovellusta tukemaan toimintaa useissa maissa.",
+          "Paransin ReactJS-käyttöliittymää Redux-Saga-väliohjelmistolla tilan hallinnan optimoimiseksi.",
+          "Kehitin backend-järjestelmiä C#- ja .NET-kehyksellä.",
+          "Toteutin monimutkaisia tallennettuja proseduureja Microsoft SQL Serverissä.",
+          "Otin käyttöön SSDT:n tallennettujen proseduurien versiointiin.",
+          "Hallinnoin käyttöönottoja ja palvelinkonfiguraatioita Microsoft Azuressa."
+        ],
+        "job3": [
+          "Kehitin ja otin käyttöön itsehallitun verkkokaupan Reactilla ja Node.js:llä.",
+          "Suunnittelin backend-järjestelmät TypeScriptillä ja ExpressJS:llä.",
+          "Hallinnoin ja optimoin MongoDB-tietokantaa.",
+          "Loin mukautetun NPM-paketin tulevien projektien kehityksen nopeuttamiseksi."
+        ],
+        "job2": [
+          "Kehitin demo-Android-sovelluksen hyväntekeväisyyteen suuntautuneelle startupille."
+        ],
+        "job1": [
+          "Kehitin verkossa toimivan kuvankäsittelyportaalin PHP:llä ja ThreeJS:llä.",
+          "Renderöin 3D-objekteja ja mahdollistin mukautetun kuvakorjauksen 3D-tulostukseen."
+        ]
+      }
+    },
+    "projects": {
+      "heading": "Projektit",
+      "app1": "Elokuvapaikkojen varausjärjestelmä",
+      "app2": "PC-peli",
+      "app3": "Mealting",
+      "app4": "Easy Cook"
+    }
+  }
 }
