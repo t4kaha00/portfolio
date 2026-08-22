@@ -1,143 +1,93 @@
-import { Component, useEffect, useRef } from 'react'
-import { Switch } from 'react-router-dom'
-import { HashRouter as Router, Route, NavLink } from 'react-router-dom'
-// import { axiosInstance } from './config';
+import { useEffect, useRef, useState } from 'react'
+import { HashRouter as Router, Route, NavLink, Switch } from 'react-router-dom'
 import './styles/App.css'
 import './styles/menu.css'
 import Resume from './components/Resume'
-// import Fibonacci from './components/Fibonacci';
-import one from './images/1.jpg'
-import twogif from './images/2.gif'
-import three from './images/3.jpg'
-import four from './images/4.jpg'
-import five from './images/5.jpg'
-import six from './images/6.jpg'
-import seven from './images/7.jpg'
-import eight from './images/8.jpg'
-import nine from './images/9.jpg'
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      ipaddress: '',
-      ipcity: '',
-      ipcountry: '',
-      checked: false,
-      images: [one, twogif, three, four, five, six, seven, eight, nine]
-    }
-  }
+const MENU_ITEMS = [
+  { to: '/', label: 'Home', exact: true },
+  { to: '/resume', label: 'Resume', exact: false }
+]
 
-  // componentDidMount() {
-  //   this.get()
-  // }
+const SCRAMBLE_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+const SCRAMBLE_INTERVAL_MS = 50
 
-  // get = () => {
-  //   // axiosInstance.get('/app').then(() => {console.log("Database responded")})
-  // }
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
 
-  uncheck = (e) => {
-    e.preventDefault()
-    this.setState({ checked: !this.state.checked })
-  }
-
-  change = () => {
-    this.setState({ checked: !this.state.checked })
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <div>
-          <Router>
-            <div className="nav">
-              <nav className="navigation">
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={this.state.checked}
-                    onChange={this.change}
-                  />
-                  <span className="menu">
-                    <span className="hamburger"></span>
-                  </span>
-                  <ul>
-                    <li onClick={this.uncheck} activeclassname="nav_active">
-                      <NavLink
-                        exact={true}
-                        activeClassName="nav_active"
-                        to="/"
-                        className="nav-item"
-                      >
-                        <u>Home</u>
-                      </NavLink>
-                    </li>
-                    <li onClick={this.uncheck} activeclassname="nav_active">
-                      <NavLink
-                        activeClassName="nav_active"
-                        to="/resume"
-                        className="nav-item"
-                      >
-                        <u>Resume</u>
-                      </NavLink>
-                    </li>
-                    {/* <li onClick={this.uncheck} activeclassname='nav_active'>
+  return (
+    <div className="App">
+      <Router>
+        <div className="nav">
+          <nav className="navigation">
+            <label>
+              <input
+                type="checkbox"
+                checked={menuOpen}
+                onChange={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle navigation menu"
+              />
+              <span className="menu">
+                <span className="hamburger"></span>
+              </span>
+              <ul>
+                {MENU_ITEMS.map(({ to, label, exact }) => (
+                  <li key={to} onClick={() => setMenuOpen(false)}>
                     <NavLink
-                      activeClassName='nav_active' 
-                      to={{
-                        pathname: "/fibonacci"
-                      }} 
-                        className="nav-item"><u>Fibonacci</u>
+                      exact={exact}
+                      activeClassName="nav_active"
+                      to={to}
+                      className="nav-item"
+                    >
+                      <u>{label}</u>
                     </NavLink>
-                  </li> */}
-                  </ul>
-                </label>
-              </nav>
-            </div>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/resume" component={Resume} />
-              {/* <Route 
-                path="/fibonacci"
-                render={(props) => <Fibonacci {...props} images={this.state.images}/>}
-                /> */}
-            </Switch>
-          </Router>
+                  </li>
+                ))}
+              </ul>
+            </label>
+          </nav>
         </div>
-      </div>
-    )
-  }
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/resume" component={Resume} />
+        </Switch>
+      </Router>
+    </div>
+  )
 }
 
 function Home() {
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  const intervalRef = useRef(null)
+  const headingRef = useRef(null)
 
   useEffect(() => {
-    const h1 = document.querySelector('h1')
-    if (!h1) return // safety check
+    const h1 = headingRef.current
+    if (!h1) return undefined
 
+    const target = h1.dataset.value
     let iteration = 0
 
-    intervalRef.current = setInterval(() => {
-      h1.innerText = h1.innerText
+    const interval = setInterval(() => {
+      h1.innerText = target
         .split('')
         .map((letter, index) => {
           if (index < iteration) {
-            return h1.dataset.value[index]
+            return target[index]
           }
-
-          return letters[Math.floor(Math.random() * 26)]
+          return SCRAMBLE_LETTERS[
+            Math.floor(Math.random() * SCRAMBLE_LETTERS.length)
+          ]
         })
         .join('')
 
-      if (iteration >= h1.dataset.value.length) {
-        clearInterval(intervalRef.current)
+      if (iteration >= target.length) {
+        clearInterval(interval)
       }
 
-      iteration += 1 / 2 // optional: slower reveal
-    }, 50)
-  })
+      iteration += 0.5
+    }, SCRAMBLE_INTERVAL_MS)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div>
@@ -145,7 +95,9 @@ function Home() {
         {/* First container */}
         <div className="container container_solid">
           <div className="title_wrapper">
-            <h1 data-value="Harjit Karmacharya">Harjit Karmacharya</h1>
+            <h1 ref={headingRef} data-value="Harjit Karmacharya">
+              Harjit Karmacharya
+            </h1>
           </div>
         </div>
         {/* Second container */}
@@ -155,66 +107,11 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* Timeline */}
-      <div className="timeline">
-        <div className="timeline_container right">
-          <div className="date">1 Sep 2011</div>
-          <div className="content">
-            <h2>Capital College and Research Center</h2>
-            <p>
-              High School
-              <br />
-              <small>
-                <i>Physics and Mathematics Major</i>
-              </small>
-            </p>
-          </div>
-        </div>
-        <div className="timeline_container left">
-          <div className="date">27 Aug 2014</div>
-          <div className="content">
-            <h2>Oulu University of Applied Sciences</h2>
-            <p>
-              Bachelors in Engineering <br />
-              <small>
-                <i>Information and Communications Technology</i>
-              </small>
-            </p>
-          </div>
-        </div>
-        <div className="timeline_container right">
-          <div className="date">5 Sep 2016</div>
-          <div className="content">
-            <h2>Dublin Institute of Technology</h2>
-            <p>
-              Bachelors in Computer Sciences <br />
-              <small>
-                <i>Double Degree (Erasmus Computing)</i>
-              </small>
-            </p>
-          </div>
-        </div>
-        <div className="timeline_container left">
-          <div className="date">05 Jan 2019</div>
-          <div className="content">
-            <h2>Nclean Oy</h2>
-            <p>
-              Supervisor <br />
-            </p>
-          </div>
-        </div>
-        <div className="timeline_container right">
-          <div className="date">15 Sep 2022</div>
-          <div className="content">
-            <h2>Kassavirtanen Oy</h2>
-            <p>
-              Full Stack Developer <br />
-            </p>
-          </div>
-        </div>
-      </div>
 
-      {/* H Logo  */}
+      {/* Timeline */}
+      <Timeline />
+
+      {/* H Logo */}
       <div
         style={{
           width: '100%',
@@ -235,5 +132,65 @@ function Home() {
     </div>
   )
 }
+
+function Timeline() {
+  return (
+    <div className="timeline">
+      {TIMELINE_ENTRIES.map(({ date, title, subtitle, detail }, index) => (
+        <div
+          key={`${date}-${title}`}
+          className={`timeline_container ${index % 2 === 0 ? 'right' : 'left'}`}
+        >
+          <div className="date">{date}</div>
+          <div className="content">
+            <h2>{title}</h2>
+            <p>
+              {subtitle}
+              <br />
+              {detail && (
+                <small>
+                  <i>{detail}</i>
+                </small>
+              )}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+const TIMELINE_ENTRIES = [
+  {
+    date: '1 Sep 2011',
+    title: 'Capital College and Research Center',
+    subtitle: 'High School',
+    detail: 'Physics and Mathematics Major'
+  },
+  {
+    date: '27 Aug 2014',
+    title: 'Oulu University of Applied Sciences',
+    subtitle: 'Bachelors in Engineering',
+    detail: 'Information and Communications Technology'
+  },
+  {
+    date: '5 Sep 2016',
+    title: 'Dublin Institute of Technology',
+    subtitle: 'Bachelors in Computer Sciences',
+    detail: 'Double Degree (Erasmus Computing)'
+  },
+  {
+    date: '05 Jan 2019',
+    title: 'Nclean Oy',
+    subtitle: 'Supervisor',
+    detail: null
+  },
+  {
+    date: '15 Sep 2022',
+    title: 'Kassavirtanen Oy',
+    subtitle: 'Full Stack Developer',
+    detail: null
+  }
+]
 
 export default App

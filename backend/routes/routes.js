@@ -3,55 +3,45 @@ const router = express.Router()
 const https = require('https')
 const DataTemplateCopy = require('../models/RecordModel')
 
-router.get('/visit', async (request, response) => {
+const GEOLOCATION_TIMEOUT_MS = 5000
+
+// Fire-and-forget visit logging. Always answers { ok: true } so analytics
+// can never break or leak anything to the client.
+router.get('/visit', (request, response) => {
   const ip =
     (request.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
     request.socket.remoteAddress
 
-  https
-    .get(`https://geolocation-db.com/json/${ip}`, (res) => {
+  const respondOk = () => {
+    if (!response.headersSent) {
+      response.json({ ok: true })
+    }
+  }
+
+  const geoRequest = https.get(
+    `https://geolocation-db.com/json/${ip}`,
+    { timeout: GEOLOCATION_TIMEOUT_MS },
+    (res) => {
       let data = ''
-      res.on('data', (chunk) => (data += chunk))
-      res.on('end', async () => {
+      res.on('data', (chunk) => {
+        data += chunk
+      })
+      res.on('end', () => {
+        respondOk()
         try {
           const ipdata = JSON.parse(data)
-          const record = new DataTemplateCopy({
-            clickedData: true,
-            ipdata
-          })
-          await record.save()
-          response.json({ ok: true }) // Return nothing revealing
+          DataTemplateCopy.create({ clickedData: true, ipdata }).catch(
+            () => {} // Logging failures must never affect the client
+          )
         } catch (err) {
-          response.json({ ok: true }) // Fail silently to client
+          // Malformed geolocation response — ignore
         }
       })
-    })
-    .on('error', () => response.json({ ok: true }))
-})
+    }
+  )
 
-router.post('/submit', (request, response) => {
-  const clickedData = new DataTemplateCopy({
-    clickedData: request.body.clickedData,
-    ipdata: request.body.ipdata
-  })
-  clickedData
-    .save()
-    .then((data) => {
-      response.json(data), console.log(data.ipcity + 'posted')
-    })
-    .catch((error) => {
-      response.json(error)
-    })
-})
-
-router.get('/', (request, response) => {
-  DataTemplateCopy.find({})
-    .then((data) => {
-      response.json(data), console.log(data.length + ' addresses found')
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+  geoRequest.on('timeout', () => geoRequest.destroy())
+  geoRequest.on('error', respondOk)
 })
 
 module.exports = router

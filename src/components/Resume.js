@@ -1,5 +1,5 @@
-import { useState, useCallback, useMemo, useEffect } from 'react'
-import { axiosInstance } from '../config'
+import { useState, useCallback, useMemo, useEffect, useRef } from 'react'
+import { API_BASE_URL, EMAIL, LINKEDIN_URL, GITHUB_URL, RESUME_PDF_URL } from '../constants'
 import '../styles/resume.css'
 import lang from '../lang/lang.json'
 
@@ -76,18 +76,24 @@ const EDUCATION = [
 function Resume() {
   const [option, setOption] = useState('eng')
   const [copied, setCopied] = useState(false)
+  const copyTimerRef = useRef(null)
 
   const language = useMemo(() => lang[option], [option])
 
   useEffect(() => {
-    axiosInstance.get('/.netlify/functions/postIP/visit').catch(() => {})
+    fetch(`${API_BASE_URL}/.netlify/functions/postIP/visit`).catch(() => {})
+
+    return () => clearTimeout(copyTimerRef.current)
   }, [])
 
   const copyEmail = useCallback((e) => {
     e.preventDefault()
-    navigator.clipboard.writeText('hkarmacharya@gmail.com')
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(EMAIL).catch(() => {})
+    }
     setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    clearTimeout(copyTimerRef.current)
+    copyTimerRef.current = setTimeout(() => setCopied(false), 2000)
   }, [])
 
   return (
@@ -99,6 +105,7 @@ function Resume() {
             key={opt}
             className={`lang-btn ${option === opt ? 'active' : ''}`}
             onClick={() => setOption(opt)}
+            aria-pressed={option === opt}
           >
             {opt.toUpperCase()}
           </button>
@@ -117,7 +124,7 @@ function Resume() {
                 <img src="gmail.png" alt="mail" width="20px" />
                 <a
                   className="email"
-                  href="mailto:hkarmacharya@gmail.com"
+                  href={`mailto:${EMAIL}`}
                   onClick={copyEmail}
                 >
                   {language.email}
@@ -130,7 +137,7 @@ function Resume() {
               <div className="col1-row1-row-row1">
                 <img src="linkedin2.png" alt="linkedin" width="20px" />
                 <a
-                  href="http://www.linkedin.com/in/harjit-karmacharya"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -141,7 +148,7 @@ function Resume() {
               <div className="col1-row1-row-row1">
                 <img src="github.png" alt="github" width="20px" />
                 <a
-                  href="https://github.com/t4kaha00"
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -195,7 +202,7 @@ function Resume() {
           </div>
           <div className="save-icon">
             <a
-              href="harjitkarmacharya.pdf"
+              href={RESUME_PDF_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
