@@ -1,4 +1,4 @@
-You can view it [here](https://t4kaha00.github.io/portfolio/).
+You can view it [here](http://www.harjitkarmacharya.com).
 
 ## Personal Website
 
