@@ -1,7 +1,7 @@
 export const EMAIL = 'hkarmacharya@gmail.com'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/harjit-karmacharya'
 export const GITHUB_URL_PERSONAL = 'https://github.com/t4kaha00'
-export const GITHUB_URL_PROFESSIONAL = 'https://github.com/t4kaha00'
+export const GITHUB_URL_PROFESSIONAL = 'https://github.com/Harjit-Kassavirtanen'
 export const RESUME_PDF_URL = 'harjitkarmacharya.pdf'
 
 // Base URL of the site hosting the Netlify functions.
