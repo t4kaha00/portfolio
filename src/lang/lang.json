@@ -6,7 +6,8 @@
     "summary": "An IT engineering graduate with expertise in full-stack web development, cloud management, and scalable application design. Skilled in driving end-to-end software development projects, leveraging modern frameworks like React, Node.js, and Azure to deliver innovative solutions. Passionate about optimizing performance and delivering impactful digital experiences.",
     "email": "hkarmacharya@gmail.com",
     "linkedin": "LinkedIn",
-    "github": "Github",
+    "githubPersonal": "Github (Personal)",
+    "githubProfessional": "Github (Professional)",
     "skills": {
       "heading": "Skills",
       "mobile": "Mobile Development",
@@ -96,7 +97,8 @@
     "summary": "IT-insinööri, jolla on asiantuntemusta full stack -web-kehityksestä, pilvinhallinnasta ja skaalautuvien sovellusten suunnittelusta. Kokenut ohjelmistokehitysprojektien läpiviemisessä hyödyntäen moderneja teknologioita kuten React, Node.js ja Azure innovatiivisten ratkaisujen tuottamiseksi. Intohimoinen suorituskyvyn optimoinnista ja vaikuttavien digitaalisten kokemusten luomisesta.",
     "email": "hkarmacharya@gmail.com",
     "linkedin": "LinkedIn",
-    "github": "Github",
+    "githubPersonal": "Github (Personal)",
+    "githubProfessional": "Github (Professional)",
     "skills": {
       "heading": "Taitoja",
       "mobile": "Mobiilikehitys",
