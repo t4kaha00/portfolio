@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo, useEffect, useRef } from 'react'
-import { API_BASE_URL, EMAIL, LINKEDIN_URL, GITHUB_URL, RESUME_PDF_URL } from '../constants'
+import { API_BASE_URL, EMAIL, LINKEDIN_URL, GITHUB_URL_PERSONAL, GITHUB_URL_PROFESSIONAL, RESUME_PDF_URL } from '../constants'
 import '../styles/resume.css'
 import lang from '../lang/lang.json'
 
@@ -148,11 +148,21 @@ function Resume() {
               <div className="col1-row1-row-row1">
                 <img src="github.png" alt="github" width="20px" />
                 <a
-                  href={GITHUB_URL}
+                  href={GITHUB_URL_PERSONAL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {language.github}
+                  {language.githubPersonal}
+                </a>
+              </div>
+              <div className="col1-row1-row-row1">
+                <img src="github.png" alt="github" width="20px" />
+                <a
+                  href={GITHUB_URL_PROFESSIONAL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {language.githubProfessional}
                 </a>
               </div>
             </div>
