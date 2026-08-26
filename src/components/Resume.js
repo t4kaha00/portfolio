@@ -155,6 +155,7 @@ function Resume() {
                   {language.githubPersonal}
                 </a>
               </div>
+              <br />
               <div className="col1-row1-row-row1">
                 <img src="github.png" alt="github" width="20px" />
                 <a
