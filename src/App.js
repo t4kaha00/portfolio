@@ -3,10 +3,12 @@ import { HashRouter as Router, Route, NavLink, Switch } from "react-router-dom";
 import "./styles/App.css";
 import "./styles/menu.css";
 import Resume from "./components/Resume";
+import Gallery from "./components/Gallery";
 
 const MENU_ITEMS = [
   { to: "/", label: "Home", exact: true },
   { to: "/resume", label: "Resume", exact: false },
+  { to: "/gallery", label: "Gallery", exact: false },
 ];
 
 const SCRAMBLE_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -51,6 +53,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/resume" component={Resume} />
+          <Route exact path="/gallery" component={Gallery} />
         </Switch>
       </Router>
     </div>
