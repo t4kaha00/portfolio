@@ -11,6 +11,7 @@ const MENU_ITEMS = [
 
 const SCRAMBLE_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const SCRAMBLE_INTERVAL_MS = 50;
+const SCRAMBLE_PAUSE_MS = 3500;
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -58,35 +59,53 @@ function App() {
 
 function Home() {
   const headingRef = useRef(null);
+  const [cueVisible, setCueVisible] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setCueVisible(window.scrollY < 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const h1 = headingRef.current;
     if (!h1) return undefined;
 
     const target = h1.dataset.value;
-    let iteration = 0;
+    let interval = null;
+    let resetTimer = null;
 
-    const interval = setInterval(() => {
-      h1.innerText = target
-        .split("")
-        .map((letter, index) => {
-          if (index < iteration) {
-            return target[index];
-          }
-          return SCRAMBLE_LETTERS[
-            Math.floor(Math.random() * SCRAMBLE_LETTERS.length)
-          ];
-        })
-        .join("");
+    const scramble = () => {
+      let iteration = 0;
+      interval = setInterval(() => {
+        h1.innerText = target
+          .split("")
+          .map((letter, index) => {
+            if (index < iteration) {
+              return target[index];
+            }
+            return SCRAMBLE_LETTERS[
+              Math.floor(Math.random() * SCRAMBLE_LETTERS.length)
+            ];
+          })
+          .join("");
 
-      if (iteration >= target.length) {
-        clearInterval(interval);
-      }
+        if (iteration >= target.length) {
+          clearInterval(interval);
+          resetTimer = setTimeout(scramble, SCRAMBLE_PAUSE_MS);
+          return;
+        }
 
-      iteration += 0.5;
-    }, SCRAMBLE_INTERVAL_MS);
+        iteration += 0.5;
+      }, SCRAMBLE_INTERVAL_MS);
+    };
 
-    return () => clearInterval(interval);
+    scramble();
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(resetTimer);
+    };
   }, []);
 
   return (
@@ -106,6 +125,18 @@ function Home() {
             <h1>Harjit Karmacharya</h1>
           </div>
         </div>
+
+        {/* Scroll down cue */}
+        <button
+          className={`scroll-cue ${cueVisible ? "show" : "hide"}`}
+          onClick={scrollToTimeline}
+          aria-label="Scroll to journey"
+        >
+          <span className="scroll-cue-mouse">
+            <span className="scroll-cue-wheel"></span>
+          </span>
+          <span className="scroll-cue-text">Scroll</span>
+        </button>
       </div>
 
       {/* Timeline */}
@@ -119,43 +150,57 @@ function Home() {
           marginBottom: "1em",
         }}
       >
-        <div className="logo_container">
-          <div className="logo_horizontal">
-            <div className="horizontal_white white1"></div>
-            <div className="horizontal_black black1"></div>
-            <div className="horizontal_blank"></div>
-            <div className="horizontal_black black2"></div>
-            <div className="horizontal_white white2"></div>
+        <NavLink to="/" aria-label="Home" className="logo_link">
+          <div className="logo_container">
+            <div className="logo_horizontal">
+              <div className="horizontal_white white1"></div>
+              <div className="horizontal_black black1"></div>
+              <div className="horizontal_blank"></div>
+              <div className="horizontal_black black2"></div>
+              <div className="horizontal_white white2"></div>
+            </div>
           </div>
-        </div>
+        </NavLink>
       </div>
     </div>
   );
 }
 
+function scrollToTimeline() {
+  const timeline = document.querySelector(".timeline");
+  if (timeline) {
+    timeline.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
 function Timeline() {
   return (
-    <div className="timeline">
-      {TIMELINE_ENTRIES.map(({ date, title, subtitle, detail }, index) => (
-        <div
-          key={`${date}-${title}`}
-          className={`timeline_container ${index % 2 === 0 ? "right" : "left"}`}
-        >
-          <div className="date">{date}</div>
-          <div className="content">
-            <h2>{title}</h2>
-            <p>
-              {subtitle}
-              <br />
-              {detail && (
-                <small>
-                  <i>{detail}</i>
-                </small>
-              )}
-            </p>
+    <div className="timeline" id="journey">
+      {TIMELINE_ENTRIES.map(
+        ({ date, title, subtitle, detail, icon }, index) => (
+          <div
+            key={`${date}-${title}`}
+            className={`timeline_container ${index % 2 === 0 ? "right" : "left"}`}
+          >
+            <div className="date">{date}</div>
+            <div className="icon" aria-hidden="true">
+              {icon}
+            </div>
+            <div className="content">
+              <h2>{title}</h2>
+              <p>
+                {subtitle}
+                <br />
+                {detail && (
+                  <small>
+                    <i>{detail}</i>
+                  </small>
+                )}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ),
+      )}
     </div>
   );
 }
@@ -166,36 +211,42 @@ const TIMELINE_ENTRIES = [
     title: "Capital College and Research Center",
     subtitle: "High School",
     detail: "Physics and Mathematics Major",
+    icon: "🎓",
   },
   {
     date: "27 Aug 2014",
     title: "Oulu University of Applied Sciences",
     subtitle: "Bachelors in Engineering",
     detail: "Information and Communications Technology",
+    icon: "🎓",
   },
   {
     date: "5 Sep 2016",
     title: "Dublin Institute of Technology",
     subtitle: "Bachelors in Computer Sciences",
     detail: "Double Degree (Erasmus Computing)",
+    icon: "🎓",
   },
   {
     date: "05 Jan 2019",
     title: "Nclean Oy",
     subtitle: "Supervisor",
     detail: null,
+    icon: "🧹",
   },
   {
     date: "15 Sep 2022",
     title: "Kassavirtanen Oy",
     subtitle: "Full Stack Developer",
     detail: null,
+    icon: "💻",
   },
   {
     date: "01 Sep 2026",
     title: "University of Turku",
     subtitle: "Master of Science (Technology)",
     detail: "Robotics and Autonomous Systems",
+    icon: "🤖",
   },
 ];
 
