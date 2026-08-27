@@ -4,11 +4,13 @@ import "./styles/App.css";
 import "./styles/menu.css";
 import Resume from "./components/Resume";
 import Gallery from "./components/Gallery";
+import Films from "./components/Films";
 
 const MENU_ITEMS = [
   { to: "/", label: "Home", exact: true },
   { to: "/resume", label: "Resume", exact: false },
   { to: "/gallery", label: "Gallery", exact: false },
+  { to: "/videos", label: "Videos", exact: false },
 ];
 
 const SCRAMBLE_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -54,6 +56,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/resume" component={Resume} />
           <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/videos" component={Films} />
         </Switch>
       </Router>
     </div>
