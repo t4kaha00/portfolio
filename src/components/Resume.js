@@ -73,9 +73,20 @@ const EDUCATION = [
   }
 ]
 
+const RESUME_TABS = [
+  { key: 'education', labelKey: 'education.heading' },
+  { key: 'projects', labelKey: 'projects.heading' },
+  { key: 'livetools', labelKey: 'live_projects.heading' }
+]
+
+function getByPath(obj, path) {
+  return path.split('.').reduce((acc, part) => (acc && acc[part]) || '', obj)
+}
+
 function Resume() {
   const [option, setOption] = useState('eng')
   const [copied, setCopied] = useState(false)
+  const [activeTab, setActiveTab] = useState('education')
   const copyTimerRef = useRef(null)
 
   const language = useMemo(() => lang[option], [option])
@@ -255,39 +266,98 @@ function Resume() {
             ))}
           </div>
 
-          {/* Education */}
+          {/* Tabs: Education / Projects / Live Projects */}
           <div className="col2-row1">
-            <h2 className="col2-row1-row right-heading2">
-              <u>{language.education.heading}</u>
-            </h2>
-            {EDUCATION.map(
-              ({
-                degreeKey,
-                schoolKey,
-                dateKey,
-                subjectKey,
-                url,
-                cssClass
-              }) => (
-                <div className={`col2-row1-row ${cssClass}`} key={degreeKey}>
-                  <a href={url} target="_blank" rel="noopener noreferrer">
-                    <div className="col2-row1-row-row">
-                      <h4 className="heading1">
-                        {language.education[degreeKey]}
-                      </h4>
-                      <p>{language.education[dateKey]}</p>
-                    </div>
-                    <div className="col2-row1-row-row">
-                      <h3>{language.education[schoolKey]}</h3>
-                      <i>{language.education[subjectKey]}</i>
-                    </div>
-                  </a>
-                </div>
-              )
-            )}
+            <div className="resume-tabs" role="tablist" aria-label="Resume sections">
+              {RESUME_TABS.map(({ key, labelKey }) => (
+                <button
+                  key={key}
+                  role="tab"
+                  className={`resume-tab ${activeTab === key ? 'active' : ''}`}
+                  aria-selected={activeTab === key}
+                  onClick={() => setActiveTab(key)}
+                >
+                  {getByPath(language, labelKey)}
+                </button>
+              ))}
+            </div>
+
+            <div className="tab-panel" role="tabpanel">
+              {activeTab === 'education' && (
+                <EducationPanel language={language} />
+              )}
+              {activeTab === 'projects' && (
+                <ProjectsPanel language={language} />
+              )}
+              {activeTab === 'livetools' && (
+                <LiveProjectsPanel language={language} />
+              )}
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  )
+}
+
+function EducationPanel({ language }) {
+  return (
+    <div className="tab-inner">
+      {EDUCATION.map(
+        ({ degreeKey, schoolKey, dateKey, subjectKey, url, cssClass }) => (
+          <div className={`col2-row1-row ${cssClass}`} key={degreeKey}>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              <div className="col2-row1-row-row">
+                <h4 className="heading1">{language.education[degreeKey]}</h4>
+                <p>{language.education[dateKey]}</p>
+              </div>
+              <div className="col2-row1-row-row">
+                <h3>{language.education[schoolKey]}</h3>
+                <i>{language.education[subjectKey]}</i>
+              </div>
+            </a>
+          </div>
+        )
+      )}
+    </div>
+  )
+}
+
+function ProjectsPanel({ language }) {
+  const projects = ['app1', 'app2', 'app3', 'app4']
+  return (
+    <div className="tab-inner">
+      <ul className="project-list">
+        {projects.map((key) => (
+          <li key={key}>{language.projects[key]}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+function LiveProjectsPanel({ language }) {
+  const links = [
+    {
+      url: 'https://nadaasi.com/',
+      labelKey: 'live_projects.nadaasi'
+    },
+    {
+      url: 'https://mern-stack-trial.netlify.app/',
+      labelKey: 'live_projects.mern'
+    }
+  ]
+  return (
+    <div className="tab-inner">
+      <ul className="project-list">
+        {links.map(({ url, labelKey }) => (
+          <li key={labelKey}>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              {getByPath(language, labelKey)}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
