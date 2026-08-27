@@ -176,31 +176,26 @@ function scrollToTimeline() {
 function Timeline() {
   return (
     <div className="timeline" id="journey">
-      {TIMELINE_ENTRIES.map(
-        ({ date, title, subtitle, detail, icon }, index) => (
-          <div
-            key={`${date}-${title}`}
-            className={`timeline_container ${index % 2 === 0 ? "right" : "left"}`}
-          >
-            <div className="date">{date}</div>
-            <div className="icon" aria-hidden="true">
-              {icon}
-            </div>
-            <div className="content">
-              <h2>{title}</h2>
-              <p>
-                {subtitle}
-                <br />
-                {detail && (
-                  <small>
-                    <i>{detail}</i>
-                  </small>
-                )}
-              </p>
-            </div>
+      {TIMELINE_ENTRIES.map(({ date, title, subtitle, detail }, index) => (
+        <div
+          key={`${date}-${title}`}
+          className={`timeline_container ${index % 2 === 0 ? "right" : "left"}`}
+        >
+          <div className="date">{date}</div>
+          <div className="content">
+            <h2>{title}</h2>
+            <p>
+              {subtitle}
+              <br />
+              {detail && (
+                <small>
+                  <i>{detail}</i>
+                </small>
+              )}
+            </p>
           </div>
-        ),
-      )}
+        </div>
+      ))}
     </div>
   );
 }
@@ -211,42 +206,36 @@ const TIMELINE_ENTRIES = [
     title: "Capital College and Research Center",
     subtitle: "High School",
     detail: "Physics and Mathematics Major",
-    icon: "🎓",
   },
   {
     date: "27 Aug 2014",
     title: "Oulu University of Applied Sciences",
     subtitle: "Bachelors in Engineering",
     detail: "Information and Communications Technology",
-    icon: "🎓",
   },
   {
     date: "5 Sep 2016",
     title: "Dublin Institute of Technology",
     subtitle: "Bachelors in Computer Sciences",
     detail: "Double Degree (Erasmus Computing)",
-    icon: "🎓",
   },
   {
     date: "05 Jan 2019",
     title: "Nclean Oy",
     subtitle: "Supervisor",
     detail: null,
-    icon: "🧹",
   },
   {
     date: "15 Sep 2022",
     title: "Kassavirtanen Oy",
     subtitle: "Full Stack Developer",
     detail: null,
-    icon: "💻",
   },
   {
     date: "01 Sep 2026",
     title: "University of Turku",
     subtitle: "Master of Science (Technology)",
     detail: "Robotics and Autonomous Systems",
-    icon: "🤖",
   },
 ];
 
