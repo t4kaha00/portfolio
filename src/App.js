@@ -1,19 +1,19 @@
-import { useEffect, useRef, useState } from 'react'
-import { HashRouter as Router, Route, NavLink, Switch } from 'react-router-dom'
-import './styles/App.css'
-import './styles/menu.css'
-import Resume from './components/Resume'
+import { useEffect, useRef, useState } from "react";
+import { HashRouter as Router, Route, NavLink, Switch } from "react-router-dom";
+import "./styles/App.css";
+import "./styles/menu.css";
+import Resume from "./components/Resume";
 
 const MENU_ITEMS = [
-  { to: '/', label: 'Home', exact: true },
-  { to: '/resume', label: 'Resume', exact: false }
-]
+  { to: "/", label: "Home", exact: true },
+  { to: "/resume", label: "Resume", exact: false },
+];
 
-const SCRAMBLE_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-const SCRAMBLE_INTERVAL_MS = 50
+const SCRAMBLE_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const SCRAMBLE_INTERVAL_MS = 50;
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="App">
@@ -53,41 +53,41 @@ function App() {
         </Switch>
       </Router>
     </div>
-  )
+  );
 }
 
 function Home() {
-  const headingRef = useRef(null)
+  const headingRef = useRef(null);
 
   useEffect(() => {
-    const h1 = headingRef.current
-    if (!h1) return undefined
+    const h1 = headingRef.current;
+    if (!h1) return undefined;
 
-    const target = h1.dataset.value
-    let iteration = 0
+    const target = h1.dataset.value;
+    let iteration = 0;
 
     const interval = setInterval(() => {
       h1.innerText = target
-        .split('')
+        .split("")
         .map((letter, index) => {
           if (index < iteration) {
-            return target[index]
+            return target[index];
           }
           return SCRAMBLE_LETTERS[
             Math.floor(Math.random() * SCRAMBLE_LETTERS.length)
-          ]
+          ];
         })
-        .join('')
+        .join("");
 
       if (iteration >= target.length) {
-        clearInterval(interval)
+        clearInterval(interval);
       }
 
-      iteration += 0.5
-    }, SCRAMBLE_INTERVAL_MS)
+      iteration += 0.5;
+    }, SCRAMBLE_INTERVAL_MS);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
@@ -114,9 +114,9 @@ function Home() {
       {/* H Logo */}
       <div
         style={{
-          width: '100%',
-          textAlign: '-webkit-center',
-          marginBottom: '1em'
+          width: "100%",
+          textAlign: "-webkit-center",
+          marginBottom: "1em",
         }}
       >
         <div className="logo_container">
@@ -130,7 +130,7 @@ function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function Timeline() {
@@ -139,7 +139,7 @@ function Timeline() {
       {TIMELINE_ENTRIES.map(({ date, title, subtitle, detail }, index) => (
         <div
           key={`${date}-${title}`}
-          className={`timeline_container ${index % 2 === 0 ? 'right' : 'left'}`}
+          className={`timeline_container ${index % 2 === 0 ? "right" : "left"}`}
         >
           <div className="date">{date}</div>
           <div className="content">
@@ -157,46 +157,46 @@ function Timeline() {
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 const TIMELINE_ENTRIES = [
   {
-    date: '1 Sep 2011',
-    title: 'Capital College and Research Center',
-    subtitle: 'High School',
-    detail: 'Physics and Mathematics Major'
+    date: "1 Sep 2011",
+    title: "Capital College and Research Center",
+    subtitle: "High School",
+    detail: "Physics and Mathematics Major",
   },
   {
-    date: '27 Aug 2014',
-    title: 'Oulu University of Applied Sciences',
-    subtitle: 'Bachelors in Engineering',
-    detail: 'Information and Communications Technology'
+    date: "27 Aug 2014",
+    title: "Oulu University of Applied Sciences",
+    subtitle: "Bachelors in Engineering",
+    detail: "Information and Communications Technology",
   },
   {
-    date: '5 Sep 2016',
-    title: 'Dublin Institute of Technology',
-    subtitle: 'Bachelors in Computer Sciences',
-    detail: 'Double Degree (Erasmus Computing)'
+    date: "5 Sep 2016",
+    title: "Dublin Institute of Technology",
+    subtitle: "Bachelors in Computer Sciences",
+    detail: "Double Degree (Erasmus Computing)",
   },
   {
-    date: '05 Jan 2019',
-    title: 'Nclean Oy',
-    subtitle: 'Supervisor',
-    detail: null
+    date: "05 Jan 2019",
+    title: "Nclean Oy",
+    subtitle: "Supervisor",
+    detail: null,
   },
   {
-    date: '15 Sep 2022',
-    title: 'Kassavirtanen Oy',
-    subtitle: 'Full Stack Developer',
-    detail: null
+    date: "15 Sep 2022",
+    title: "Kassavirtanen Oy",
+    subtitle: "Full Stack Developer",
+    detail: null,
   },
   {
-    date: '01 Sep 2026',
-    title: 'University of Turku',
-    subtitle: 'Master of Science (Technology)',
-    detail: 'Robotics and Autonomous Systems'
-  }
-]
+    date: "01 Sep 2026",
+    title: "University of Turku",
+    subtitle: "Master of Science (Technology)",
+    detail: "Robotics and Autonomous Systems",
+  },
+];
 
-export default App
+export default App;
