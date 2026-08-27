@@ -190,6 +190,12 @@ const TIMELINE_ENTRIES = [
     title: 'Kassavirtanen Oy',
     subtitle: 'Full Stack Developer',
     detail: null
+  },
+  {
+    date: '01 Sep 2026',
+    title: 'University of Turku',
+    subtitle: 'Master of Science (Technology)',
+    detail: 'Robotics and Autonomous Systems'
   }
 ]
 
